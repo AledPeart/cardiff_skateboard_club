@@ -19,6 +19,16 @@ body {
     width: 1.5rem;
 }
 
+.banner {
+    background-color: black;
+    
+    
+}
+
+.banner-text{
+    font-size: 11px;
+}
+
 .logo-font {
     text-transform: uppercase;
 }
@@ -28,14 +38,14 @@ body {
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
+    background: white;
+    color: black;
+    min-width: 200px;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: white;
+    color: rgb(245, 61, 162);
 }
 
 .shop-now-button:hover,
@@ -44,12 +54,16 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: rgb(245, 61, 162);
     color: white;
 }
 
 .text-black {
     color: #000 !important;
+}
+
+.text-white {
+    color: #fff !important;
 }
 
 .border-black {

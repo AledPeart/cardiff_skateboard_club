@@ -1,6 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <!-- <h1 class="text-success display-4">It Works!</h1> -->
-{% endblock %}  
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-12 col-md-6 my-auto">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                    
+                <h1 class="display-7 logo-font text-white"><img class="d-inline-block d-lg-none" src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499" alt="CSC logo">
+                    Cardiff's only independant skate shop
+                </h1></a>
+                <div class="my-5">
+                    <h4>
+                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

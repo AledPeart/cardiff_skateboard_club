@@ -1,0 +1,10 @@
+[
+    {"pk": 1, "model": "products.category", "fields": {"name": "gifts", "friendly_name": "Gifts"}},
+    {"pk": 2, "model": "products.category", "fields": {"name": "bearings", "friendly_name": "Bearings"}},
+    {"pk": 3, "model": "products.category", "fields": {"name": "caps_beanies", "friendly_name": "Caps & Beanies"}},
+    {"pk": 4, "model": "products.category", "fields": {"name": "decks", "friendly_name": "Decks"}},
+    {"pk": 5, "model": "products.category", "fields": {"name": "dvds_zines", "friendly_name": "DVDs & Zines"}},
+    {"pk": 6, "model": "products.category", "fields": {"name": "griptape", "friendly_name": "Griptape"}},
+    {"pk": 7, "model": "products.category", "fields": {"name": "trucks", "friendly_name": "Trucks"}},
+    {"pk": 8, "model": "products.category", "fields": {"name": "wheels", "friendly_name": "Wheels"}}
+]
