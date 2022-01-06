@@ -2,33 +2,33 @@
     <ul class="navbar-nav w-auto mx-auto">
 
         <li class="nav-item dropdown">
-            <a class="logo-font nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font shop-now-button btn btn-lg rounded-0 py-0 nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Skate
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Decks</a>
-                <a href="" class="dropdown-item">Wheels</a>
-                <a href="" class="dropdown-item">Trucks</a>
-                <a href="" class="dropdown-item">Bearings</a>
-                <a href="" class="dropdown-item">Griptape</a>
-                <a href="" class="dropdown-item">All Skate</a>
+                <a href="{% url 'products' %}?category=decks" class="dropdown-item">Decks</a>
+                <a href="{% url 'products' %}?category=wheels" class="dropdown-item">Wheels</a>
+                <a href="{% url 'products' %}?category=trucks" class="dropdown-item">Trucks</a>
+                <a href="{% url 'products' %}?category=bearings" class="dropdown-item">Bearings</a>
+                <a href="{% url 'products' %}?category=griptape" class="dropdown-item">Griptape</a>
+                <a href="{% url 'products' %}?category=decks,wheels,trucks,bearings,griptape" class="dropdown-item">All Skate</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font shop-now-button btn btn-lg rounded-0 py-0 nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Caps &amp; Beanies</a>
-                <a href="" class="dropdown-item">Dvds &amp; 'Zines</a>
-                <a href="" class="dropdown-item">Gifts</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=caps_beanies" class="dropdown-item">Caps &amp; Beanies</a>
+                <a href="{% url 'products' %}?category=dvds_zines" class="dropdown-item">Dvds &amp; 'Zines</a>
+                <a href="{% url 'products' %}?category=gifts" class="dropdown-item">Gifts</a>
+                <a href="{% url 'products' %}?category=caps_beanies,dvds_zines,gifts" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font nav-link text-black mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font shop-now-button btn btn-lg rounded-0 py-0 nav-link text-black mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Brands
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
@@ -39,7 +39,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font shop-now-button btn btn-lg rounded-0 py-0 nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">

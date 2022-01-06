@@ -37,6 +37,9 @@ body {
     width: fit-content;
 }
 
+.main-nav-link{
+    background-color: white;
+}
 .shop-now-button {
     background: white;
     color: black;
