@@ -12,7 +12,7 @@
                   <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                   <div class="input-group-append">
                       <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
-                          <span class="icon">
+                          <span class="icon text-black">
                               <i class="fas fa-search"></i>
                           </span>
                       </button>
@@ -43,7 +43,7 @@
   </li>
   <li class="list-inline-item">
       <!-- <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href=""> -->
-          <a class ="text-black nav-link d-block d-lg-none" href="">
+          <a class ="text-black nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
           <div class="text-center">
               <div><img src="media/icons/2662503.png"class="icon"></img></div>
               <p class="my-0">
