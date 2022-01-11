@@ -24,8 +24,8 @@ def bag_contents(request):
         delivery = Decimal(settings.STANDARD_DELIVERY)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
-        delivery = 0.00
-        free_delivery_delta = 0.00
+        delivery = 0
+        free_delivery_delta = 0
    
     grand_total = delivery + total
    
