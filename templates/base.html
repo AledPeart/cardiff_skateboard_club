@@ -16,6 +16,7 @@
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Lato&display=swap">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -58,9 +59,7 @@
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon text-black">
-                                    <i class="fas fa-search"></i>
-                                </span>
+                                <span class="text-black">search</span>
                             </button>
                         </div>
                     </div>
@@ -71,7 +70,7 @@
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <div><img src="/media/1144760.png"class="icon"></img></div>
+                                <div><i class="ri-user-line ri-xl icon"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
@@ -89,9 +88,9 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                        <a class="text-black nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><img src="/media/2662503.png"class="icon"></img></div>
+                                <div><i class="ri-shopping-bag-line ri-xl icon"></i></div>
                                 <p class="my-0 text-pink">
                                     {% if total %}
                                         £{{ total|floatformat:2 }}
