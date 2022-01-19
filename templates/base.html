@@ -59,7 +59,7 @@
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="text-black">search</span>
+                                <span class="text-black"><i class="ri-search-line"></i></span>
                             </button>
                         </div>
                     </div>
@@ -71,15 +71,15 @@
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="ri-user-line ri-xl icon"></i></div>
-                                <p class="my-0">My Account</p>
+                                <p class="my-0">Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href=" {% url 'add_product' %} " class="dropdown-item">Product Management</a>
+                                    <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
