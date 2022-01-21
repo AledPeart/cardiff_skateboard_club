@@ -28,8 +28,17 @@ class BrandAdmin(admin.ModelAdmin):
         'name',
     )
 
+# class ProductReviewAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'user',
+#         'product',
+#         'review_text',
+#         'review_rating',
+#     )
+
 
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Brand, BrandAdmin)
+# admin.site.register(ProductReview,ProductReviewAdmin)

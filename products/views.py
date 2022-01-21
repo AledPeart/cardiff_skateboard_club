@@ -153,3 +153,81 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+
+# @login_required
+# def save_review(request, product_id):
+#     """ Add and save a product review """
+
+#     product = get_object_or_404(Product, pk=product_id)
+#     profile = get_object_or_404(UserProfile, user_id=request.user)
+  
+#     if request.user.is_authenticated:
+#         if request.method == 'POST':
+#             form = ReviewForm(request.POST)
+#             reviews = product.reviews.all()
+
+#             if reviews.filter(user=request.user).exists():
+#                 messages.info(
+#                     request, f"You've already reviewed {product.name}")
+#                 return redirect(reverse('product_detail', args=[product.id]))
+
+#             if form.is_valid():
+#                 review = form.save(commit=False)
+#                 review.product = product
+#                 review.user = request.user
+#                 # Check whether line items related to user include the product
+#                 if OrderLineItem.objects.filter(
+#                     order__user_profile=profile).filter(
+#                         product=product).exists():
+#                     review.verified_purchase = True
+
+#                 review.save()
+#                 if review.verified_purchase:
+#                     messages.info(
+#                         request,
+#                         'Thanks for the review - 5 points to you!')
+#                 else:
+#                     messages.info(
+#                         request,
+#                         'Thanks for the review!')
+
+#                 return redirect(reverse('product_detail', args=[product.id]))
+#             else:
+#                 messages.error(
+#                     request,
+#                     "Failed to add review - please check form and try again")
+
+#     context = {
+#         'form': form,
+#         'profile': profile,
+#     }
+
+#     return render(request, context)
+
+
+
+
+
+
+    # product = get_object_or_404(Product, pk=product_id)
+    # user = request.user
+    # review = ProductReview.objects.create(
+	# 	user=user,
+	# 	product=product,
+	# 	review_text=request.POST['review_text'],
+	# 	review_rating=request.POST['review_rating'],
+	# 	)
+    # data = {
+	# 	'user': user.username,
+	# 	'review_text': request.POST['review_text'],
+	# 	'review_rating': request.POST['review_rating']
+	# }
+
+	# # Fetch avg rating for reviews
+    # avg_reviews = ProductReview.objects.filter(product=product).aggregate(avg_rating=Avg('review_rating'))
+	# # End
+
+    # return JsonResponse({'bool': True, 'data': data,'avg_reviews': avg_reviews})
+
