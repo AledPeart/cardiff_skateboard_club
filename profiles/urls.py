@@ -9,4 +9,8 @@ urlpatterns = [
          name='add_to_wishlist'),
     path('profile/user_wishlist/', views.user_wishlist,
          name='user_wishlist'),
+    path('profile/order_summary/', views.order_summary,
+         name='order_summary'),
+    path('profile/user_details/', views.user_details,
+         name='user_details'),
 ]

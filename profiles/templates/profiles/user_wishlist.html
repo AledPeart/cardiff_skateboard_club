@@ -23,27 +23,21 @@
                 <hr />
               
                 {% if products %}
-
-                <!-- <p class="card-text">products have been added to your wishlist yay</p> -->
-                
                 {% for product in products %}
               
                 <div class="card mb-3 rounded-0">
                   <div class="row g-0">
                     <div class="col-md-2">
-                      <!-- {% for image in product.product_image.all  %}
-                        {% if image.is_feature %}
-                        <img class="img-fluid d-block p-2" width="135px" src="{{ image.image.url }}"
-                          alt="{{ image.image.alt_text }}" />
-                        {% endif %}
-                      {% endfor %} -->
+                        <img class="img-fluid d-block p-2" width="135px" src="{{ product.image.url }}"
+                          alt="{{ product.name }}" />
                     </div>
                     <div class="col-md-10">
                       <div class="card-body">
                         <h5 class="card-title">{{product.name}}</h5>
                         <p class="card-text">{{product.description}}</p>
                         <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
-                        
+                        <a type="button" class="btn btn-black fw500 btn-sm" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
+                         
                       </div>
                     </div>
                   </div>
@@ -57,6 +51,12 @@
               
               
               </div>
+              <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Dashboard</span>
+            </a>
         </div>
     </div>
         
@@ -64,5 +64,4 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

@@ -35,6 +35,48 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
+def user_details(request):
+    """ Display the user details page. """
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully')
+        else:
+            messages.error(request, 'Update failed. Please check the form and try again.')
+    else:
+        form = UserProfileForm(instance=profile)
+    orders = profile.orders.all()
+
+    template = 'profiles/user_details.html'
+    context = {
+        'form': form,
+        'orders': orders,
+        'on_profile_page': True
+    }
+
+    return render(request, template, context)
+
+
+def order_summary(request):
+    """ Display the user's previous order summary """
+
+    
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
+
+
+    template = 'profiles/order_summary.html'
+    context = {
+        'orders': orders,
+        'from_profile': True,
+    }
+
+    return render(request, template, context)
+
 
 def order_history(request, order_number):
     """ Display the user's previous orders """
@@ -77,11 +119,15 @@ def add_to_wishlist(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     profile = get_object_or_404(UserProfile, user=request.user)
-
-    if profile.wishlist.filter(pk=product_id).exists():
+    print (profile.wishlist.all)
+# code taken from tutor support session with @igor_ci
+    if product in profile.wishlist.all():
         profile.wishlist.remove(product)
+        messages.success(request, f'{product.name} was removed from your wishlist')
     else:
         profile.wishlist.add(product)
+        messages.success(request, f'You have added {product.name} to your wishlist')
+        
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
 

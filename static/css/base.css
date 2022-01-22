@@ -30,6 +30,12 @@ body {
     width: 2rem;
 }
 
+.wishlist-icon {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+
 .banner {
     background-color: black;
     

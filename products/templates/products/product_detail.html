@@ -88,8 +88,12 @@
                         </div>
                     </form>
 
-                
+                    {% if product in request.user.userprofile.wishlist.all %}
+                    <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-black rounded-0 text-uppercase" role="button" aria-disabled="true">Remove from Wishlist</a>
+                    {% else %}
                     <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-black rounded-0 text-uppercase" role="button" aria-disabled="true">Add to Wishlist</a>
+                    {% endif %}
+
 
 
 

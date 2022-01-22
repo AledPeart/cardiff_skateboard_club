@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Thank You</h2>
+                <h2 class="logo-font mb-4">Order Summary</h2>
                 <hr>
                 <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
@@ -197,7 +197,7 @@
                     <span class="icon mr-2">
                         <i class="fas fa-angle-left"></i>
                     </span>
-                    <span class="text-uppercase">Back to Profile</span>
+                    <span class="text-uppercase">Back to Dashboard</span>
                 </a>
             {% else %}
                 <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
