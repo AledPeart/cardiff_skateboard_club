@@ -119,7 +119,6 @@ def add_to_wishlist(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     profile = get_object_or_404(UserProfile, user=request.user)
-    print (profile.wishlist.all)
 # code taken from tutor support session with @igor_ci
     if product in profile.wishlist.all():
         profile.wishlist.remove(product)

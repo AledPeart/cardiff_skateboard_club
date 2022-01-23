@@ -94,6 +94,74 @@
                     <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-black rounded-0 text-uppercase" role="button" aria-disabled="true">Add to Wishlist</a>
                     {% endif %}
 
+                    <hr>
+
+                    <h2>Reviews</h2>
+
+                    <div class="">
+
+                        {% for review in product.reviews.all %}
+
+                        <div>
+                            <p>
+                                <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
+                                <strong>Rating: </strong>{{ review.stars }}
+                            </p>
+
+                            {{review.review_text }}
+                        </div>
+
+                        {% empty %}
+                        <div>
+                            <P>No reviews yet...</P>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div>
+                        {% if request.user.is_authenticated %}
+
+                        <form method="post" action="">
+                            {% csrf_token %}
+
+                            <div>
+                                <label>Stars</label>
+
+                                <div>
+                                    <div>
+                                        <select name="stars" id="">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3" selected>3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="">Content</label>
+                                <div class="control">
+                                    <textarea name="review_text" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="control">
+                                    <button class="btn btn-success">Submit</button>
+
+                                </div>
+                            </div>
+                        </form>
+                        {% else %}
+
+                        <p>Please sign in to add a review</p>
+
+                        {% endif %}
+                        
+                    </div>
+
 
 
 
