@@ -86,9 +86,9 @@
                                         <div class="row text-center">
                                                     <div class="col-4">
                                                         {% if product in request.user.userprofile.wishlist.all %}
-                                                        <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-fill text-pink ri-x3"></i></a>
+                                                        <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-fill text-pink ri-2x"></i></a>
                                                         {% else %}
-                                                        <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-line text-pink ri-x3"></i></a>
+                                                        <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-line text-pink ri-2x"></i></a>
                                                         {% endif %}
                                                     </div>
                                                     <div class="col-4">

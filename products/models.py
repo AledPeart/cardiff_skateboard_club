@@ -51,20 +51,19 @@ class Product(models.Model):
         return self.name
 
 
-# class ProductReview(models.Model):
-#     """
-#     A model for users to leave a product review
-#     """
+class ProductReview(models.Model):
+    """
+    A model for users to leave a product review
+    """
 
-#     RATING = (
-#         (1, '1'),
-#         (2, '2'),
-#         (3, '3'),
-#         (4, '4'),
-#         (5, '5'),
-#     )
+    class Meta:
+        ordering = ['-date_added']
 
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-#     review_text = models.TextField()
-#     review_rating = models.CharField(choices=RATING, max_length=150)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    review_text = models.TextField(null=True, blank=True)
+    stars = models.IntegerField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
