@@ -98,6 +98,10 @@ body {
     border: 1px solid black !important;
 }
 
+.bg-grey {
+    background-color: #eee;
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;

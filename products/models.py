@@ -50,6 +50,14 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    def get_rating(self):
+        total = sum(int(review['stars']) for review in self.reviews.values())
+
+        if self.reviews.count() > 0:
+            return total / self.reviews.count()
+        else:
+            return 0
+
 
 class ProductReview(models.Model):
     """
@@ -64,6 +72,8 @@ class ProductReview(models.Model):
     review_text = models.TextField(null=True, blank=True)
     stars = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add=True)
+
+    
 
     # def __str__(self):
     #     return self.title

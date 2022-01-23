@@ -78,9 +78,10 @@ def product_detail(request, product_id):
     if request.method == 'POST' and request.user.is_authenticated:
         stars = request.POST.get('stars', 3)
         review_text = request.POST.get('review_text', '')
+
         review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text)
 
-    # return redirect(reverse('product_detail', args=[product.id]))
+        return redirect(reverse('product_detail', args=[product.id]))
 
     context = {
          'product': product,

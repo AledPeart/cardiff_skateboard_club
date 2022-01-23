@@ -30,6 +30,12 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                        {% if product.get_rating == 0 %} Rating: <small>No ratings yet</small>
+                        {% else %}
+                           <p> Rating: {{ product.get_rating|floatformat:1 }}/5</p>
+                        {% endif %}
+                        
+
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -96,19 +102,20 @@
 
                     <hr>
 
-                    <h2>Reviews</h2>
+                    <h2 class =>Reviews</h2>
 
                     <div class="">
 
                         {% for review in product.reviews.all %}
 
-                        <div>
+                        <div class="bg-grey p-2 mb-2">
                             <p>
                                 <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
                                 <strong>Rating: </strong>{{ review.stars }}
                             </p>
 
                             {{review.review_text }}
+                            
                         </div>
 
                         {% empty %}
