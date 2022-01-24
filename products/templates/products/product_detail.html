@@ -114,7 +114,7 @@
                         <div class="bg-grey p-2 mb-2">
                             <p>
                                 {% include 'products/includes/star_ratings.html' %} 
-                                {{ review.user }}:
+                                <strong>{{ review.user }}</strong>:
                                 {{ review.date_added|naturaltime }}
                             </p>
 
