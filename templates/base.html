@@ -130,12 +130,16 @@
                     {% include 'includes/toasts/toast_warning.html' %}
                 {% elif level == 25 %}
                     {% include 'includes/toasts/toast_success.html' %}
+                </div>
+
                 {% else %}
+                <div class="alert alert-warning" role="alert">
                     {% include 'includes/toasts/toast_info.html' %}
+                    </div>
                 {% endif %}
             {% endwith %}
         {% endfor %}
-        </div>
+        
     {% endif %}
 
     {% block page_header %}
@@ -143,19 +147,25 @@
 
     {% block content %}
     {% endblock %}
-    <hr>
+   
     <footer class="m-3">
+        <hr>
         <div class="social social-footer d-flex justify-content-center">
-            <a class="mx-2" href="#!"><i class="ri-facebook-line"></i></a>
-            <a class="mx-2" href="#!"><i class="ri-twitter-line"></i></a>
-            <a class="mx-2" href="#!"><i class="ri-instagram-line"></i></a>
-            <a class="mx-2" href="#!"><i class="ri-pinterest-line"></i></a>
+            <a class="mx-3" href="#!"><i class="ri-facebook-line ri-xl"></i></a>
+            <a class="mx-3" href="#!"><i class="ri-twitter-line ri-xl"></i></a>
+            <a class="mx-3" href="#!"><i class="ri-instagram-line ri-xl"></i></a>
+            <a class="mx-3" href="#!"><i class="ri-pinterest-line ri-xl"></i></a>
         </div>
     </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
+
+        // function to fade out flashed messages - https://stackoverflow.com/questions/23101966/bootstrap-alert-auto-close
+        $("#flash-messages").fadeTo(3000, 500).slideUp(500, function(){
+        $("#flash-messages").slideUp(500);
+        });
     </script>
     {% endblock %}
 

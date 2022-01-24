@@ -118,26 +118,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %} -->
+                        
                     {% endfor %}
                 </div>
 
@@ -149,6 +130,28 @@
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
+   
+
+
+    <!-- code ammended from https://github.com/flatplanet/Django-Club-Youtube-Playlist -->
+<!-- <div class="text-muted mt-3 text-center text-md-left">
+    {% if product_list.has_previous %}
+        <a href="?page=1">&laquo first</a>
+        <a href="?page={{ product_list.previous_page_number }}">previous</a>
+    {% endif %}
+
+    page {{ product_list.number }} of {{ product_list.paginator.num_pages }}
+
+    {% if product_list.has_next %}
+        <a href="?page={{ product_list.next_page_number }}">next</a>
+        <a href="?page={{ product_list.paginator.num_pages }}">last &raquo</a>
+    {% endif %}
+
+</div> -->
+
+
+
+
 {% endblock %}
 
 {% block postloadjs %}

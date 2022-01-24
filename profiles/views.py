@@ -122,10 +122,10 @@ def add_to_wishlist(request, product_id):
 # code taken from tutor support session with @igor_ci
     if product in profile.wishlist.all():
         profile.wishlist.remove(product)
-        messages.success(request, f'{product.name} was removed from your wishlist')
+        messages.info(request, f'{product.name} was removed from your wishlist')
     else:
         profile.wishlist.add(product)
-        messages.success(request, f'You have added {product.name} to your wishlist')
+        messages.info(request, f'You have added {product.name} to your wishlist')
         
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 

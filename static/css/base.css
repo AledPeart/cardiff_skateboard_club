@@ -138,6 +138,24 @@ body {
     cursor: pointer;
 }
 
+/* Flash Messages */
+
+.flash-body {
+    margin: 10px auto;
+    
+    width: -webkit-fit-content;
+    
+    width: -moz-fit-content;
+    
+    width: fit-content;
+    height: auto !important;
+}
+
+.flash-body i {
+    font-size: 1.5rem;
+    color: #313232;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

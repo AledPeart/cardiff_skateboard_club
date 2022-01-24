@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+# from django.core.paginator import Paginator 
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand, ProductReview
@@ -55,14 +56,19 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
+    
+    # pagination but broke filtering
+    # pagination = Paginator(Product.objects.all(), 12)
+    # page = request.GET.get('page')
+    # product_list = pagination.get_page(page)
 
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_brands': brands,
-
         'current_sorting': current_sorting,
+        # 'product_list': product_list,
     }
 
     return render(request, 'products/products.html', context)
