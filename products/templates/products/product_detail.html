@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -33,19 +34,7 @@
                         {% if product.get_rating == 0 %} Rating: <small>No ratings yet</small>
                         {% else %}
                            <p> Rating: {{ product.get_rating|floatformat:1 }}/5
-                            {% if product.get_rating >= 5 %}
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                            {% elif product.get_rating >= 4 %}
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
-                            {% elif product.get_rating >= 3 %}
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
-                            {% elif product.get_rating >= 2 %}
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
-                            {% elif product.get_rating >= 1 %}
-                            <i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
-                            {% else %}
-                            <i class="ri-star-half-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
-                            {% endif %}
+                            {% include 'products/includes/star_ratings.html' %} 
                            </p>
                         {% endif %}
                         
@@ -124,8 +113,9 @@
 
                         <div class="bg-grey p-2 mb-2">
                             <p>
-                                <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
-                                <strong>Rating: </strong>{{ review.stars }}
+                                {% include 'products/includes/star_ratings.html' %} 
+                                {{ review.user }}:
+                                {{ review.date_added|naturaltime }}
                             </p>
 
                             {{review.review_text }}
