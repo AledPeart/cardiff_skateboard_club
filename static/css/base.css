@@ -21,6 +21,8 @@ body {
     opacity: 66%;
   } */
 
+  /* icons */
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -28,6 +30,10 @@ body {
     justify-content: center;
     height: 2rem;
     width: 2rem;
+}
+
+.grey {
+    color: #EDEDED;
 }
 
 

@@ -32,7 +32,21 @@
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                         {% if product.get_rating == 0 %} Rating: <small>No ratings yet</small>
                         {% else %}
-                           <p> Rating: {{ product.get_rating|floatformat:1 }}/5</p>
+                           <p> Rating: {{ product.get_rating|floatformat:1 }}/5
+                            {% if product.get_rating >= 5 %}
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            {% elif product.get_rating >= 4 %}
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+                            {% elif product.get_rating >= 3 %}
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
+                            {% elif product.get_rating >= 2 %}
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
+                            {% elif product.get_rating >= 1 %}
+                            <i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
+                            {% else %}
+                            <i class="ri-star-half-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
+                            {% endif %}
+                           </p>
                         {% endif %}
                         
 
