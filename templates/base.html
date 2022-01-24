@@ -130,16 +130,15 @@
                     {% include 'includes/toasts/toast_warning.html' %}
                 {% elif level == 25 %}
                     {% include 'includes/toasts/toast_success.html' %}
-                </div>
-
+        
                 {% else %}
-                <div class="alert alert-warning" role="alert">
+                
                     {% include 'includes/toasts/toast_info.html' %}
-                    </div>
+                    
                 {% endif %}
             {% endwith %}
         {% endfor %}
-        
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -148,7 +147,7 @@
     {% block content %}
     {% endblock %}
    
-    <footer class="m-3">
+    <footer class="container">
         <hr>
         <div class="social social-footer d-flex justify-content-center">
             <a class="mx-3" href="#!"><i class="ri-facebook-line ri-xl"></i></a>

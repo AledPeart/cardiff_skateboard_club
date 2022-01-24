@@ -1,12 +1,44 @@
-<!-- <div class="toast rounded-0 border-top-0" data-autohide="false">
+<!-- <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false"> -->
+    <!-- <div class="arrow-up arrow-info"></div> -->
+    <!-- <div class="w-100 toast-capper bg-info"></div>  -->
+    <!-- <div class=""> -->
+        
+       
+        <!-- <div id="flash-messages" class="alert alert-warning alert-dismissible fade text-center" role="alert">
+            <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }} <a href="{% url 'user_wishlist' %}" class="alert-link"><strong>View Wishlist</strong></a>.       
+        </div>
+    </div> -->
     
-        {{message}} - <a href="{% url 'user_wishlist' %}" class="alert-link">Your Wishlist</a>.   
+<!-- </div> -->
+
+<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+    {{ message }} <a href="{% url 'user_wishlist' %}" class="alert-link"><strong> View Wishlist</strong></a>.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+
+
+
+<!-- <div id="flash-messages" class="alert alert-warning alert-dismissible fade text-center" role="alert">
+    <strong>{{message}} - <a href="{% url 'user_wishlist' %}" class="alert-link">Your Wishlist</a>.</strong>
+  </div> -->
+
+  <!-- <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
+    <div class="arrow-up arrow-info"></div>
+    <div class="w-100 toast-capper bg-info"></div>
+    <div class="toast-header bg-white text-dark">
+        <strong class="mr-auto">Alert!</strong>
         <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-        </button>    
-    
+        </button>
+    </div>
+    <div class="toast-body bg-white">
+        {{ message }}        
+    </div>
 </div> -->
-
-<div id="flash-messages" class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-    <strong>{{message}} - <a href="{% url 'user_wishlist' %}" class="alert-link">Your Wishlist</a>.</strong>
-  </div>

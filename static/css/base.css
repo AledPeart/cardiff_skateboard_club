@@ -138,6 +138,13 @@ body {
     cursor: pointer;
 }
 
+.footer-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
 /* Flash Messages */
 
 .flash-body {
@@ -164,6 +171,7 @@ body {
     right: 15px;
     z-index: 99999999999;
 }
+
 
 .custom-toast {
     overflow: visible;
