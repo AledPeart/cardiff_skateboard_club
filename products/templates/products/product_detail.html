@@ -51,10 +51,8 @@
                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                             
                             
-                                <a class="delete-modal-trigger" data-toggle="modal" data-target="#DeleteProductModal" aria-label="Delete {{ product.name }}">
-                                    <span class="icon">
-                                        <i class="ri-delete-bin-line ri-xl"></i>
-                                    </span>
+                                <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteProductModal" aria-label="Delete {{ product.name }}">
+                                    Delete
                                 </a>
                           
                             
@@ -153,13 +151,19 @@
                             </p>
 
                             {{review.review_text }}
-                            
+                            <p>
+                            <small><a class="text-danger mx-auto my-auto" href="{% url 'delete_review' review.id %}">Delete</a></small>
+                            </p>
                         </div>
+
+                        
 
                         {% empty %}
                         <div>
                             <P>No reviews yet...</P>
                         </div>
+                        
+
                         {% endfor %}
                     </div>
 
@@ -206,6 +210,11 @@
                         {% endif %}
                         
                     </div>
+                    <br><br><br>
+
+                    
+
+                    
 
 
 
