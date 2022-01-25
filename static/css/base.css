@@ -10,6 +10,17 @@ body {
     font-family: 'Assistant', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-default);
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+
 /* generic styles */
 
 .shadow {
