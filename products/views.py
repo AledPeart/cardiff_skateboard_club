@@ -88,7 +88,9 @@ def product_detail(request, product_id):
 
         review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text)
 
-        messages.success(request, f"You have succesfully added a product review!")
+        messages.success(
+            request, 
+            "You have succesfully added a product review!")
 
         return redirect(reverse('product_detail', args=[product.id]))
 
@@ -98,16 +100,18 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+
 @login_required 
 def delete_review(request, review_id):
     """ Delete a review from the product store """
 
     review = get_object_or_404(ProductReview, pk=review_id)
-    review_owner = review.user
     product = review.product
 
-    if not request.user.is_superuser or request.user == review.user:
-        messages.error(request, "Sorry, you don't have the necessary permissions to access that page.")
+    if not request.user.is_superuser:
+        messages.error(
+            request,
+            "Sorry, you don't have the necessary permissions to access that page.")
         return redirect(reverse('home'))
 
     review.delete()
