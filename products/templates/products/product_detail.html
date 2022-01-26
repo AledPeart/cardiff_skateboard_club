@@ -39,6 +39,8 @@
                         {% endif %}
                         {% if product.get_recommended == 0 %}
                         <p><small><strong>{{ product.get_recommended  }}</strong> customers have recommend this product.....yet.</p></small>
+                        {% elif product.get_recommended == 1 %}
+                        <p><small><strong>{{ product.get_recommended  }}</strong> customer has recommend this product.</p></small>
                         {% else %}
                         <p><small><strong>{{ product.get_recommended  }}</strong> customers recommend this product.</p></small>
                         {% endif %}

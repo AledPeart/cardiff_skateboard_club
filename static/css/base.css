@@ -21,8 +21,6 @@ body {
     flex: 1 0 auto;
 }
 
-<<<<<<< HEAD
-=======
 .footer-bottom {
     position: sticky;
     left: 0;
@@ -34,7 +32,7 @@ a:hover {
     text-decoration: none;
     opacity: 75%;
 }
->>>>>>> 2a3020bfc302f57ff5288ee2448566654fe773d5
+
 
 /* generic styles */
 
@@ -339,3 +337,19 @@ a:hover {
         height: calc(100vh - 116px);
     }
 }
+
+/* spinner overlay */
+
+.loading-overlay-hidden {
+	display: none;
+}
+
+.spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+
+
