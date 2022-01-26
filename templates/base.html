@@ -130,9 +130,7 @@
                     {% include 'includes/toasts/toast_warning.html' %}
                 {% elif level == 25 %}
                     {% include 'includes/toasts/toast_success.html' %}
-        
                 {% else %}
-                
                     {% include 'includes/toasts/toast_info.html' %}
                     
                 {% endif %}
@@ -148,13 +146,21 @@
     {% endblock %}
 </div>
    
+<<<<<<< HEAD
     <footer class="container-fluid">
         <div class="social social-footer col-auto col-sm  d-flex justify-content-center">
+=======
+    <footer class="container-fluid ">
+        <div class="row">
+        <div class="social social-footer footer-bottom col-auto col-sm  d-flex justify-content-center">
+>>>>>>> 2a3020bfc302f57ff5288ee2448566654fe773d5
             <a class="mx-3" href="#!"><i class="ri-facebook-line ri-xl"></i></a>
             <a class="mx-3" href="#!"><i class="ri-twitter-line ri-xl"></i></a>
             <a class="mx-3" href="#!"><i class="ri-instagram-line ri-xl"></i></a>
             <a class="mx-3" href="#!"><i class="ri-pinterest-line ri-xl"></i></a>
         </div>
+    </div>
+
     </footer>
 
     {% block postloadjs %}

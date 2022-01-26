@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand, ProductReview
+from profiles.models import UserProfile
 from .forms import ProductForm
 
 # Create your views here.
@@ -96,6 +97,25 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+def delete_review(request, review_id):
+    """ Delete a review from the product store """
+
+    if not request.user.is_superuser:
+        messages.error(
+            request,
+            "Sorry, you don't have the necessary permissions to access that page.")
+        return redirect(reverse('home'))
+
+       
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+    review.delete()
+
+    messages.success(request, f"{review.user}'s review has now been deleted!")
+
+    return redirect(reverse('product_detail', args=[product.id]))
+   
+
 @login_required 
 def add_product(request):
     """ Add a product to the store """
@@ -167,7 +187,7 @@ def delete_product(request, product_id):
         
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, 'Product deleted!')
+    messages.success(request, f'{product.name} has now been deleted!')
     return redirect(reverse('products'))
 
 
