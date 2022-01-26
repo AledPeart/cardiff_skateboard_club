@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand, ProductReview
 from profiles.models import UserProfile
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -101,6 +101,44 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+# ** edit review **
+@login_required
+def edit_review(request, review_id):
+    """ Edit a product review """
+
+    if not request.user.is_superuser:
+        messages.error(
+            request,
+            "Sorry, you don't have the necessary permissions to access that page.")
+        return redirect(reverse('home'))
+
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'review edited successfully!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update review. Please check the form and try again.')
+    else:
+        form = ReviewForm(instance=review)
+        messages.success(request, f'You are editing a review of {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True,
+    }
+
+    return render(request, template, context)
+
+
 @login_required 
 def delete_review(request, review_id):
     """ Delete a review from the product store """
@@ -119,6 +157,7 @@ def delete_review(request, review_id):
     messages.success(request, f"{review.user}'s review has now been deleted!")
 
     return redirect(reverse('product_detail', args=[product.id]))
+
 
 @login_required 
 def add_product(request):

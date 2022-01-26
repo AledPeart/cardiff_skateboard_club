@@ -154,7 +154,7 @@
                            
                             {% if request.user.is_superuser or request.user == review.user %}
                             <p class="text-right">
-                                <small><a href="">Edit</a></small>  
+                                <small><a href="{% url 'edit_review' review.id %}">Edit</a></small>  
                             {% endif %}
                             {% if request.user.is_superuser %}
                             <small> | <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteReviewModal" aria-label="Delete {{ review.user }}">Delete</a></small>

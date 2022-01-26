@@ -67,13 +67,13 @@ class ProductReview(models.Model):
     class Meta:
         ordering = ['-date_added']
 
-    user = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, related_name='reviews', on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, related_name='reviews', on_delete=models.CASCADE)
     review_text = models.TextField(null=True, blank=True)
     stars = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add=True)
 
-    
-
     def __str__(self):
-        return self.title
+        return self.product
