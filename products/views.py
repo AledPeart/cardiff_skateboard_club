@@ -88,6 +88,8 @@ def product_detail(request, product_id):
 
         review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text)
 
+        messages.success(request, f"You have succesfully added a product review!")
+
         return redirect(reverse('product_detail', args=[product.id]))
 
     context = {
@@ -96,25 +98,23 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-
+@login_required 
 def delete_review(request, review_id):
     """ Delete a review from the product store """
 
-    if not request.user.is_superuser:
-        messages.error(
-            request,
-            "Sorry, you don't have the necessary permissions to access that page.")
+    review = get_object_or_404(ProductReview, pk=review_id)
+    review_owner = review.user
+    product = review.product
+
+    if not request.user.is_superuser or request.user == review.user:
+        messages.error(request, "Sorry, you don't have the necessary permissions to access that page.")
         return redirect(reverse('home'))
 
-       
-    review = get_object_or_404(ProductReview, pk=review_id)
-    product = review.product
     review.delete()
 
     messages.success(request, f"{review.user}'s review has now been deleted!")
 
     return redirect(reverse('product_detail', args=[product.id]))
-   
 
 @login_required 
 def add_product(request):
@@ -136,7 +136,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please check the form and try again')
     else:
         form = ProductForm()
-        
+       
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -266,4 +266,3 @@ def delete_product(request, product_id):
 	# # End
 
     # return JsonResponse({'bool': True, 'data': data,'avg_reviews': avg_reviews})
-

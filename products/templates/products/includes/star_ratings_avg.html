@@ -1,12 +1,12 @@
-{% if review.stars == 5 %}
+{% if product.get_rating >= 5 %}
 <i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i>
-{% elif review.stars == 4 %}
+{% elif product.get_rating >= 4 %}
 <i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-line align-bottom"></i>
-{% elif review.stars == 3 %}
+{% elif product.get_rating >= 3 %}
 <i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-line align-bottom"></i><i class="ri-star-line align-bottom"></i>
-{% elif review.stars == 2 %}
+{% elif product.get_rating >= 2 %}
 <i class="ri-star-fill align-bottom"></i><i class="ri-star-fill align-bottom"></i><i class="ri-star-line align-bottom"></i><i class="ri-star-line align-bottom"></i><i class="ri-star-line align-bottom"></i>
-{% elif review.stars == 1 %}
+{% elif product.get_rating >= 1 %}
 <i class="ri-star-fill align-bottom"></i><i class="ri-star-line align-bottom"></i><i class="ri-star-line align-bottom"></i><i class="ri-star-line align-bottom"></i><i class="ri-star-line align-bottom"></i>
 {% else %}
 No ratings yet

@@ -34,7 +34,7 @@
                         {% if product.get_rating == 0 %} Rating: <small>No ratings yet</small>
                         {% else %}
                            <p> Rating: {{ product.get_rating|floatformat:1 }}/5
-                            {% include 'products/includes/star_ratings.html' %} 
+                            {% include 'products/includes/star_ratings_avg.html' %} 
                            </p>
                         {% endif %}
                         
@@ -143,7 +143,7 @@
 
                         {% for review in product.reviews.all %}
 
-                        <div class="bg-grey p-2 mb-2">
+                        <div class="bg-grey px-2 pb-1 pt-2 mb-2">
                             <p>
                                 {% include 'products/includes/star_ratings.html' %} 
                                 <strong>{{ review.user }}</strong>:
@@ -151,12 +151,38 @@
                             </p>
 
                             {{review.review_text }}
-                            <p>
-                            <small><a class="text-danger mx-auto my-auto" href="{% url 'delete_review' review.id %}">Delete</a></small>
-                            </p>
+                           
+                            {% if request.user.is_superuser or request.user == review.user %}
+                            <p class="text-right">
+                            <small><a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteReviewModal" aria-label="Delete {{ review.user }}">Delete</a></small></p>
+                            {% endif %}
                         </div>
+                    
+                        <!-- Delte Review Modal -->
+                            <div class="modal fade" id="DeleteReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header mx-auto">
+                                        <h5 class="modal-title" id="exampleModalLabel"><i
+                                                class="align-bottom ri-error-warning-line ri-x2 p-2"></i>Confirm Delete</h5>
 
-                        
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <p>Are you sure you want to permanently delete <strong>{{ review.user }}'s</strong> review? Once you click delete
+                                            this action cannot be undone.</p>
+                                    </div>
+                                    <div class="modal-footer mx-auto">
+                                        <button type="button" class="btn modal-cancel-btn btn-sm btn-outline-secondary"
+                                            data-dismiss="modal" aria-label="Close">Cancel</button>
+                                        <a href="{% url 'delete_review' review.id %}"
+                                            class="btn btn-sm modal-delete-btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    <!-- end modal -->
+                       
 
                         {% empty %}
                         <div>
@@ -166,6 +192,11 @@
 
                         {% endfor %}
                     </div>
+
+                    
+                   
+                
+                
 
                     <div>
                         {% if request.user.is_authenticated %}
