@@ -73,6 +73,7 @@ class ProductReview(models.Model):
         Product, related_name='reviews', on_delete=models.CASCADE)
     review_text = models.TextField(null=True, blank=True)
     stars = models.IntegerField()
+    recommended = models.BooleanField(default=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

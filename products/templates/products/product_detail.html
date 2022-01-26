@@ -149,8 +149,14 @@
                                 <strong>{{ review.user }}</strong>:
                                 {{ review.date_added|naturaltime }}
                             </p>
-
-                            {{review.review_text }}
+                            <p>{{review.review_text }}</p>
+                            <p><small>
+                                {% if review.recommended %} 
+                                <i class="align-bottom p-1 ri-checkbox-circle-fill ri-1x"></i><strong>Yes</strong> I recommend this product.
+                                {% else %}
+                                <i class="align-bottom p-1 ri-close-circle-fill ri-1x"></i><strong>No</strong> I don't recommend this product.
+                                {% endif %}
+                            </small></p>
                            
                             {% if request.user.is_superuser or request.user == review.user %}
                             <p class="text-right">
@@ -228,6 +234,19 @@
                                 <label for="">Content</label>
                                 <div class="control">
                                     <textarea name="review_text" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label>Would you recommend this product?</label>
+
+                                <div>
+                                    <div>
+                                        <select name="recommended" id="">
+                                            <option value="True">Yes</option>
+                                            <option value="False">No</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 

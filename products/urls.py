@@ -15,5 +15,4 @@ urlpatterns = [
     path(
         'delete_review/<int:review_id>/',
         views.delete_review, name='delete_review'),
-    # path('save_review/<int:product_id>', views.save_review, name='save_review'),
 ]

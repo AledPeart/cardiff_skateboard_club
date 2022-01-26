@@ -85,11 +85,18 @@ def product_detail(request, product_id):
     if request.method == 'POST' and request.user.is_authenticated:
         stars = request.POST.get('stars', 3)
         review_text = request.POST.get('review_text', '')
+        recommended = request.POST.get('recommended', True)
+        reviews = product.reviews.all()
 
-        review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text)
+        # if reviews.filter(user=request.user).exists():
+        #     messages.error(
+        #         request, "You've already reviewed this product")
+        #     return redirect(reverse('product_detail', args=[product.id]))
+        # else:
+        review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text, recommended=recommended)
 
         messages.success(
-            request, 
+            request,
             "You have succesfully added a product review!")
 
         return redirect(reverse('product_detail', args=[product.id]))
@@ -106,21 +113,21 @@ def product_detail(request, product_id):
 def edit_review(request, review_id):
     """ Edit a product review """
 
-    if not request.user.is_superuser:
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+
+    if not request.user.is_superuser and not request.user == review.user:
         messages.error(
             request,
             "Sorry, you don't have the necessary permissions to access that page.")
-        return redirect(reverse('home'))
-
-    review = get_object_or_404(ProductReview, pk=review_id)
-    product = review.product
+        return redirect(reverse('product_detail', args=[product.id]))
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'review edited successfully!')
+            messages.success(request, 'Review edited successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update review. Please check the form and try again.')
@@ -128,7 +135,7 @@ def edit_review(request, review_id):
         form = ReviewForm(instance=review)
         messages.success(request, f'You are editing a review of {product.name}')
 
-    template = 'products/edit_product.html'
+    template = 'products/edit_review.html'
     context = {
         'form': form,
         'review': review,
@@ -143,18 +150,17 @@ def edit_review(request, review_id):
 def delete_review(request, review_id):
     """ Delete a review from the product store """
 
-    review = get_object_or_404(ProductReview, pk=review_id)
-    product = review.product
-
     if not request.user.is_superuser:
         messages.error(
             request,
             "Sorry, you don't have the necessary permissions to access that page.")
         return redirect(reverse('home'))
 
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
     review.delete()
 
-    messages.success(request, f"{review.user}'s review has now been deleted!")
+    messages.success(request, f"{review.review_text}'s review has now been deleted!")
 
     return redirect(reverse('product_detail', args=[product.id]))
 
