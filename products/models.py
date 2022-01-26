@@ -58,6 +58,11 @@ class Product(models.Model):
         else:
             return 0
 
+    def get_recommended(self):
+
+        total = sum(int(review['recommended']) for review in self.reviews.values())
+
+        return total
 
 class ProductReview(models.Model):
     """

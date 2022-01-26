@@ -37,6 +37,11 @@
                             {% include 'products/includes/star_ratings_avg.html' %} 
                            </p>
                         {% endif %}
+                        {% if product.get_recommended == 0 %}
+                        <p><small><strong>{{ product.get_recommended  }}</strong> customers have recommend this product.....yet.</p></small>
+                        {% else %}
+                        <p><small><strong>{{ product.get_recommended  }}</strong> customers recommend this product.</p></small>
+                        {% endif %}
                         
 
                     {% if product.category %}
