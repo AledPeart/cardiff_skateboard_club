@@ -36,6 +36,11 @@ a:hover {
 
 /* generic styles */
 
+.shadow-hover:hover {
+    -webkit-box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+
 .shadow {
     -webkit-box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
             box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
@@ -116,6 +121,10 @@ a:hover {
 .hover-pink:focus {
     background: rgb(245, 61, 162);
     color: white !important; /* use important to override bootstrap defaults */
+}
+
+.thin {
+    font-weight: 100;
 }
 
 .text-black {
@@ -229,8 +238,8 @@ a:hover {
 }
 
 .arrow-pink {
-color: rgb(245, 61, 162);
-}
+    color: rgb(245, 61, 162);
+}    
 
 .arrow-danger {
     border-bottom-color: #dc3545 !important;

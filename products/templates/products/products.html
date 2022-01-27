@@ -58,7 +58,7 @@
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
+                            <div class="m-2 p-3 shadow-hover">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -69,16 +69,20 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0 text-center">
-                                    <p class="mb-0"><strong>{{ product.name }}</strong></p>
+                                    <h6 class="thin"><strong>{{ product.name }}</strong></h6>
+                                    <h6 class="">£{{ product.price }}</h6>
+                                    <p><span class="text-pink small">{% include 'products/includes/star_ratings_avg.html' %}</span></p>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-small btn-black hover-pink thin text-uppercase rounded-0">See More</a>
+                                  
                                 </div>
-                                    <div class="card-footer container bg-white pt-0 border-0 text-left">
+                                    <!-- <div class="card-footer container bg-white pt-0 border-0 text-left">
                                         <div class="row">
-                                            <div class="col">
-                                                <p class="lead mb-0 text-center"><strong>£{{ product.price }}</strong>
-                                                {% include 'products/includes/star_ratings_avg.html' %} 
+                                            <div class="col"> -->
+                                               
+                                                <!-- {% include 'products/includes/star_ratings_avg.html' %} 
                                                </p>
-                                            </div>
-                                        <div class="row text-center">
+                                            </div> -->
+                                        <!-- <div class="row text-center">
                                                     <div class="col-4">
                                                         {% if product in request.user.userprofile.wishlist.all %}
                                                         <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-fill text-pink ri-2x"></i></a>
@@ -91,23 +95,23 @@
                                                     </div>
 
                                                     <div class="col-4">
-                                                    <!-- <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                         <i class="ri-price-tag-3-line ri-lg text-black"></i>{{ product.category.friendly_name }}
                                                     </a> -->
-                                                    {% if request.user.is_superuser %}
+                                                    <!-- {% if request.user.is_superuser %}
                                                         <span class="ml-3 icon">
                                                             <a href="{% url 'edit_product' product.id %}"><i class="ri-pencil-line ri-lg text-black"></i></a> 
                                                             <a href="{% url 'delete_product' product.id %}"><i class="ri-delete-bin-line ri-lg text-black"></i></a>
                                                         </span>
                                                     {% endif %}
                                                     </div>
-                                                 </div>
+                                                 </div> --> 
 
                                         
                                            
                                         
-                                    </div>
-                                </div>
+                                    <!-- </div> -->
+                                <!-- </div> -->
                             </div>
                         </div>
                         
