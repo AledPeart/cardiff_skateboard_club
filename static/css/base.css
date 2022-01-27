@@ -30,7 +30,7 @@ body {
 
 a:hover {
     text-decoration: none;
-    opacity: 75%;
+    /* opacity: 75%; */
 }
 
 
@@ -89,16 +89,19 @@ a:hover {
     min-width: 200px;
 }
 
-.btn-black {
+/* pink text-turns black on hover */
+.btn-pink-outline {
     background: white;
     color: rgb(245, 61, 162);
 }
 
 .btn-pink {
-    background: rgb(245, 61, 162);
-    color: white;
+    background: white;
+    color: rgb(245, 61, 162);
+    border: 1px solid rgb(245, 61, 162);
 }
 
+/* black outline black text */
 .btn-outline-black {
     background: white;
     color: black !important; /* use important to override link colors for <a> elements */
@@ -108,11 +111,11 @@ a:hover {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.hover-pink:hover,
+.hover-pink:active,
+.hover-pink:focus {
     background: rgb(245, 61, 162);
-    color: white;
+    color: white !important; /* use important to override bootstrap defaults */
 }
 
 .text-black {
@@ -197,6 +200,9 @@ a:hover {
     height: 2px;
 }
 
+.bg-pink{
+    background-color: rgb(245, 61, 162);
+}
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
@@ -220,6 +226,10 @@ a:hover {
 
 .arrow-success {
     border-bottom-color: #28a745 !important;
+}
+
+.arrow-pink {
+color: rgb(245, 61, 162);
 }
 
 .arrow-danger {
@@ -350,6 +360,12 @@ a:hover {
     justify-content: center;
     margin: 0;
     height: 100%;
+    font-size: 2rem;
+}
+
+.spinner-border{
+    height: 5rem;
+    width: 5rem;
 }
 
 
