@@ -152,7 +152,7 @@
                 {% for review in product.reviews.all %}
                 <div class="review-container bg-grey px-2 pb-1 pt-2 mb-2">
                     <p>
-                        {% include 'products/includes/star_ratings.html' %} 
+                        <span class="text-pink">{% include 'products/includes/star_ratings.html' %}</span>
                         <strong>{{ review.user }}</strong>:
                         {{ review.date_added|naturaltime }}
                     </p>
@@ -219,7 +219,7 @@
                                             {% csrf_token %}
                                             <div>
                                                 <label class="m-2">Rate this product out of 5</label>
-                                                <select name="stars" id="">
+                                                <select name="stars" id="" class="review-text-area">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3" selected>3</option>
@@ -231,13 +231,13 @@
                                             <div>
                                                 <label class="m-2" for="">Review this product</label>
                                                 <div class="control class m-2">
-                                                    <textarea name="review_text" id="" cols="50" rows="10"></textarea>
+                                                    <textarea class="review-text-area" name="review_text" id="" cols="50" rows="10"></textarea>
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <label class="m-2">Would you recommend this product?</label>
-                                                <select name="recommended" id="">
+                                                <select name="recommended" id="" class="review-text-area">
                                                     <option value="True">Yes</option>
                                                     <option value="False">No</option>
                                                 </select>
