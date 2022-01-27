@@ -141,42 +141,42 @@
                     {% else %}
                     <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-black rounded-0 text-uppercase" role="button" aria-disabled="true">Add to Wishlist</a>
                     {% endif %}
-
-                    <hr>
-
-                    <h2 class =>Reviews</h2>
-
-                    <div class="">
-
-                        {% for review in product.reviews.all %}
-
-                        <div class="bg-grey px-2 pb-1 pt-2 mb-2">
-                            <p>
-                                {% include 'products/includes/star_ratings.html' %} 
-                                <strong>{{ review.user }}</strong>:
-                                {{ review.date_added|naturaltime }}
-                            </p>
-                            <p>{{review.review_text }}</p>
-                            <p><small>
-                                {% if review.recommended %} 
-                                <i class="align-bottom p-1 ri-checkbox-circle-fill ri-1x"></i><strong>Yes</strong> I recommend this product.
-                                {% else %}
-                                <i class="align-bottom p-1 ri-close-circle-fill ri-1x"></i><strong>No</strong> I don't recommend this product.
-                                {% endif %}
-                            </small></p>
-                           
-                            {% if request.user.is_superuser or request.user == review.user %}
-                            <p class="text-right">
-                                <small><a href="{% url 'edit_review' review.id %}">Edit</a></small>  
-                            {% endif %}
-                            {% if request.user.is_superuser %}
-                            <small> | <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteReviewModal" aria-label="Delete {{ review.user }}">Delete</a></small>
-                            </p>
-                            {% endif %}
-                        </div>
-                    
+                </div>
+            </div>
+   
+    <div class="container">
+        <hr class="pb-4">
+        <div class="row mt-2">
+            <div class="col-12 col-lg-6">
+                <h2 class =>Reviews</h2>
+                {% for review in product.reviews.all %}
+                <div class="review-container bg-grey px-2 pb-1 pt-2 mb-2">
+                    <p>
+                        {% include 'products/includes/star_ratings.html' %} 
+                        <strong>{{ review.user }}</strong>:
+                        {{ review.date_added|naturaltime }}
+                    </p>
+                    <p>{{review.review_text }}</p>
+                    <p><small>
+                        {% if review.recommended %} 
+                        <i class="align-bottom p-1 ri-checkbox-circle-fill ri-1x"></i><strong>Yes</strong> I recommend this product.
+                        {% else %}
+                        <i class="align-bottom p-1 ri-close-circle-fill ri-1x"></i><strong>No</strong> I don't recommend this product.
+                        {% endif %}
+                    </small></p>
+                   
+                    {% if request.user.is_superuser or request.user == review.user %}
+                    <p class="text-right">
+                        <small><a href="{% url 'edit_review' review.id %}">Edit</a></small>  
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                    <small> | <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteReviewModal" aria-label="Delete {{ review.user }}">Delete</a></small>
+                    </p>
+                    {% endif %}
+                </div>
+            
                         <!-- Delte Review Modal -->
-                            <div class="modal fade" id="DeleteReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="DeleteReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -198,92 +198,70 @@
                                 </div>
                             </div>
                         </div>
-                                    <!-- end modal -->
-                       
+                        <!-- end modal -->
+               
 
-                        {% empty %}
-                        <div>
-                            <P>No reviews yet...</P>
-                        </div>
-                        
-
-                        {% endfor %}
-                    </div>
-
-                    
-                   
-                
-                
-
-                    <div>
-                        {% if request.user.is_authenticated %}
-
-                        <form method="post" action="">
-                            {% csrf_token %}
-
-                            <div>
-                                <label>Stars</label>
-
-                                <div>
-                                    <div>
-                                        <select name="stars" id="">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3" selected>3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="">Content</label>
-                                <div class="control">
-                                    <textarea name="review_text" id="" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label>Would you recommend this product?</label>
-
-                                <div>
-                                    <div>
-                                        <select name="recommended" id="">
-                                            <option value="True">Yes</option>
-                                            <option value="False">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="control">
-                                    <button class="btn btn-success">Submit</button>
-
-                                </div>
-                            </div>
-                        </form>
-                        {% else %}
-
-                        <p>Please sign in to add a review</p>
-
-                        {% endif %}
-                        
-                    </div>
-                    <br><br><br>
-
-                    
-
-                    
-
-
-
-
-
-                
+                {% empty %}
+                <div>
+                    <P>No reviews yet...</P>
                 </div>
+                
+
+                {% endfor %}
             </div>
+
+                                <!-- Add a Review -->
+                                <div class="col-12 col-lg-6">
+                                    {% if request.user.is_authenticated %}
+                                    <h2>Add A Review</h2>
+                                    <div class="add-review-container bg-grey px-2 pb-1 pt-2 mb-2">
+                                        <form method="post" action="">
+                                            {% csrf_token %}
+                                            <div>
+                                                <label class="m-2">Rate this product out of 5</label>
+                                                <select name="stars" id="">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3" selected>3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>       
+                                            </div>
+
+                                            <div>
+                                                <label class="m-2" for="">Review this product</label>
+                                                <div class="control class m-2">
+                                                    <textarea name="review_text" id="" cols="50" rows="10"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label class="m-2">Would you recommend this product?</label>
+                                                <select name="recommended" id="">
+                                                    <option value="True">Yes</option>
+                                                    <option value="False">No</option>
+                                                </select>
+                                            <div>
+                                            <div class="control m-2">
+                                                <button class="btn btn-pink hover-pink rounded-0">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    {% else %}
+                                        <p>Please sign in to add a review</p>
+                                    {% endif %} 
+                                </div>
+                            
+            
+
+            
+           
+        
+        
+
+            
+
+
         </div>
     </div>
 {% endblock %}
