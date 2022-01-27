@@ -149,20 +149,39 @@ def edit_review(request, review_id):
 @login_required 
 def delete_review(request, review_id):
     """ Delete a review from the product store """
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
 
     if not request.user.is_superuser:
         messages.error(
             request,
             "Sorry, you don't have the necessary permissions to access that page.")
-        return redirect(reverse('home'))
+        return redirect(reverse('product_detail', args=[product.id]))
 
-    review = get_object_or_404(ProductReview, pk=review_id)
-    product = review.product
+    
     review.delete()
 
-    messages.success(request, f"{review.review_text}'s review has now been deleted!")
+    messages.success(request, f"{review.user}'s review has now been deleted!")
 
     return redirect(reverse('product_detail', args=[product.id]))
+
+    # TEST -----------------------
+# @login_required 
+# def delete_product(request, product_id):
+#     """ Delete a product from the store """
+
+#     if not request.user.is_superuser:
+#         messages.error(
+#             request,
+#             "Sorry, you don't have the necessary permissions to access that page.")
+#         return redirect(reverse('home'))
+        
+#     product = get_object_or_404(Product, pk=product_id)
+#     product.delete()
+#     messages.success(request, f'{product.name} has now been deleted!')
+#     return redirect(reverse('products'))
+
+    # TEST ------------------------
 
 
 @login_required 

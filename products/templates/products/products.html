@@ -71,18 +71,11 @@
                                 <div class="card-body pb-0 text-center">
                                     <p class="mb-0"><strong>{{ product.name }}</strong></p>
                                 </div>
-                                <!-- {% if product.brand %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.brand.friendly_name }}</p>
-                                </div>
-                                {% endif %} -->
                                     <div class="card-footer container bg-white pt-0 border-0 text-left">
                                         <div class="row">
                                             <div class="col">
                                                 <p class="lead mb-0 text-center"><strong>£{{ product.price }}</strong>
-                                                <!-- {% if product.category %} -->
-                                                <!-- <p class="text-black mt-1 mb-2"> -->
-                                                {% include 'products/includes/star_ratings.html' %} 
+                                                {% include 'products/includes/star_ratings_avg.html' %} 
                                                </p>
                                             </div>
                                         <div class="row text-center">
@@ -110,8 +103,7 @@
                                                     </div>
                                                  </div>
 
-                                                <!-- </p> -->
-                                                <!-- {% endif %} -->
+                                        
                                            
                                         
                                     </div>
