@@ -21,6 +21,11 @@ body {
     flex: 1 0 auto;
 }
 
+.spacer-block {
+    height: 100px;
+    width: 100%;
+}
+
 .footer-bottom {
     position: sticky;
     left: 0;
@@ -60,6 +65,10 @@ a:hover {
 
 .icon-align { 
     vertical-align: text-bottom; 
+}
+
+.heart-icon {
+    z-index: 99999999999;
 }
 
 .social-footer i {

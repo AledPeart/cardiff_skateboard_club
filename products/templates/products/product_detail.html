@@ -225,13 +225,14 @@
                                                     <option value="3" selected>3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
-                                                </select>       
+                                                </select>
                                             </div>
 
                                             <div>
                                                 <label class="m-2" for="">Review this product</label>
                                                 <div class="control class m-2">
-                                                    <textarea class="review-text-area" name="review_text" id="" cols="50" rows="10"></textarea>
+                                                    <textarea class="review-text-area" name="review_text" id=""
+                                                        cols="50" rows="10"></textarea>
                                                 </div>
                                             </div>
 
@@ -241,29 +242,22 @@
                                                     <option value="True">Yes</option>
                                                     <option value="False">No</option>
                                                 </select>
-                                            <div>
-                                            <div class="control m-2">
-                                                <button class="btn btn-pink hover-pink rounded-0">Submit</button>
-                                            </div>
+                                                <div>
+                                                    <div class="control m-2">
+                                                        <button
+                                                            class="btn btn-pink hover-pink rounded-0">Submit</button>
+                                                    </div>
                                         </form>
                                     </div>
                                     {% else %}
-                                        <p>Please sign in to add a review</p>
-                                    {% endif %} 
+                                    <p>Please sign in to add a review</p>
+                                    {% endif %}
                                 </div>
-                            
-            
+                                </div>
+                                </div>
 
-            
-           
-        
-        
-
-            
-
-
-        </div>
-    </div>
+                                <div class="spacer-block"></div>
+    
 {% endblock %}
 
 {% block postloadjs %}

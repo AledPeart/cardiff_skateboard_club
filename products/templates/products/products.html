@@ -71,13 +71,18 @@
                                 <div class="card-body pb-0 text-center">
                                     <h6 class="thin">{{ product.name }}</h6>
                                     <h7 class="">£{{ product.price }}</h7>
-                                    <p><span class="text-pink small">{% include 'products/includes/star_ratings_avg.html' %}</span></p>
-                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-small btn-black hover-pink thin text-uppercase rounded-0">See More</a>
-                                    {% if product in request.user.userprofile.wishlist.all %}
-                                    <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-fill text-pink ri-xl icon float-right"></i></a>
-                                    {% else %}
-                                    <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-line text-pink ri-xl icon float-right"></i></a>
-                                    {% endif %}
+                                    <p><span class="text-pink mb-0 small">{% include 'products/includes/star_ratings_avg.html' %}</span></p>
+                                    <div class="row justify-content-end">
+                                        <div class="col-12 col-md-10">
+                                            <a href="{% url 'product_detail' product.id %}" class="btn btn-small btn-black hover-pink thin text-uppercase rounded-0">See More</a>
+                                        </div>
+                                        <div class="col-12 col-md-1">{% if product in request.user.userprofile.wishlist.all %}
+                                            <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-fill text-pink ri-lg icon"></i></a>
+                                            {% else %}
+                                            <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-line text-pink ri-lg icon"></i></a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
