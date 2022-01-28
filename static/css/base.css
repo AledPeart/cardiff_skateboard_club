@@ -67,9 +67,6 @@ a:hover {
     vertical-align: text-bottom; 
 }
 
-.heart-icon {
-    z-index: 99999999999;
-}
 
 .social-footer i {
     padding: 10px;
@@ -364,6 +361,7 @@ a:hover {
         height: calc(100vh - 116px);
     }
 }
+
 
 /* spinner overlay */
 
