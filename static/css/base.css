@@ -2,19 +2,19 @@ html {
     height: 100%;
 }
 
-
+/* 
 body {
-    background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
+    /* background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash.jpg') no-repeat center center fixed; 
+    background-size: cover; */ */
+    /* height: calc(100vh - 164px);  */
     /* color: #555; */
-    font-family: 'Assistant', sans-serif;
-}
+    /* font-family: 'Assistant', sans-serif; */
+} */
 
 body {
     display: flex;
     flex-direction: column;
-    font-family: var(--font-default);
+    height: 10000px;
 }
 
 .content {
@@ -32,6 +32,46 @@ body {
     bottom: 0;
     width: 100%;
   }
+
+  /* home page */
+
+  /* .main-home-image{
+      position: relative;
+  }
+
+  .main-home-text{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    width: auto;
+  } */
+
+  /* .main-image {
+    background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash-letterbox.jpg') no-repeat bottom fixed;
+  } */
+
+  /* Code ammended from https://stackoverflow.com/questions/20134375/how-do-you-create-a-scrolling-window-over-a-still-background-image-with-css */
+
+.spacing {
+    height: 20px;
+}
+
+.main-image-block {
+    background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash.jpg') no-repeat center center fixed; 
+    width: 100%;
+    height: 800px;
+}
+
+.medium-image {
+
+    width: 330px;
+    height: auto;
+}
+
+
 
 a:hover {
     text-decoration: none;
@@ -363,6 +403,7 @@ a:hover {
 }
 
 
+
 /* spinner overlay */
 
 .loading-overlay-hidden {
@@ -387,4 +428,21 @@ a:hover {
 .review-text-area {
     border-color: rgb(245, 61, 162);
 }
+
+
+/* botstrap template */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
 
