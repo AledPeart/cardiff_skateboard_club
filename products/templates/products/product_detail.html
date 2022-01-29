@@ -55,40 +55,36 @@
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            
-                            
-                                <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteProductModal" aria-label="Delete {{ product.name }}">
-                                    Delete
-                                </a>
-                          
-                            
-                            <!-- Modal -->
-                            <div class="modal fade" id="DeleteProductModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header mx-auto">
-                                        <h5 class="modal-title" id="exampleModalLabel"><i class="align-bottom ri-error-warning-line ri-x2 p-2"></i>Confirm Delete</h5>
-                                        
-                                    </div>
-                                    <div class="modal-body text-center">
-                                    <p>Are you sure you want to permanently delete {{ product.name }}? Once you click delete this action cannot be undone.</p>
-                                    </div>
-                                    <div class="modal-footer mx-auto">
-                                        <button type="button" class="btn modal-cancel-btn btn-sm btn-outline-secondary" data-dismiss="modal"
-                                            aria-label="Close">Cancel</button>
-                                        <a href="{% url 'delete_product' product.id %}"
-                                            class="btn btn-sm modal-delete-btn btn-danger">Delete</a>
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                            <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal"
+                                data-target="#DeleteProductModal" aria-label="Delete {{ product.name }}">
+                                Delete
+                            </a>
+
+                            <!-- Delete Product Modal -->
+                            <div class="modal fade" id="DeleteProductModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header mx-auto">
+                                            <h5 class="modal-title" id="exampleModalLabel"><i
+                                                    class="align-bottom ri-error-warning-line ri-x2 p-2"></i>Confirm
+                                                Delete</h5>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <p>Are you sure you want to permanently delete {{ product.name }}? Once you
+                                                click delete this action cannot be undone.</p>
+                                        </div>
+                                        <div class="modal-footer mx-auto">
+                                            <button type="button"
+                                                class="btn modal-cancel-btn btn-sm btn-outline-secondary"
+                                                data-dismiss="modal" aria-label="Close">Cancel</button>
+                                            <a href="{% url 'delete_product' product.id %}"
+                                                class="btn btn-sm modal-delete-btn btn-danger">Delete</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-
-
-                            <!-- <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a> -->
                         </small>
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
@@ -170,13 +166,13 @@
                         <small><a href="{% url 'edit_review' review.id %}">Edit</a></small>  
                     {% endif %}
                     {% if request.user.is_superuser %}
-                    <small> | <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteReviewModal" aria-label="Delete {{ review.user }}">Delete</a></small>
+                    <small> | <a class="delete-modal-trigger text-danger remove-item" data-toggle="modal" data-target="#DeleteReviewModal-{{ review.id }}" aria-label="Delete {{ review.user }}">Delete</a></small>
                     </p>
                     {% endif %}
                 </div>
             
                         <!-- Delte Review Modal -->
-                        <div class="modal fade" id="DeleteReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="DeleteReviewModal-{{ review.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
