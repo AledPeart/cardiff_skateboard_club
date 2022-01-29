@@ -9,7 +9,7 @@ body {
     /* height: calc(100vh - 164px);  */
     /* color: #555; */
     /* font-family: 'Assistant', sans-serif; */
-} */
+/* } */ */
 
 body {
     display: flex;
@@ -19,6 +19,7 @@ body {
 
 .content {
     flex: 1 0 auto;
+   
 }
 
 .spacer-block {
@@ -65,18 +66,69 @@ body {
     height: 800px;
 }
 
+.csc-logo {
+    width: 400px;
+    height: 400px;
+}
 .medium-image {
 
     width: 330px;
     height: auto;
 }
 
+.jumbotron-home {
+    /* background-color: #F94892; */
+}
 
 
 a:hover {
     text-decoration: none;
     /* opacity: 75%; */
 }
+
+.image-link:hover {
+    zoom: 25%;
+    opacity: 75%;
+}
+
+/* image overlay  W3 Schools */
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .overlay-box:hover .image {
+    opacity: 0.6;
+  }
+  
+  .overlay-box:hover .middle {
+    opacity: 1;
+  }
+  
+  .text {
+    background-color: rgb(245, 61, 162);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
 
 
 /* generic styles */

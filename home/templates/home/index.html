@@ -13,174 +13,79 @@
 
 <div class="spacing container"></div>
 <div class="main-image-block row align-items-center">
-  <div class="col-md-5 p-lg-5 mx-auto text-white">
-    <h1 class="display-8 border pl-4 p-2 fw-normal text-uppercase text-white"><img class="d-inline-block" src="/media/csc-logo-50px-white.png" alt="CSC logo">
-      Cardiff's only independant skate shop
-  </h1>
-    <a class="btn shop-now-button btn rounded-0 text-uppercase py-2" href="{% url 'products' %}">Shop Now</a>
+  <div class="col-10 p-lg-5 float-right text-white">
+    <img class="d-inline-block float-right csc-logo" src="/media/csc-logo-50px-white.png" alt="CSC logo">
   </div>
+  
 </div>
 
 <div class="spacer-block"></div>
+<div class="container-fluid p-0">
+<div class="jumbotron jumbotron-home no-gutters text-black text-center">
+    <h1><small>Welcome to </small><span class="text-uppercase logo-font">cardiff skateboard club</span></h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-outline-black rounded-0 btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+</div>
+
+
+
+<div class="spacer-block"></div>
+
 <h3 class="text-center">Browse our shit....</h3>
 
-<div class="container">
+
+
+
+
+
  
-  <div class="row justify-content-center">
-    
-      <div class="card m-3" style="width: 18rem;">
-        <img class="card-img-top" src="/media/252223824_3063183927336188_104132403770108639_n.jpg" alt="Card image cap">
-        <div class="card-body text-center"> 
-          <a href="#" class="btn btn-pink hover-pink rounded-0">Decks</a>
-        </div>
-      </div>
-  
-
-    
-      <div class="card m-3" style="width: 18rem;">
-        <img class="card-img-top" src="/media/174531717_146301687454760_3231269219805880757_n.jpg" alt="Card image cap">
-        <div class="card-body text-center"> 
-          <a href="#" class="btn btn-pink hover-pink rounded-0">Decks</a>
-        </div>
-      </div>
-    
-
-    
-      <div class="card m-3" style="width: 18rem;">
-        <img class="card-img-top" src="/media/176140880_3015865858738409_4634275918539339472_n.jpg" alt="Card image cap">
-        <div class="card-body text-center"> 
-          <a href="#" class="btn btn-pink hover-pink rounded-0">Decks</a>
-        </div>
-      </div>
-  </div>
 
 
-  <div class="row justify-content-center">
-    <div class="col-12 text-center">
-      <img class="" src="/media/new-support-sticker_0c8bed00-d7e9-47b3-babf-76b98bd7a638_600x600.jpeg" alt="support independant shops graphic">
+
+<div class="card-group">
+  <div class="card overlay-box">
+    <a href="href={% url 'products' %}?category=decks"><img class="card-img-top image" src="/media/252223824_3063183927336188_104132403770108639_n.jpg" alt="Card image cap"></a>
+    <div class="middle">
+      <div class="text">DECKS</div>
     </div>
   </div>
 
+  <div class="card overlay-box">
+    <a href="href={% url 'products' %}?category=decks"><img class="card-img-top image" src="/media/174531717_146301687454760_3231269219805880757_n.jpg" alt="Card image cap"></a>
+    <div class="middle">
+      <div class="text">MAGAZINES</div>
+    </div>
+  </div>
+
+  <div class="card overlay-box">
+    <a href="href={% url 'products' %}?category=decks"><img class="card-img-top image" src="/media/176140880_3015865858738409_4634275918539339472_n.jpg" alt="Card image cap"></a>
+    <div class="middle">
+      <div class="text">WHEELS</div>
+    </div>
+  </div>
+ 
+  
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-12 text-center">
+    <img class="" src="/media/new-support-sticker_0c8bed00-d7e9-47b3-babf-76b98bd7a638_600x600.jpeg" alt="support independant shops graphic">
+  </div>
 </div>
 
 
 
 
-<!-- <div class="container-fluid">
-  <div class="row">
-    <h3>Browse our shit....</h3>
-    <div class="col-12 col-lg-4">
 
-      <img class="img-fluid medium-image" src="/media/252223824_3063183927336188_104132403770108639_n.jpg" alt="image of skateboards">
 
-    </div>
-    <div class="col-12 col-lg-4">
 
-      <img class="image-fluid medium-image" src="/media/174531717_146301687454760_3231269219805880757_n.jpg" alt="image of a skateboard magazine">
-      
-    </div>
-    <div class="col-12 col-lg-4">
 
-      <img class="image-fluid medium-image" src="/media/176140880_3015865858738409_4634275918539339472_n.jpg" alt="image of skateboards">
-      
-    </div>
-  </div>
-</div> -->
 
-<!-- <main>
-    <div class="main-image position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 fw-normal">Punny headline</h1>
-        <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-      </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div> -->
-<!--   
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-  
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div> -->
-  <!-- </main> -->
-
-<!-- <div class="container">
-
-    <div class="row">
-        <div class="col-12">
-            <img class="main-home-image img-fluid" src="/media/jacob-bentzinger-vknJUK53wHU-unsplash.jpg" alt="homepage skateboarding image">
-            <h1 class="main-home-text fluid display-7 logo-font text-white">
-                Welcome to Cardiff's only independant skate shop
-            </h1>
-
-        </div>
-
-    </div>
-
-</div> -->
 
 {% endblock %}
 
