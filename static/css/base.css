@@ -91,7 +91,7 @@ a:hover {
     opacity: 75%;
 }
 
-/* image overlay  W3 Schools */
+/* image overlay  W3 Schools/css tricks */
   
   .image {
     opacity: 1;
@@ -167,8 +167,8 @@ a:hover {
 }
 
 
-.banner {
-    background-color: black; 
+.bg-pink {
+    background-color: rgb(245, 61, 162); 
 }
 
 .banner-text{
