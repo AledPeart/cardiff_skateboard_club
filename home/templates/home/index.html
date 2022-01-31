@@ -19,64 +19,87 @@
   
 </div>
 
-<div class="spacer-block"></div>
-<div class="container-fluid p-0">
-<div class="jumbotron jumbotron-home text-black text-center">
-    <h1><small>Welcome to </small><span class="text-uppercase logo-font">cardiff skateboard club</span></h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-outline-black hover-pink rounded-0 btn-lg" href="#" role="button">Learn more</a>
-    </p>
-  </div>
-</div>
 
-
-
-<div class="spacer-block"></div>
-
-<h3 class="text-center">Browse our shit....</h3>
-
-
-
-
-
-
- 
-
-
-
-<div class="card-group">
-  <div class="card overlay-box">
-    <a href="href={% url 'products' %}?category=decks"><img class="card-img-top image" src="/media/252223824_3063183927336188_104132403770108639_n.jpg" alt="Card image cap"></a>
-    <div class="middle">
-      <div class="text">DECKS</div>
-    </div>
-  </div>
-
-  <div class="card overlay-box">
-    <a href="href={% url 'products' %}?category=decks"><img class="card-img-top image" src="/media/174531717_146301687454760_3231269219805880757_n.jpg" alt="Card image cap"></a>
-    <div class="middle">
-      <div class="text">MAGAZINES</div>
-    </div>
-  </div>
-
-  <div class="card overlay-box">
-    <a href="href={% url 'products' %}?category=decks"><img class="card-img-top image" src="/media/176140880_3015865858738409_4634275918539339472_n.jpg" alt="Card image cap"></a>
-    <div class="middle">
-      <div class="text">WHEELS</div>
+<div class="container-fluid p-0 mt-5">
+  <div class="jumbotron jumbotron-home bg-white text-black text-center thin row justify-content-center">
+    <div class="col-12 col-md-4">
+    <h2 class="pb-2"><small>Welcome to </small><span class="text-uppercase">cardiff skateboard club</span></h2>
+    
+      <p>
+        The CSC Store, aka 'Cardiff Skateboard Club' is <span class="medium-font">Cardiff's only independent skateboard shop</span>. We have been around a while now, <span class="medium-font">since 2008</span> or something.
+        We are not really a club, but we also are kind of a club......<br>
+        <a class="btn btn-pink hover-pink rounded-0 btn-lg mt-4" href="#about-csc" role="button">Learn more</a>
     </div>
   </div>
 </div>
 
-<div class="spacer-block"></div>
 
-<div class="container-fluid px-0 pb-3">
-<div class="jumbotron bg-pink text-black text-center">
-    <h1><strong class="text-uppercase">Skateboarding</strong> <small>(noun)</small></h1>   
+
+<h3 class="text-center thin pb-2">Browse the store....</h3>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
+      <a href="{% url 'products' %}?category=decks"><img class="image"
+          src="/media/184802767_2235253306606024_5395885038894168657_n.jpg" alt="Card image cap">
+        <div class="middle">
+          <div class="text">DECKS</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
+      <a href="{% url 'products' %}?category=dvds_zines"><img class="image"
+          src="/media/181454103_830995130821895_8745566874423460027_n.jpg" alt="Card image cap">
+        <div class="middle">
+          <div class="text">MAGAZINES</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
+      <a href="{% url 'products' %}?category=wheels"><img class="image"
+          src="/media/185840803_338209467837671_9177231274513118132_n.jpg" alt="Card image cap">
+        <div class="middle">
+          <div class="text">WHEELS</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="col text-center mt-5">
+<a id="about-csc" class="btn btn-pink hover-pink rounded-0 btn-lg px-4" href="{% url 'products' %}" role="button">Shop All</a>
+</div>
+
+
+
+<!-- <div class="container-fluid px-0 pb-3">
+<div class="jumbotron text-black jumbo-large text-center align-items-center">
+    <div class="spacer-block"></div>
+    <h1 class="mt-6"><strong class="text-uppercase">Skateboarding</strong> <small>(noun)</small></h1><br>   
     <p>a device for riding upon, usually while standing, consisting of a short, oblong piece of wood,<br>
        plastic, or aluminum mounted on large roller-skate wheels, 
       used on smooth surfaces and requiring <br> better balance of the rider than a roller skate does</p>
+  </div>
+</div> -->
+
+<div class="container-fluid px-0 mt-5">
+  <div class="jumbotron text-black text-center thin row justify-content-center mb-0">
+    <div class="col-12 col-md-4">
+      <h1 class="mt-6"><strong class="text-uppercase">About CSC <span><img src="/media/csc-logo-50px.png" alt="CSC logo"></span></strong></h1><br>
+      <p>The CSC Store, aka 'Cardiff Skateboard Club' is <span class="medium-font">Cardiff's only independent skateboard
+          shop</span>. We have been around a while now, <span class="medium-font">since 2008</span> or something.
+        We are not really a club, but we also are kind of a club. You can't join as such,
+        but we still want you to join us in having fun on your skateboard, wearing skate clothes, caring about shoes too
+        much, waxing curbs, and stuff like that.
+        We started our little shop when Cardiff's famous City Surf bit the dust and we hope we can be half as good as
+        they were. What more can we say?
+        We're here for you if you skate or not...come and buy something or just lurk and watch vids. When you shop at
+        CSC you are giving your money to skateboarders who live and skate in Cardiff, and helping to support the scene
+        in South Wales.
+        Keep it real, <span class="medium-font">shop local</span> and support real skate shops!</p>
+    </div>
   </div>
 </div>
 
@@ -87,31 +110,4 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
 {% endblock %}
-
-
-    <!-- <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-12 col-md-6 my-auto">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    
-                <h1 class="display-7 logo-font text-white"><img class="d-inline-block d-lg-none" src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499" alt="CSC logo">
-                    Cardiff's only independant skate shop
-                </h1></a>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div> -->

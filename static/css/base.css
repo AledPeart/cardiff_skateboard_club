@@ -2,19 +2,11 @@ html {
     height: 100%;
 }
 
-/* 
-body {
-    /* background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash.jpg') no-repeat center center fixed; 
-    background-size: cover; */ */
-    /* height: calc(100vh - 164px);  */
-    /* color: #555; */
-    /* font-family: 'Assistant', sans-serif; */
-/* } */ */
-
 body {
     display: flex;
     flex-direction: column;
-    height: 10000px;
+    /* height: 10000px; */
+    font-family: 'Assistant', sans-serif;
 }
 
 .content {
@@ -27,6 +19,11 @@ body {
     width: 100%;
 }
 
+.jumbo-large {
+    height: 500px;
+    width: 100%;
+}
+
 .footer-bottom {
     position: sticky;
     left: 0;
@@ -36,28 +33,18 @@ body {
 
   /* home page */
 
-  /* .main-home-image{
-      position: relative;
-  }
-
-  .main-home-text{
-    position: absolute;
-    top: 200px;
-    left: 100px;
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
-    width: auto;
-  } */
-
-  /* .main-image {
-    background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash-letterbox.jpg') no-repeat bottom fixed;
-  } */
-
   /* Code ammended from https://stackoverflow.com/questions/20134375/how-do-you-create-a-scrolling-window-over-a-still-background-image-with-css */
 
 .spacing {
     height: 20px;
+}
+
+.large-font {
+    font-size: 3rem;
+}
+
+.medium-font {
+    font-size: 1.5rem;
 }
 
 .main-image-block {
@@ -74,10 +61,6 @@ body {
 
     width: 330px;
     height: auto;
-}
-
-.jumbotron-home {
-    /* background-color: #F94892; */
 }
 
 
@@ -102,6 +85,7 @@ a:hover {
     backface-visibility: hidden;
     background-position: center;
     background-size: cover;
+  
   }
   
   .middle {
@@ -117,6 +101,7 @@ a:hover {
   
   .overlay-box:hover .image {
     opacity: 0.6;
+    
   }
   
   .overlay-box:hover .middle {
@@ -237,12 +222,28 @@ a:hover {
     color: rgb(245, 61, 162) !important;
 }
 
+.teal {
+    color: #75fbf4;
+}
+
+.bg-teal {
+    background-color: #75fbf4;
+}
+
+.purple {
+    color: #1b124b
+}
+
+.bg-purple {
+    background-color: #1b124b;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
 
 .bg-grey {
-    background-color: #eee;
+    background-color: #e9ecef;
 }
 
 .overlay {
