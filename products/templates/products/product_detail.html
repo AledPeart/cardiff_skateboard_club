@@ -146,7 +146,7 @@
             <div class="col-12 col-lg-6">
                 <h2 class =>Reviews</h2>
                 {% for review in product.reviews.all %}
-                <div class="review-container bg-grey px-2 pb-1 pt-2 mb-2">
+                <div class="review-container bg-grey p-4 mb-2">
                     <p>
                         <span class="text-pink">{% include 'products/includes/star_ratings.html' %}</span>
                         <strong>{{ review.user }}</strong>:
@@ -210,7 +210,7 @@
                                 <div class="col-12 col-lg-6">
                                     {% if request.user.is_authenticated %}
                                     <h2>Add A Review</h2>
-                                    <div class="add-review-container bg-grey px-2 pb-1 pt-2 mb-2">
+                                    <div class="add-review-container bg-grey p-4 mb-2">
                                         <form method="post" action="">
                                             {% csrf_token %}
                                             <div>
@@ -227,7 +227,7 @@
                                             <div>
                                                 <label class="m-2" for="">Review this product</label>
                                                 <div class="control class m-2">
-                                                    <textarea class="review-text-area" name="review_text" id=""
+                                                    <textarea class="review-text-area" name="review_text"
                                                         cols="50" rows="10"></textarea>
                                                 </div>
                                             </div>
@@ -253,7 +253,11 @@
                                 </div>
 
                                 <div class="spacer-block"></div>
-    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 {% endblock %}
 
 {% block postloadjs %}
