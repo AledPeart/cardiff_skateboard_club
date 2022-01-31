@@ -171,6 +171,10 @@ a:hover {
 .main-nav-link{
     background-color: white;
 }
+
+.nav-toggler-btn {
+    color:rgb(245, 61, 162);
+}
 .shop-now-button {
     background: white;
     color: black;
