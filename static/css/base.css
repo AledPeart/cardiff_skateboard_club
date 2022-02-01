@@ -279,7 +279,6 @@ a:hover {
 }
   
   /* --- icons --- */
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -479,9 +478,10 @@ a:hover {
     } */
 }
 
-@media (min-width: 400px) {
-    .review-text-area {
-        columns: 23;
+/* reduce padding on the add review container on smaller screens to improve layout */
+@media (max-width: 400px) {
+    .add-review-container {
+        padding: 4px !important;
     }
 } 
 
