@@ -41,83 +41,224 @@
 
 <body>
    
-    <header class="container-fluid px-0 fixed-top thin">
-        <div class="row bg-grey text-center">
-            <div class="col text-black">
-                <h6 class="my-1 text-uppercase">Come Skate with us!</h6>                
-            </div>       
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-grey">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- CSC Logo -->
+        
+            <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <img src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499"
+                    alt="CSC logo"><span class="logo-font d-none d-md-inline-flex text-black px-1 my-0">Cardiff Skateboard Club</span>
+            </a>
+
+            
+        
+
+        <!-- Navbar-Collapse -->
+        <div class="collapse navbar-collapse" id="navbar-toggler">
+
+            <!-- Nav Links -->
+            
+                <ul class="navbar-nav nav-menu mx-auto mb-2 mb-md-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="skate-link" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Skate
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="skate-link">
+                            <a href="{% url 'products' %}?category=decks" class="dropdown-item">Decks</a>
+                            <a href="{% url 'products' %}?category=wheels" class="dropdown-item">Wheels</a>
+                            <a href="{% url 'products' %}?category=trucks" class="dropdown-item">Trucks</a>
+                            <a href="{% url 'products' %}?category=bearings" class="dropdown-item">Bearings</a>
+                            <a href="{% url 'products' %}?category=griptape" class="dropdown-item">Griptape</a>
+                            <a href="{% url 'products' %}?category=decks,wheels,trucks,bearings,griptape"
+                                class="dropdown-item">All Skate</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="accessories-link" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Accessories
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
+                            <a href="{% url 'products' %}?category=caps_beanies" class="dropdown-item">Caps &amp;
+                                Beanies</a>
+                            <a href="{% url 'products' %}?category=dvds_zines" class="dropdown-item">Dvds &amp;
+                                'Zines</a>
+                            <a href="{% url 'products' %}?category=gifts" class="dropdown-item">Gifts</a>
+                            <a href="{% url 'products' %}?category=caps_beanies,dvds_zines,gifts"
+                                class="dropdown-item">All
+                                Accessories</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="brands-link" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Brands
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="brands-link">
+                            <a href="{% url 'products' %}?brand=alltimers" class="dropdown-item">Alltimers</a>
+                            <a href="{% url 'products' %}?brand=anti_hero" class="dropdown-item">Anti Hero</a>
+                            <a href="{% url 'products' %}?brand=bones" class="dropdown-item">Bones</a>
+                            <a href="{% url 'products' %}?brand=butter_goods" class="dropdown-item">Butter Goods</a>
+                            <a href="{% url 'products' %}?brand=chocolate" class="dropdown-item">Chocolate</a>
+                            <a href="{% url 'products' %}?brand=handy_supply_co" class="dropdown-item">Handy Supply
+                                Co</a>
+                            <a href="{% url 'products' %}?brand=independent" class="dropdown-item">Independent</a>
+                            <a href="{% url 'products' %}?brand=oj" class="dropdown-item">OJ</a>
+                            <a href="{% url 'products' %}?brand=sour_solution" class="dropdown-item">Sour Solution</a>
+                            <a href="{% url 'products' %}" class="dropdown-item">View All</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            All Products
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                            <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
+                                Category</a>
+                            <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                        </div>
+                    </li>
+
+                     <!-- Mobile Search Bar-->
+         
+            
+                </ul>
+
+        
+        
+       
+            
+                
+        <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
+            <li class="list-inline-item">
+                <!-- Search Icon -->
+                <a class="text-black nav-link" href="#" id="mobile-search" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="ri-search-line ri-xl icon"></i></div>
+                        <p class="my-0">Search</p>
+                    </div>
+                </a>
+                <!-- Hidden search Bar -->
+                <div class="dropdown-menu row border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+                    <form class="form" method="GET" action="{% url 'products' %}">
+                        <div class="input-group w-25 float-right">
+                            <input class="form-control border rounded-0" type="text" name="q"
+                                placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="form-control form-control btn btn-pink hover-pink border rounded-0"
+                                    type="submit">
+                                    <span class="text-black">Search</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <!-- User/Bag -->
+            <li class="list-inline-item dropdown mx-2">
+                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="ri-user-line ri-xl icon"></i></div>
+                        <p class="my-0">Account</p>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
+                    {% endif %}
+                    <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+            </li>
+            <li class="list-inline-item mx-2">
+                <a class="text-black nav-link" href="{% url 'view_bag' %}">
+                    <div class="text-center">
+                        <div><i class="ri-shopping-bag-line ri-xl icon"></i></div>
+                        <p class="my-0 text-pink">
+                            {% if total %}
+                            £{{ total|floatformat:2 }}
+                            {% else %}
+                            £0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
         </div>
 
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div id="top-nav" class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499" alt="CSC logo"><span class="logo-font text-black px-1 my-0">Cardiff Skateboard Club</span> 
-                </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0 p-2" type="submit">
-                                <span class="text-black"><i class="ri-search-line"></i></span>
-                            </button>
-                        </div>
+                 
+
+                <!-- <div class="large-nav collapse collapsed-search fixed-top" id="searchCollapse">
+                    <div class="card card-body border-0 rounded-0 search-nav">
+                        <form method="GET" action="{% url 'products' %}" class="d-flex mx-auto">
+                            <input class="form-control form-control-sm me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" type="submit">Search</button>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div class="col-12 col-lg-4 my-auto">
-                <ul class="list-inline list-unstyled text-center pl-0 text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="ri-user-line ri-xl icon"></i></div>
-                                <p class="my-0">Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
-                                {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-black nav-link" href="{% url 'view_bag' %}">
-                            <div class="text-center">
-                                <div><i class="ri-shopping-bag-line ri-xl icon"></i></div>
-                                <p class="my-0 text-pink">
-                                    {% if total %}
-                                        £{{ total|floatformat:2 }}
-                                    {% else %}
-                                        £0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                </div> -->
+
         
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-        </div>
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white w-100">
-                <button class="nav-toggler-btn d-lg-none border-0 bg-white" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="nav-toggler"><i class="ri-menu-fill ri-xl icon"></i></span>
-                </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
-            </nav>
-        </div>
-    </div>
-    </header>
+
+
+    </nav>
+    <!-- <div class="row bg-grey mx-2 justify-content-end d-flex"> -->
+        <!-- Search Bar-->
+          <!-- <form method="GET" action="{% url 'products' %}" class="form-inline d-flex my-2 my-lg-0">
+            <input class="form-control bg-grey mr-sm-2" type="text" name="q">
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                   <div class="text-center">
+                       <div><i class="ri-search-line ri-xl icon"></i></div>
+                       <p class="my-0">Search</p>
+                   </div>
+               </a>
+            </input>
+        </form>
+
+    </div> -->
+
+     <!-- <form method="GET" action="{% url 'products' %}" class="form-inline d-flex my-2 my-lg-0">
+            <input class="form-control-sm me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-black hover-pink btn-sm rounded-0" type="submit">Search</button>
+        </form> -->
+
+          <!-- Search Bar-->
+          <!-- <form method="GET" action="{% url 'products' %}" class="form-inline d-flex my-2 my-lg-0">
+            <input class="form-control bg-grey mr-sm-2" type="text" name="q">
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                   <div class="text-center">
+                       <div><i class="ri-search-line ri-xl icon"></i></div>
+                       <p class="my-0">Search</p>
+                   </div>
+               </a>
+            </input>
+        </form> -->
+
+    
+       
+        
+
+        
+    
+      
+
 
     
 

@@ -277,6 +277,17 @@ a:hover {
 .nav-toggler-btn {
     color:rgb(245, 61, 162);
 }
+
+.search-bar {
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 50px;
+}
+
+.nav-menu a {
+    color: black !important;
+    margin-left: 5px;
+}
   
   /* --- icons --- */
 /* from Bulma */
