@@ -442,6 +442,10 @@ a:hover {
 	color: #17a2b8; /* text-info */
 }
 
+.qty-selector-box {
+    width: 25%;
+}
+
 /* --- Media Queries --- */
 
 /* Slightly larger container on xl screens */
@@ -484,6 +488,14 @@ a:hover {
         padding: 4px !important;
     }
 } 
+
+@media (max-width: 568px) {
+    .qty-selector-box {
+        max-width: 100%;
+    }
+} 
+
+
 
 
 
