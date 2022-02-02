@@ -42,17 +42,19 @@
 <body>
    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-grey">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- CSC Logo -->
+
+         <!-- CSC Logo -->
         
-            <a href="{% url 'home' %}" class="nav-link">
-                <img class="main-logo-link" src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499"
-                    alt="CSC logo"><span class="logo-font d-none d-sm-inline-flex text-black px-1 my-0">Cardiff Skateboard Club</span>
-            </a>
+         <a href="{% url 'home' %}" class="nav-link hover-text-pink">
+            <img class="main-logo-link" src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499"
+                alt="CSC logo"><span class="logo-font d-none d-sm-inline-flex text-black px-1 my-0">Cardiff Skateboard Club</span>
+        </a>
+        
              <!-- User/Bag on mobile -->
             <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
             <li class="list-inline-item dropdown mx-1 d-flex d-lg-none">
@@ -89,21 +91,17 @@
             </li>
         </ul>
 
-            
-        
-
         <!-- Navbar-Collapse -->
         <div class="collapse navbar-collapse" id="navbar-toggler">
 
             <!-- Nav Links -->
-            
-                <ul class="navbar-nav nav-menu mx-auto mb-2 mb-md-0">
+                <ul class="navbar-nav nav-menu mb-2 mb-md-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="skate-link" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             Skate
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="skate-link">
+                        <div class="dropdown-menu p-2 border-0" aria-labelledby="skate-link">
                             <a href="{% url 'products' %}?category=decks" class="dropdown-item">Decks</a>
                             <a href="{% url 'products' %}?category=wheels" class="dropdown-item">Wheels</a>
                             <a href="{% url 'products' %}?category=trucks" class="dropdown-item">Trucks</a>
@@ -118,7 +116,7 @@
                             aria-expanded="false">
                             Accessories
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
+                        <div class="dropdown-menu p-2 border-0" aria-labelledby="accessories-link">
                             <a href="{% url 'products' %}?category=caps_beanies" class="dropdown-item">Caps &amp;
                                 Beanies</a>
                             <a href="{% url 'products' %}?category=dvds_zines" class="dropdown-item">Dvds &amp;
@@ -134,7 +132,7 @@
                             aria-expanded="false">
                             Brands
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="brands-link">
+                        <div class="dropdown-menu p-2 border-0" aria-labelledby="brands-link">
                             <a href="{% url 'products' %}?brand=alltimers" class="dropdown-item">Alltimers</a>
                             <a href="{% url 'products' %}?brand=anti_hero" class="dropdown-item">Anti Hero</a>
                             <a href="{% url 'products' %}?brand=bones" class="dropdown-item">Bones</a>
@@ -153,25 +151,17 @@
                             aria-expanded="false">
                             All Products
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                        <div class="dropdown-menu p-2 border-0" aria-labelledby="all-products-link">
                             <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                             <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
                                 Category</a>
                             <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                         </div>
                     </li>
-
-                     <!-- Mobile Search Bar-->
-         
-            
                 </ul>
-
-        
-        
-       
-            
-                
-        <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
+          
+   
+        <ul class="list-inline list-unstyled me-2 mb-0 d-flex nav-icons ml-auto">
             <li class="list-inline-item">
                 <!-- Search Icon -->
                 <a class="text-black" href="#" id="mobile-search" data-toggle="dropdown"
@@ -185,7 +175,7 @@
                     <form class="form" method="GET" action="{% url 'products' %}">
                         <div class="input-group search-bar float-right">
                             <input class="form-control border rounded-0" type="text" name="q"
-                                placeholder="Search">
+                                placeholder="What you looking for?">
                             <div class="input-group-append">
                                 <button class="form-control form-control btn btn-pink hover-pink border rounded-0"
                                     type="submit">
@@ -205,7 +195,7 @@
                         <div><i class="ri-user-line ri-xl icon"></i></div>
                     </div>
                 </a>
-                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                <div class="dropdown-menu p-2 border-0" aria-labelledby="user-options">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                     <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
@@ -232,67 +222,8 @@
             </li>
         </ul>
         </div>
-
-                 
-
-                <!-- <div class="large-nav collapse collapsed-search fixed-top" id="searchCollapse">
-                    <div class="card card-body border-0 rounded-0 search-nav">
-                        <form method="GET" action="{% url 'products' %}" class="d-flex mx-auto">
-                            <input class="form-control form-control-sm me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="search">
-                            <button class="btn btn-outline-dark btn-sm rounded-0" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div> -->
-
-        
-
-
     </nav>
-    <!-- <div class="row bg-grey mx-2 justify-content-end d-flex"> -->
-        <!-- Search Bar-->
-          <!-- <form method="GET" action="{% url 'products' %}" class="form-inline d-flex my-2 my-lg-0">
-            <input class="form-control bg-grey mr-sm-2" type="text" name="q">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                   <div class="text-center">
-                       <div><i class="ri-search-line ri-xl icon"></i></div>
-                       <p class="my-0">Search</p>
-                   </div>
-               </a>
-            </input>
-        </form>
-
-    </div> -->
-
-     <!-- <form method="GET" action="{% url 'products' %}" class="form-inline d-flex my-2 my-lg-0">
-            <input class="form-control-sm me-2 rounded-0" type="search" placeholder="Search" aria-label="Search" name="search">
-            <button class="btn btn-black hover-pink btn-sm rounded-0" type="submit">Search</button>
-        </form> -->
-
-          <!-- Search Bar-->
-          <!-- <form method="GET" action="{% url 'products' %}" class="form-inline d-flex my-2 my-lg-0">
-            <input class="form-control bg-grey mr-sm-2" type="text" name="q">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                   <div class="text-center">
-                       <div><i class="ri-search-line ri-xl icon"></i></div>
-                       <p class="my-0">Search</p>
-                   </div>
-               </a>
-            </input>
-        </form> -->
-
     
-       
-        
-
-        
-    
-      
-
-
-    
-
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -343,6 +274,23 @@
         $("#flash-messages").fadeTo(3000, 500).slideUp(500, function(){
         $("#flash-messages").slideUp(500);
         });
+
+        // jQuery(document).ready(function($) {
+        // var alterClass = function() {
+        // var ww = document.body.clientWidth;
+        // if (ww < 992) { $('#nav-items').removeClass('nav-menu'); } else if (ww>= 992) {
+        //     $('#nav-items').addClass('nav-menu');
+        //     };
+        //     };
+        //     $(window).resize(function(){
+        //     alterClass();
+        //     });
+        //     //Fire it when the page first loads:
+        //     alterClass();
+        //     });
+        // function resize() {
+        // if (screen.width >= 992) { document.getElementById("nav-items").classList.add("center-menu"); } else {
+        //     document.getElementById("nav-items").classList.remove("center-menu"); } }
     </script>
     {% endblock %}
 

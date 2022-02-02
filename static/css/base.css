@@ -30,6 +30,10 @@ body {
     width: 100%;
 }
 
+a:hover {
+    color: rgb(245, 61, 162) !important;
+}
+
 /* --- Custom classes --- */
 .spacing {
     height: 20px;
@@ -251,12 +255,30 @@ a:hover {
 
 
   /* --- Base template --- */
-.banner-text{
+/* .banner-text{
     font-size: 11px;
-}
+} */
 
 .main-nav-link{
     background-color: white;
+}
+
+.dropdown-item {
+    padding-left: 8px;
+}
+
+.nav-item a:hover {
+    color: rgb(245, 61, 162) !important;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    color: rgb(245, 61, 162) !important;
+    text-decoration: none;
+}
+
+.social-footer a:hover {
+    color: rgb(245, 61, 162) !important;
 }
 
 .nav-toggler-btn {
@@ -458,24 +480,24 @@ a:hover {
 
 
 /* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         z-index: 1030;
-    }
+    } */
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 50px;
     }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
+@media (max-width: 768px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 30px;
     }
 
     /* body {
@@ -518,9 +540,17 @@ a:hover {
 } 
 
 
+/* ** to center nav links on desktop ** */
 
-
-
+@media (min-width: 992px) {
+    .nav-menu {
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+} 
 
 
 /* --- spinner overlay --- */
