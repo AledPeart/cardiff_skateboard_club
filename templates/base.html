@@ -49,10 +49,45 @@
         </button>
         <!-- CSC Logo -->
         
-            <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <img src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499"
-                    alt="CSC logo"><span class="logo-font d-none d-md-inline-flex text-black px-1 my-0">Cardiff Skateboard Club</span>
+            <a href="{% url 'home' %}" class="nav-link">
+                <img class="main-logo-link" src="https://cdn.shopify.com/s/files/1/1619/8105/files/cscLOGO_50x.png?v=1638443499"
+                    alt="CSC logo"><span class="logo-font d-none d-sm-inline-flex text-black px-1 my-0">Cardiff Skateboard Club</span>
             </a>
+             <!-- User/Bag on mobile -->
+            <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
+            <li class="list-inline-item dropdown mx-1 d-flex d-lg-none">
+                <a class="text-black" href="#" id="user-options" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="ri-user-line ri-lg icon"></i></div>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
+                    {% endif %}
+                    <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+            </li>
+            <li class="list-inline-item mx-1 d-flex d-lg-none">
+                <a class="text-black" href="{% url 'view_bag' %}">
+                    <div class="text-center">
+                        {% if total %}
+                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon"><small><p class="text-pink mb-0">{{ product_count }}</p></small></i></div>
+                        {% else %}
+                        <div><i class="ri-shopping-bag-line ri-lg icon"></i>
+                        {% endif %}
+                        </div> 
+                    </div>
+                </a>
+            </li>
+        </ul>
 
             
         
@@ -139,11 +174,10 @@
         <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
             <li class="list-inline-item">
                 <!-- Search Icon -->
-                <a class="text-black nav-link" href="#" id="mobile-search" data-toggle="dropdown"
+                <a class="text-black" href="#" id="mobile-search" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
                         <div><i class="ri-search-line ri-xl icon"></i></div>
-                        <p class="my-0">Search</p>
                     </div>
                 </a>
                 <!-- Hidden search Bar -->
@@ -163,13 +197,12 @@
                 </div>
             </li>
 
-            <!-- User/Bag -->
-            <li class="list-inline-item dropdown mx-2">
-                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+            <!-- User/Bag on desktop -->
+            <li class="list-inline-item dropdown mx-1 d-none d-lg-flex">
+                <a class="text-black" href="#" id="user-options" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
                         <div><i class="ri-user-line ri-xl icon"></i></div>
-                        <p class="my-0">Account</p>
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -185,17 +218,15 @@
                     {% endif %}
                 </div>
             </li>
-            <li class="list-inline-item mx-2">
-                <a class="text-black nav-link" href="{% url 'view_bag' %}">
+            <li class="list-inline-item mx-1 d-none d-lg-flex">
+                <a class="text-black" href="{% url 'view_bag' %}">
                     <div class="text-center">
-                        <div><i class="ri-shopping-bag-line ri-xl icon"></i></div>
-                        <p class="my-0 text-pink">
-                            {% if total %}
-                            £{{ total|floatformat:2 }}
-                            {% else %}
-                            £0.00
-                            {% endif %}
-                        </p>
+                        {% if total %}
+                        <div><i class="ri-shopping-bag-line text-pink ri-xl icon"><small><p class="text-pink mb-0">{{ product_count }}</p></small></i></div>
+                        {% else %}
+                        <div><i class="ri-shopping-bag-line ri-xl icon"></i></div> 
+                        {% endif %}
+                        
                     </div>
                 </a>
             </li>

@@ -255,10 +255,6 @@ a:hover {
     font-size: 11px;
 }
 
-.main-logo-link {
-    width: fit-content;
-}
-
 .main-nav-link{
     background-color: white;
 }
@@ -500,6 +496,7 @@ a:hover {
     }
 } 
 
+/* increase width of the search bar on mobile */
 @media (max-width: 1200px) {
     .search-bar {
         width: 50%;
@@ -510,6 +507,16 @@ a:hover {
         width: 100%;
      }
 } 
+
+/* reduce logo image and center on mobile */
+@media (max-width: 576px) {
+    .main-logo-link {
+        width: 75%;
+        height: auto;
+        float: right;
+     }
+} 
+
 
 
 
