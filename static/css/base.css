@@ -23,28 +23,12 @@ body {
 
 .content {
     flex: 1 0 auto; 
-   
 }
 
 .spacer-block {
     height: 100px;
     width: 100%;
 }
-
-.jumbo-large {
-    height: 500px;
-    width: 100%;
-}
-
-.footer-bottom {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-
-  
-  
 
 /* --- Custom classes --- */
 .spacing {
@@ -260,6 +244,11 @@ a:hover {
     opacity: 1;
   }
 
+  .jumbo-large {
+    height: 500px;
+    width: 100%;
+}
+
 
   /* --- Base template --- */
 .banner-text{
@@ -279,15 +268,20 @@ a:hover {
 }
 
 .search-bar {
-    border: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 50px;
+   width: 25%;
 }
 
 .nav-menu a {
     color: black !important;
     margin-left: 5px;
 }
+
+.footer-bottom {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
   
   /* --- icons --- */
 /* from Bulma */
@@ -505,6 +499,18 @@ a:hover {
         max-width: 100%;
     }
 } 
+
+@media (max-width: 1200px) {
+    .search-bar {
+        width: 50%;
+     }
+} 
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+     }
+} 
+
 
 
 
