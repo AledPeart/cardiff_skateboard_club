@@ -30,6 +30,11 @@ body {
     width: 100%;
 }
 
+.spacer-block-sm {
+    height: 50px;
+    width: 100%;
+}
+
 a:hover {
     color: rgb(245, 61, 162) !important;
 }
