@@ -224,8 +224,45 @@ A relational database was used for this project. It was the obvious choice given
  
 ![Database Schema](media/readme-images/csc-database-schema.jpeg)
 
-### Products
-* Holds all the key information relating to the each product
+The following is a brief explanation of how the various models in the databse interact: 
+
+### Product
+* Holds all the key information relating to each product.
+* Links to the Category model in order that each product falls within its given category.
+* Links to the Brands models as each product has a brand type.
+* Also links to the Product Review model so that reviews are linked to specific products.
+
+### Category
+* Stores details of each product category.
+* links to the product table in so that each product has a given category.
+
+### Brands
+* Stores details of each product brand.
+* links to the product table in so that each product has a particulare brand.
+
+### ProductReview
+* Holds information relating to each product review.
+* Links to the user model so that each review is linked to a specifc user.
+* Also links to the product model as each review is tied to a specific product
+
+### OrderLineItem
+* Links the product model to the order model
+* Pulls the relevant product information which is added to the users order
+
+### User 
+* Created when a user registers an account
+* Holds basic user info and links to the user profile model as well as to the product review model.
+
+### UserProfile
+* links to the user model
+* Stores delivery details and the users wishlist.
+* User wishlist links to the product model via a ManyToManyField as many users may have many products added to their wishlist.
+* Also provides user information to the order model.
+
+### Order 
+* This model stores the complete order information.
+* Pulls product information via the OrderLineItem model.
+* Pulls user information from the UserProfile model
 
 
 
