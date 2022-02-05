@@ -55,6 +55,10 @@
                         </p>
                     </div>
                 </div>
+
+                <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=asc" class="btn btn-primary" disabled>Price (low to high)</a>
+                <a href="{% url 'products' %}?category={{ current_categories }}&sort=name&direction=asc" class="btn btn-primary" disabled>Price (high to low)</a>
+                
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -74,7 +78,7 @@
                                     <p><span class="text-pink mb-0 small">{% include 'products/includes/star_ratings_avg.html' %}</span></p>
                                     <div class="row justify-content-end">
                                         <div class="col-12 col-md-10">
-                                            <a href="{% url 'product_detail' product.id %}" class="btn btn-small btn-black hover-pink thin text-uppercase rounded-0">See More</a>
+                                            <a href="{% url 'product_detail' product.id %}" class="btn btn-small btn-pink hover-pink thin text-uppercase rounded-0">See More</a>
                                         </div>
                                         <div class="col-12 col-md-1">{% if product in request.user.userprofile.wishlist.all %}
                                             <a href="{% url 'add_to_wishlist' product.id %}"><i class="ri-heart-fill text-pink ri-lg icon"></i></a>

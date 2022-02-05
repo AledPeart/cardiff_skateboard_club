@@ -36,7 +36,8 @@
                         <h5 class="card-title">{{product.name}}</h5>
                         <p class="card-text">{{product.description}}</p>
                         <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
-                        <a type="button" class="btn btn-pink hover-pink fw500 btn-sm" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
+                        <a type="button" class="btn btn-black hover-pink fw500 btn-sm" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
+                        <a type="button" class="btn btn-pink hover-pink fw500 btn-sm" href="{% url 'product_detail' product.id %}">View Product</a>
                          
                       </div>
                     </div>
