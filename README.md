@@ -110,9 +110,82 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Site Header and Footer
 * CSC logo in the top left that links to the home page
 * Navigation menu is positioned centrally and includes a series of dropdown menus that allow users to filter products by type or brand, as well as to order the products by price and category.
-* On the far right of the navbar are search, user and bag icons, that reveal a hidden search bar, links to the user's dashboard and their shopping bag.
-
+* On the far right of the navbar are search, user and bag icons.
+* Search Icon reveals a hidden search bar to reduce screen clutter, particularly on mobile.
+* Search bar allows users to search the products by name and description.
+* If users are logged in the user icon reveals a dropdown menu which links to the users dashboard and an option to log out of the site.
+* If the user is a Site Admin they will lsao be shown a link to the 'product admin' page.
+* If the user is not logged in the dropdown will show the option to login to the site or to register an account.
+* Bag icon links to the users shopping bag and is pink if there are items in the bag. The number of items is also shown to the user.
 * Footer displays the social media icons (for demonstration, not currently active)
+
+### Home Page
+* Users are shown a hero image of a skateboarder and the CSC logo and a short introductory paragraph to immediately make the purpose of the site clear.
+* Users are shown a link to learm more about CSC, and a  'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.
+* Below this a series of 3 colourful images link to diffrent products in the store.
+* There is a nother short paragraph about CSC and an image to encourage supporting local independant shops.
+
+### Products Page
+* Products are laid out in a convenient grid style which stacks nicely on mobile devices.
+* Users are able to use the menus in the navbar to filter products by categories or brands.
+* Users can then sort the items in order by price, name, brand or category by clicking the relevant buttons.
+* An information box displays the amount of products the user is viewing and also informs them of the results if they have searched for a product. 
+* Each product has an image aand some key information underneath, including the average rating of the product.
+* Users are able to add a product to their wishlist by clicking on the heart icon.
+* Users are invited to click the 'See More' button which links to the 'product details' page.
+
+### Product Details Page
+* Users are shown all the information pertaining to each product
+* Page split into 3 distinct sections to display this information to the user.
+* The top section contains a large product image and other key information such as price, rating and how many users have recommended the product.
+* Users are able to add/remove products to/from their wishlist.
+* The middle section allows users to select the desired number of a particular item and add it to their shopping bag.
+* Confirmation messages are used to confirm the users actions. 
+* On adding to their bag users are shown a 'toast' which summarises their bag contents, and offers them a link to view their bag.
+
+### Bag Page
+* Users are shown a nice summarised list of the items in their bag
+* Users are able to adjust the quantiy of each item in their bag or remove them completely.
+* Users are shown the grant total of their items and any shipping costs as well as how much more they need to spend to reveive free shipping (if applicable).
+* User are given the option to checkout or to keep shopping.
+
+### Checkout Page
+* Users are presented with nicely laid out form to complete in order to submit their personal, delivery and payment details.
+* Summarise details of the priducts being purchased and the grand total are shown.
+* If users are returning customer their delivery details are pre-poulated for convenience.
+* Registered users are able to save their details to their profile, and un-registered users are given the option of creating an account in order to do so.
+* Users are warned on how much their card will be charged.
+* Bootstrap 'spinner' used to inform customers that their payment is being processed.
+* Security, payment errors, and card payments are handled via integration with 'Stripe' payments.
+ 
+### Checkout Success
+* Users are presented with a 'toast' message to confirm their order was succesul and that a confirmation email has been sent.
+* A detailed order summary is presented, and then saved to the user's profile if applicable for them to view.
+* Users are given a convenient linkback to the store so they they can 'Keep Shopping!'
+* 
+
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+
+
 
 
 
