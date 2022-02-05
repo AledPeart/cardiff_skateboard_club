@@ -265,6 +265,55 @@ The following is a brief explanation of how the various models in the databse in
 * Pulls user information from the UserProfile model
 
 
+## Testing
+
+You can view my separate TESTING.md file [here](TESTING.md)
+
+## Deployment
+
+## Technologies Used
+
+### Languages
+* [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML) 
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+* [Javascript](https://www.javascript.com/)
+* [Python](https://www.python.org/)
+
+### Frameworks
+* [Django](https://www.djangoproject.com/)
+* [Bootstrap](https://getbootstrap.com/) 
+* [JQuery](https://jquery.com/) 
+
+### Other
+* [Popper.js](https://popper.js.org/) 
+* [PIP3](https://pip.pypa.io/en/stable/)
+* [dnspython](https://www.dnspython.org/)
+* [RandomKeyGen](https://randomkeygen.com/)
+* [Responsinator](https://www.responsinator.com/)
+* [AmIResponsive](http://ami.responsivedesign.is/)
+* [Git](https://git-scm.com/) 
+* [Github](https://github.com/) 
+* [Gitpod](https://www.gitpod.io/) 
+* [Heroku](https://www.heroku.com/)
+* [Balsamiq](https://balsamiq.com/)
+* [Pillow](https://pillow.readthedocs.io/en/stable/)
+* [BOTO3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
+* [AWS](https://aws.amazon.com/cli/)
+* [Stripe](https://stripe.com/gb)
+* [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+* [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
+* [Google Fonts](https://fonts.google.com/) 
+* [Font Awesome](https://fontawesome.com/) 
+* [Remixicon](https://remixicon.com/)
+* [Photoshop](https://www.photoshop.com/en) 
+* [LucidChart](https://www.lucidchart.com/)
+* [CSVtoJson](https://gist.github.com/pamelafox/1878143)
+* [W3C](https://validator.w3.org/) 
+* [w3C](https://jigsaw.w3.org/css-validator/) 
+* [JSHint](https://jshint.com/)
+* [AutoPrefixer](https://autoprefixer.github.io/) 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+
 
 
 
