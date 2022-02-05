@@ -25,7 +25,7 @@
 CSC or 'Cardiff Skateboard Club' was founded originally in 2008 by a group of local skateboarders, as a sort of informal club/collective, and is a way for like minded people to get together, socialize organise events and above all ride skateboards. When Cardiff's famous City Surf store closed in 2016, Cardiff Skateboard Club was able to fill that void and have been successfully running a skate shop from the centre of Cardiff ever since. The good folks at CSC were kind enough to allow me to base my MS4 project on their store, they have provided me with a selection of products complete with images, prices and descriptions as well as use of their logo and some additional decorative images. From this I have built a functioning e-commerce store, that organises and showcases the available products and allows user to view and purchase them directly.
 
 ## User stories
-Here I will address the aims and goals of the store from both the perspectives of a new user, registered user and of the owner. |
+Here I will address the aims and goals of the store from both the perspectives of a new user, registered user and of the owner.
 
 ### As a new user I want to
 * Quickly and easily understand the purpose of the site to decide if I want to stay
@@ -139,9 +139,13 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Page split into 3 distinct sections to display this information to the user.
 * The top section contains a large product image and other key information such as price, rating and how many users have recommended the product.
 * Users are able to add/remove products to/from their wishlist.
+* Site admins are able to edit or delete individual products. 
 * The middle section allows users to select the desired number of a particular item and add it to their shopping bag.
 * Confirmation messages are used to confirm the users actions. 
 * On adding to their bag users are shown a 'toast' which summarises their bag contents, and offers them a link to view their bag.
+* In the bootom area the users can view any reviews left by other users.
+* Registered users can leave a product review, and also edit their own reviews.
+* Site admin users can edit or delete reviews.
 
 ### Bag Page
 * Users are shown a nice summarised list of the items in their bag
@@ -161,29 +165,59 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Checkout Success
 * Users are presented with a 'toast' message to confirm their order was succesul and that a confirmation email has been sent.
 * A detailed order summary is presented, and then saved to the user's profile if applicable for them to view.
-* Users are given a convenient linkback to the store so they they can 'Keep Shopping!'
-* 
+* Users are given a convenient linkback to the store so they they can 'Keep Shopping!'.
 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+### User Dashboard
+* Convenient area for registered users to acces all the features associated with their account.
+* Users can view and update their their details.
+* View their order history, where they can view specific details of individual oreders and link to the products themselves in case they want to re-order.
+* View their wishlist, where users can remove items, or head to the product detaiuls page in order to purchase the item.
+
+### Product Admin
+* Users with site admin access can add new products to the site, as well as edit and delete existing ones from the product details page.
+
+### Additional Features
+
+#### User Reviews/Ratings
+* Users can add reviews of products, which incluse a description, star rating and whether they recommend the product. 
+* This information is presented for other users in various ways across the site.
+* Users can edit their own reviews, and site admins can edit or delete any review.
+
+### User Wishlist
+* Users are able to add and remove products from a whishlist which is linked to their profile.
+* Users can click a heart icon to add/remove an item from the products page, or via a button on the product detail page.
+* View all saved items in within tgheir dashboard.
+
+### Messages
+* Django's message framework used in conjunction with Bootstarp toasts to provide confirmation messages to user actions.
+* Info, Success, Warning and Error tags have been utilised to give the user consistent feedback.
+
+### Defensive Programming
+* Defensive programming principles employed throughout the site.
+* Default image is loaded if a product image is not available or cannot be loaded.
+* Django's @login_required decorater is used to ensure certain features are are only available to registered users. 
+* Users re-directed to the login page where applicable.
+* Further controls have been implemented programatically through the backend to ensure only site admin users can add, edit or delete products or delete reviews.
+* Account security covered by Django's 'allauth'.
+* Django form and image validation ensures inputs do not compromise the database.
+* Payment processing and securtiy covered by 'Stripe".
+* Bootstrap modals used to force amin users to confirm that they  are happy to delete a product or a review.
+* Custom 404 and 500 error pages displayed if displayed if a page can't be found.
+* Button and menu links on the error pages so user can easily return to the site.
+
+## Features left to Implement
+* More skateboarding news/information/blogs links to events etc to promote the community based ethos of CSC.
+* Users can sign up to a mailing lst to be informed about special offeres or discounts.
+* Site admin feature to offer sale discounts on certain products/brands.
+* Users are shown 'suggested' products based on the products they have been viewing.
+* Social media integration to allow users to register easily and to share purchases, and increase sales.
+* Implement Ajax integration to reduce the number of site 're-loads' to ensure a better user experience.
+* Pagination on the proucts page. I was able to get this working but at the expense of effective product filtering. With more time it would be a nice feature to have. More details in [TESTING.md](TESTING.md) 
+
+
+
+
+ 
 
 
 
