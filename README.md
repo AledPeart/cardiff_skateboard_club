@@ -222,7 +222,10 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 A relational database was used for this project. It was the obvious choice given the number of relationships that exist betwwen the different datasets. During the development phase SQlite was used, and then once the project had been deployed to Heroku Postgres was used.
  
-![Database Schema](media/readme-images/csc database schema.jpeg)
+![Database Schema](media/readme-images/csc-database-schema.jpeg)
+
+### Products
+* Holds all the key information relating to the each product
 
 
 
