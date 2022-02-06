@@ -328,18 +328,18 @@ web: gunicorn cardiff_skateboard_club.wsgi:application
 * You need to tell __Heroku__ which variables are required, as follows:
 
 ```
-| Key                   	| Value                                                  	|
-|-----------------------	|--------------------------------------------------------	|
-| AWS_ACCESS_KEY_ID     	| Your variable taken from the AWS CSV file  (see below) 	|
-| AWS_SECRET_ACCESS_KEY 	| Your variable taken from the AWS CSV file  (see below) 	|
-| DATABASE_URL          	| Generated when Postgres is installed (see below)       	|
-| EMAIL_HOST_USER       	| Your site's email address                              	|
-| EMAIL_HOST_PASS       	| Your password from the email client                    	|
-| SECRET_KEY            	| Your secret key                                        	|
-| STRIPE_PUBLIC_KEY     	| Can be found in the Stripe Dashboard under API Keys    	|
-| STRIPE_SECRET_KEY     	| Can be found in the Stripe Dashboard under API Keys    	|
-| STRIPE_WH_SECRET      	| Can be found in the Stripe Dashboard under Webhooks    	|
-| USE_AWS               	| True                                                   	|
+| Key                   | Value                                                  |
+|-----------------------|--------------------------------------------------------|
+| AWS_ACCESS_KEY_ID     | Your variable taken from the AWS CSV file  (see below) |
+| AWS_SECRET_ACCESS_KEY | Your variable taken from the AWS CSV file  (see below) |
+| DATABASE_URL          | Generated when Postgres is installed (see below)       |
+| EMAIL_HOST_USER       | Your site's email address                              |
+| EMAIL_HOST_PASS       | Your password from the email client                    |
+| SECRET_KEY            | Your secret key                                        |
+| STRIPE_PUBLIC_KEY     | Can be found in the Stripe Dashboard under API Keys    |
+| STRIPE_SECRET_KEY     | Can be found in the Stripe Dashboard under API Keys    |
+| STRIPE_WH_SECRET      | Can be found in the Stripe Dashboard under Webhooks    |
+| USE_AWS               | True                                                   |
 ```
 
 * Under the __Resources__ tab search for and add  __Heroku Postgres__ to your app (choose the Hobby-Dev_free option)
