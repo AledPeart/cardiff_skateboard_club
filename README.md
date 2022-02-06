@@ -328,17 +328,18 @@ web: gunicorn cardiff_skateboard_club.wsgi:application
 * You need to tell __Heroku__ which variables are required, as follows:
 
 ```
-Key	                        Value
-AWS_ACCESS_KEY_ID	        Your variable taken from the AWS CSV file  (see below - connecting Django to S3)
-AWS_SECRET_ACCESS_KEY	    Your variable taken from the AWS CSV file  (see below - connecting Django to S3)
-DATABASE_URL	            Generated when Postgres is installed (see below)
-EMAIL_HOST_USER	            Your site's email address
-EMAIL_HOST_PASS	            Your assword from the email client
-SECRET_KEY	                Your secret key
-STRIPE_PUBLIC_KEY	        Can be found in the Stripe Dashboard under API Keys 
-STRIPE_SECRET_KEY	        Can be found in the Stripe Dashboard under API Keys
-STRIPE_WH_SECRET	        Can be found in the Stripe Dashboard under Webhooks
-USE_AWS	                    True
+| Key                   	| Value                                                  	|
+|-----------------------	|--------------------------------------------------------	|
+| AWS_ACCESS_KEY_ID     	| Your variable taken from the AWS CSV file  (see below) 	|
+| AWS_SECRET_ACCESS_KEY 	| Your variable taken from the AWS CSV file  (see below) 	|
+| DATABASE_URL          	| Generated when Postgres is installed (see below)       	|
+| EMAIL_HOST_USER       	| Your site's email address                              	|
+| EMAIL_HOST_PASS       	| Your password from the email client                    	|
+| SECRET_KEY            	| Your secret key                                        	|
+| STRIPE_PUBLIC_KEY     	| Can be found in the Stripe Dashboard under API Keys    	|
+| STRIPE_SECRET_KEY     	| Can be found in the Stripe Dashboard under API Keys    	|
+| STRIPE_WH_SECRET      	| Can be found in the Stripe Dashboard under Webhooks    	|
+| USE_AWS               	| True                                                   	|
 ```
 
 * Under the __Resources__ tab search for and add  __Heroku Postgres__ to your app (choose the Hobby-Dev_free option)
@@ -348,23 +349,20 @@ USE_AWS	                    True
 ```
 pip3 install dj_database_url
 pip3 install psycopg2
-
 ```
 * Add  __dj_database_url__ and __psycopg2__ to your __requirements.txt__ file
 
 * Log in to __heroku__ from the CLI using:
 ```
 heroku login -i
-
 ```
 
 * You can now migrate the databse from __Django__ into __Postgress__ using:
 ```
 heroku run python3 manage.py migrate
-
 ```
 
-### Settimg up AWS 
+### Setting up AWS 
 
 * Create an __Amazon AWS__ account
 * Search for __S3__ and then create a new bucket.
@@ -388,7 +386,6 @@ heroku run python3 manage.py migrate
       "ExposeHeaders": []
   }
 ]
-
 ```
 
 * Now under __Bucket Policy__ generate a Bucket Polity. Bucket Policy type is 'S3 Bucket Policy' __Bucket ARN__ 
@@ -414,12 +411,10 @@ heroku run python3 manage.py migrate
 * Edit the 'Resource' key as follows: 
 
 ```
-
       "Resource": [
           "{ARN}",
           "{ARN}/*"
       ]
-
 ```
 
 * Click 'Next' then 'Review' and enter a name and description (again this should be relevant to your Bucket name).
@@ -443,7 +438,6 @@ heroku run python3 manage.py migrate
 ``` 
 pip3 install boto3
 pip3 install django-storages
-
 ```
 
 * Add both of these to your  __requirements.txt__ file.
@@ -472,7 +466,6 @@ In order to clone and run this project locally, you will need to follow these st
 8.  You will also need to install all the required packages from the  __requirements.txt__ by using:
 ```
 pip3  install -r requirements.txt
-
 ```
 
 Full details of these summarised steps can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
@@ -519,6 +512,7 @@ Full details of these summarised steps can be found [here](https://docs.github.c
 * [W3C - CSS Validation](https://jigsaw.w3.org/css-validator/) 
 * [JSHint](https://jshint.com/)
 * [AutoPrefixer](https://autoprefixer.github.io/) 
+* [TableGenerator](https://www.tablesgenerator.com/markdown_tables)
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
 
 ## Credits
