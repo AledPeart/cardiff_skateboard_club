@@ -103,8 +103,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 * My initial wireframes can be seen [here](media/readme-images/wireframes.png)
 * The layout of the site has been largely governed by the accepted norms of a modern e-commerce store
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
 
 ## Layout and Features
 
@@ -215,8 +214,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Implement Ajax integration to reduce the number of site 're-loads' to ensure a better user experience.
 * Pagination on the proucts page. I was able to get this working but at the expense of effective product filtering. With more time it would be a nice feature to have. More details in [TESTING.md](TESTING.md) 
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
 
 ## Database 
 
@@ -312,7 +310,7 @@ You can view my separate TESTING.md file [here](TESTING.md)
 * [W3C - CSS Validation](https://jigsaw.w3.org/css-validator/) 
 * [JSHint](https://jshint.com/)
 * [AutoPrefixer](https://autoprefixer.github.io/) 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
 
 ## Credits
 
@@ -323,13 +321,31 @@ You can view my separate TESTING.md file [here](TESTING.md)
     * [Code With Stein](https://www.youtube.com/watch?v=MgCRkbRTgtM) - Ratings/reviews
     * [Codemy](https://www.youtube.com/watch?v=N-PB-HMFmdo) - Pagination
 
-* General deas and knowledge gleamed from: 
+* General ideas and knowledge gleamed from: 
   * [Django Docs](https://docs.djangoproject.com/en/3.2/)
   * [W3 Schools](https://www.w3schools.com/)
   * [CSS-Tricks](https://css-tricks.com/)
   * [Bootstrap](https://getbootstrap.com/)
   * [Stack Overflow](https://stackoverflow.com/) - (specific credits have been added as comment in the code)
   * [MDN](https://developer.mozilla.org/en-US/)
+* Fellow student projects
+  *  [Ed B - Moose Juice](https://github.com/Edb83/moose-juice)
+
+## Media and Content
+* Product Images, site logo and homepage copy (adapted) [Cardiff Skateboard Club](https://cardiffskateboardclub.com/collections/bronze?gclid=Cj0KCQiAgP6PBhDmARIsAPWMq6n7PZg9cdhQfIASzSawSqJx1ZSVio0muES1AWudvZb9B8bdCyQmWtwaAok-EALw_wcB)
+* Main homepage image - [jacobbentzinger](https://unsplash.com/@jacobbentzinger)
+* Independant shop artwork - [Phil Morgan](https://philmorgan.com/about/)
+* Skatebord icon - [Pngset](https://pngset.com/free/skateboard?page=26)
+ 
+
+## Acknowledgements
+
+* A massive huge thank you to the awesome [Cardiff Skateboard Club](https://cardiffskateboardclub.com/collections/bronze?gclid=Cj0KCQiAgP6PBhDmARIsAPWMq6n7PZg9cdhQfIASzSawSqJx1ZSVio0muES1AWudvZb9B8bdCyQmWtwaAok-EALw_wcB) for allowing me to base this project on theirs.
+* My mentor, Antonio Rodriguez - for his advice and guidance.
+* Code institute tutors (particularly @igor_ci), for their speedy help and explanations.
+* Slack forums/webinars.
+
+
 
 
  

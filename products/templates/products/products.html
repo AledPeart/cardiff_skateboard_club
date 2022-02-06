@@ -10,19 +10,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+    
     <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
                 {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-                    </a>
+                    <div class="category-badge">
+                        <h5 class=" mb-0 align-bottom text-pink">{{ c.friendly_name }}</h5>
+                        <p><img src="/media/skateboard.png" alt="small graphic of a skateboard"></p>
+                    </div>
                 {% endfor %}
                 {% for b in current_brands %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?brand={{ b.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ b.friendly_name }}</span>
-                    </a>
+                    <div class="category-badge">
+                        <h5 class=" mb-0 align-bottom text-black">{{ b.friendly_name }}</h5>
+                        <p><img src="/media/skateboard.png" alt="small graphic of a skateboard"></p>
+                    </div>
                 {% endfor %}
                 <hr class="w-50 mb-1">
             </div>
