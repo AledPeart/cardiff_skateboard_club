@@ -308,11 +308,33 @@ You can view my separate TESTING.md file [here](TESTING.md)
 * [Photoshop](https://www.photoshop.com/en) 
 * [LucidChart](https://www.lucidchart.com/)
 * [CSVtoJson](https://gist.github.com/pamelafox/1878143)
-* [W3C](https://validator.w3.org/) 
-* [w3C](https://jigsaw.w3.org/css-validator/) 
+* [W3C - HTML Validation](https://validator.w3.org/) 
+* [W3C - CSS Validation](https://jigsaw.w3.org/css-validator/) 
 * [JSHint](https://jshint.com/)
 * [AutoPrefixer](https://autoprefixer.github.io/) 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+
+## Credits
+
+* This project was created from a [Code Institute](https://codeinstitute.net/) student template
+* Initial outline for the site's functionality has been adapted from the [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) walkthrough project by Chris Zielinkski.
+* Code adapted from
+    * [Very Academy](https://www.youtube.com/watch?v=OgA0TTKAtqQ) - User wishlist 
+    * [Code With Stein](https://www.youtube.com/watch?v=MgCRkbRTgtM) - Ratings/reviews
+    * [Codemy](https://www.youtube.com/watch?v=N-PB-HMFmdo) - Pagination
+
+* General deas and knowledge gleamed from: 
+  * [Django Docs](https://docs.djangoproject.com/en/3.2/)
+  * [W3 Schools](https://www.w3schools.com/)
+  * [CSS-Tricks](https://css-tricks.com/)
+  * [Bootstrap](https://getbootstrap.com/)
+  * [Stack Overflow](https://stackoverflow.com/) - (specific credits have been added as comment in the code)
+  * [MDN](https://developer.mozilla.org/en-US/)
+
+
+ 
+  
+
 
 
 
