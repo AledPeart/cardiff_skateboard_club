@@ -189,7 +189,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 * View all saved items in within tgheir dashboard.
 
 ### Messages
-* Django's message framework used in conjunction with Bootstarp toasts to provide confirmation messages to user actions.
+* Django's message framework used in conjunction with Bootstrap toasts to provide confirmation messages to user actions.
 * Info, Success, Warning and Error tags have been utilised to give the user consistent feedback.
 
 ### Defensive Programming
@@ -269,6 +269,122 @@ You can view my separate TESTING.md file [here](TESTING.md)
 
 ## Deployment
 
+This project was developed using [Gitpod](https://www.gitpod.io/) and was committed and pushed to [Github](https://github.com/) using the following terminal commands within Gitpod:
+
+- _git add -A_ 
+- _git commit –m “commit message”_
+- _git push_
+
+The repository was then automatically deployed to Heroku. In order to do this the following steps were taken:
+
+<!-- ### Creating an env.py file
+
+You will need to create an __env.py__ file in __Github__. This file will hold your application’s environment variables and should contain the following:
+```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", " your secret key")
+os.environ.setdefault("MONGO_URI", " mongodb+srv://username@clustername.gkqqu.mongodb.net/ databasename?retryWrites=true&w=majority ")
+os.environ.setdefault("MONGO_DBNAME", " your database name ") 
+
+```
+Because it contains sensitive information it is important that you __env.py__ file is listed in your __.gitignore__ file to prevent it from being pushed to Github and being available publicly -->
+
+
+### Creating Dependancies
+Heroku will need to know the dependencies that are required to run your application. These will be stored in a __requirements.txt__ file. In order to create this run the following command in the github terminal
+```
+pip3 freeze --local > requirements.txt
+
+```
+You will then need to create a Procfile using the following command:
+
+```
+echo web: python app.py > Procfile
+
+```
+You should now have a __requirements.txt__ file which lists your dependencies, as well as a __Procfile__ which needs to contain the following line, make certain there are no blank spaces at the end of the line.
+
+```
+web: gunicorn cardiff_skateboard_club.wsgi:application
+
+```
+
+* Push these 2 files to Github
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+
+### Creating the Heroku App
+* Login to your Heroku account
+* From the Dashboard click on __new__ then click on __create new app__
+* Name your app (this needs to be lowercase and use dashes or minuses instead of spaces
+* Select the region closest to where you are based
+* Click __Create app__
+
+### Connect the Heroku app to Github
+* Under the __Deploy__ tab select __Connet to Github__ as the __Deployment method__
+* Ensure that your Github profile name is showing and add your repository name in the search field     
+* Click __search__ to locate your Github repository
+* Once you have found your repository click __Connect__
+
+
+<!-- * Before you click on __Enable Automatic Deployment__ -->
+* You will now need to add the __Environmenmt Variable__ in Heroku:
+* click on the __Settings__ tab near the top of the screen
+* In the __Config Vars__ section click on __Reveal Config Vars__
+* You need to tell __Heroku__ which variables are required, as follows:
+
+```
+Key			    Value
+IP			    0.0.0.0
+PORT			5000
+SECRET_KEY		
+MONGO_URI 		mongodb+srv://username@clustername.gkqqu.mongodb.net/databasename?retryWrites=true&w=majority	
+MONGO_DBNAME	your database name
+
+Key	                    Value
+AWS_ACCESS_KEY_ID	      Your variable taken from the AWS CSV file
+AWS_SECRET_ACCESS_KEY	  Your variable taken from the AWS CSV file
+DATABASE_URL	          Generated when Postgres is installed (see below)
+EMAIL_HOST_USER	        Yourt site's email address
+EMAIL_HOST_PASS	        Your assword from the email client
+SECRET_KEY	            Your secret key
+STRIPE_PUBLIC_KEY	      Can be found in the Stripe Dashboard under API Keys 
+STRIPE_SECRET_KEY	      Can be found in the Stripe Dashboard under API Keys
+STRIPE_WH_SECRET	      Can be found in the Stripe Dashboard under Webhooks
+USE_AWS	True            True
+```
+
+* Under the __Resources__ tab search for and add  __Heroku Postgres__ to your app (choose the Hobby-Dev_free option)
+* Click __Submit__
+* In order for __Postgress__ to work on your deployed site you will need to install  __dj_database_url__ and __psycopg2__ as follows:
+* in the __Github__ CLI type:
+```
+pip3 install dj_database_url
+pip3 install psycopg2
+```
+* Now __Enable Automatic Deployment__
+* In the __Manual Deploy__ section select __Master__ from the dropdown 
+* Click __Deploy Branch__
+* After a few minutes you should see a message confirming __Your app was successfully deployed__
+* Click __Open App__ located near the top of the page to launch your app
+
+### Cloning this repository
+
+In order to clone and run this project locally, you will need to follow these steps:
+
+1. On the main repository page in __Github__, click the button to download the _Code_ (located at the top above the list of files)
+2. Under the _HTTPS_ tab copy the URL for the repository
+3. Open the Terminal in your preferred __IDE__.
+4. Change the current working directory to the location that you would like for the new cloned directory.
+5. Type _git clone_ into the terminal and then paste in the URL that you copied earlier.
+6. Hit _enter_ to create your clone.
+7. Remember that you will need to create an env.py file to store your variables as detailed above
+
+Full details of these summarised steps can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+
 ## Technologies Used
 
 ### Languages
@@ -333,7 +449,7 @@ You can view my separate TESTING.md file [here](TESTING.md)
 
 ## Media and Content
 * Product Images, site logo and homepage copy (adapted) [Cardiff Skateboard Club](https://cardiffskateboardclub.com/collections/bronze?gclid=Cj0KCQiAgP6PBhDmARIsAPWMq6n7PZg9cdhQfIASzSawSqJx1ZSVio0muES1AWudvZb9B8bdCyQmWtwaAok-EALw_wcB)
-* Main homepage image - [jacobbentzinger](https://unsplash.com/@jacobbentzinger)
+* Main homepage image - [Jacob Bentzinger](https://unsplash.com/@jacobbentzinger)
 * Independant shop artwork - [Phil Morgan](https://philmorgan.com/about/)
 * Skatebord icon - [Pngset](https://pngset.com/free/skateboard?page=26)
  

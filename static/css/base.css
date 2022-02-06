@@ -519,7 +519,7 @@ a:hover {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 768px) {
     .header-container {
-        padding-top: 30px;
+        padding-top: 75px;
     }
 
     /* body {
