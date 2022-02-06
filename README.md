@@ -277,35 +277,26 @@ This project was developed using [Gitpod](https://www.gitpod.io/) and was commit
 
 The repository was then automatically deployed to Heroku. In order to do this the following steps were taken:
 
-<!-- ### Creating an env.py file
-
-You will need to create an __env.py__ file in __Github__. This file will hold your application’s environment variables and should contain the following:
-```
-import os
-
-os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", " your secret key")
-os.environ.setdefault("MONGO_URI", " mongodb+srv://username@clustername.gkqqu.mongodb.net/ databasename?retryWrites=true&w=majority ")
-os.environ.setdefault("MONGO_DBNAME", " your database name ") 
-
-```
-Because it contains sensitive information it is important that you __env.py__ file is listed in your __.gitignore__ file to prevent it from being pushed to Github and being available publicly -->
-
-
 ### Creating Dependancies
+
+* You will also need to create a superuser and install __gunicorn__. Use the following commands:
+```
+python manage.py createsuperuser
+
+```
+and
+
+```
+pip3 install gunicorn
+
+```
+
 Heroku will need to know the dependencies that are required to run your application. These will be stored in a __requirements.txt__ file. In order to create this run the following command in the github terminal
 ```
 pip3 freeze --local > requirements.txt
 
 ```
-You will then need to create a Procfile using the following command:
-
-```
-echo web: python app.py > Procfile
-
-```
-You should now have a __requirements.txt__ file which lists your dependencies, as well as a __Procfile__ which needs to contain the following line, make certain there are no blank spaces at the end of the line.
+You will then need to create a Procfile, which needs to contain the following line (make certain there are no blank spaces at the end of the line):
 
 ```
 web: gunicorn cardiff_skateboard_club.wsgi:application
@@ -329,31 +320,25 @@ web: gunicorn cardiff_skateboard_club.wsgi:application
 * Once you have found your repository click __Connect__
 
 
-<!-- * Before you click on __Enable Automatic Deployment__ -->
-* You will now need to add the __Environmenmt Variable__ in Heroku:
+* Do __not__ click on __Enable Automatic Deployment__ at this stage.
+
+* You will now need to add the __Environmenmt Variables__ in Heroku:
 * click on the __Settings__ tab near the top of the screen
 * In the __Config Vars__ section click on __Reveal Config Vars__
 * You need to tell __Heroku__ which variables are required, as follows:
 
 ```
-Key			    Value
-IP			    0.0.0.0
-PORT			5000
-SECRET_KEY		
-MONGO_URI 		mongodb+srv://username@clustername.gkqqu.mongodb.net/databasename?retryWrites=true&w=majority	
-MONGO_DBNAME	your database name
-
-Key	                    Value
-AWS_ACCESS_KEY_ID	      Your variable taken from the AWS CSV file
-AWS_SECRET_ACCESS_KEY	  Your variable taken from the AWS CSV file
-DATABASE_URL	          Generated when Postgres is installed (see below)
-EMAIL_HOST_USER	        Yourt site's email address
-EMAIL_HOST_PASS	        Your assword from the email client
-SECRET_KEY	            Your secret key
-STRIPE_PUBLIC_KEY	      Can be found in the Stripe Dashboard under API Keys 
-STRIPE_SECRET_KEY	      Can be found in the Stripe Dashboard under API Keys
-STRIPE_WH_SECRET	      Can be found in the Stripe Dashboard under Webhooks
-USE_AWS	True            True
+Key	                        Value
+AWS_ACCESS_KEY_ID	        Your variable taken from the AWS CSV file  (see below - connecting Django to S3)
+AWS_SECRET_ACCESS_KEY	    Your variable taken from the AWS CSV file  (see below - connecting Django to S3)
+DATABASE_URL	            Generated when Postgres is installed (see below)
+EMAIL_HOST_USER	            Your site's email address
+EMAIL_HOST_PASS	            Your assword from the email client
+SECRET_KEY	                Your secret key
+STRIPE_PUBLIC_KEY	        Can be found in the Stripe Dashboard under API Keys 
+STRIPE_SECRET_KEY	        Can be found in the Stripe Dashboard under API Keys
+STRIPE_WH_SECRET	        Can be found in the Stripe Dashboard under Webhooks
+USE_AWS	                    True
 ```
 
 * Under the __Resources__ tab search for and add  __Heroku Postgres__ to your app (choose the Hobby-Dev_free option)
@@ -363,12 +348,115 @@ USE_AWS	True            True
 ```
 pip3 install dj_database_url
 pip3 install psycopg2
+
 ```
-* Now __Enable Automatic Deployment__
+* Add  __dj_database_url__ and __psycopg2__ to your __requirements.txt__ file
+
+* Log in to __heroku__ from the CLI using:
+```
+heroku login -i
+
+```
+
+* You can now migrate the databse from __Django__ into __Postgress__ using:
+```
+heroku run python3 manage.py migrate
+
+```
+
+### Settimg up AWS 
+
+* Create an __Amazon AWS__ account
+* Search for __S3__ and then create a new bucket.
+* Choose the region applicable to your location.
+* Ensure that the bucket allows 'public access'.
+* Under the __Properties__ tab enable 'static website hosting'
+* Choose 'index.html' and 'error.html' as defaults and save the settings.
+* Under the __Permissions__ tab add the following __CORS__ configurations:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+
+```
+
+* Now under __Bucket Policy__ generate a Bucket Polity. Bucket Policy type is 'S3 Bucket Policy' __Bucket ARN__ 
+* Input these settings:
+  * Effect = Allow
+  * Principal = *
+  * Action = GetObject
+  * ARN = Beucket ARN from the s3 Bucket page.
+* Next 'Add Statement' then 'Generate Policy'
+* Copy the Policy JSON Document into the Bucket Policy Editor
+* Before clicking 'save' add '/*' to the end of the __resourcee key__ to allow access to all resorces in the bucket
+* Click 'save'
+* Finally under the 'Access Control List' tab set 'list object permissions' to __everyone__
+
+### Setting up AWS IAM (Identity and Access Management)
+
+* Within __AWS__ locate the IAM Dashboard.
+* Select 'User Groups' and then create a 'New Group'. You should choose a name that is linkable to your Bucket name.
+* Then choose 'Policies' and 'Create New Policy'.
+* Find the 'JSON' tab and click 'Import Managed Policy'.
+* Choose 'AmazonS3FullAccess' then chioose 'Import'.
+* locate the bucket __ARN__ in 'S3 Permissions' (see above)
+* Edit the 'Resource' key as follows: 
+
+```
+
+      "Resource": [
+          "{ARN}",
+          "{ARN}/*"
+      ]
+
+```
+
+* Click 'Next' then 'Review' and enter a name and description (again this should be relevant to your Bucket name).
+* Then you can Create the  Policy.
+* Go to 'User Groups' and select the group that was created previously. 
+* Under 'Permissions' choose 'Add Permissions' then 'Attach Policies'
+* Locate your policy and  now you can add the permissions.
+* Go to 'Users', add a 'User'
+* Under the 'Access Type' option choose'Programmatic access'. 
+* Click 'Next' and choos the new group that you created.
+* Continue to click through until you have the option to 'Create user'.
+* You can now download the CSV file that contains the secret keys that you can add to Heroku.
+* It is important that you download thgis file as it will not be available again. 
+
+### Connecting Django to S3
+
+* You can now connect Django to the S3 Bucket.
+* Firstly you will need to install __django-storages__ and __boto3__
+* Use the following command in the Gitpod CLI
+
+``` 
+pip3 install boto3
+pip3 install django-storages
+
+```
+
+* Add both of these to your  __requirements.txt__ file.
+
+### Deploying to __Heroku__
+* In __Heroku__:
+* You will need to add the secret keys from the csv file you downloaded to the __Config Vars__ in the __settings__ tab
+* At this point you should also delete the __DISABLE_COLLECTSTATIC__ variable
 * In the __Manual Deploy__ section select __Master__ from the dropdown 
 * Click __Deploy Branch__
 * After a few minutes you should see a message confirming __Your app was successfully deployed__
 * Click __Open App__ located near the top of the page to launch your app
+* You can now also __Enable Automatic Deployment__
 
 ### Cloning this repository
 
@@ -380,7 +468,12 @@ In order to clone and run this project locally, you will need to follow these st
 4. Change the current working directory to the location that you would like for the new cloned directory.
 5. Type _git clone_ into the terminal and then paste in the URL that you copied earlier.
 6. Hit _enter_ to create your clone.
-7. Remember that you will need to create an env.py file to store your variables as detailed above
+7. You will need to create an env.py file to store your variables as detailed above.
+8.  You will also need to install all the required packages from the  __requirements.txt__ by using:
+```
+pip3  install -r requirements.txt
+
+```
 
 Full details of these summarised steps can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
