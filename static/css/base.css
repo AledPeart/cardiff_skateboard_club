@@ -628,3 +628,7 @@ a:hover {
   } */
 
 
+  .sort-active {
+    border: 2px solid  rgb(245, 61, 162);
+    color: rgb(245, 61, 162) !important;
+  }

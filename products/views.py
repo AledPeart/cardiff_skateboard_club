@@ -14,7 +14,7 @@ def all_products(request):
     """ A view to show all CSC products """
 
     products = Product.objects.all()
-    selected_category = 'All'
+    selected_category = None
     query = None
     categories = None
     sort = None
@@ -48,7 +48,6 @@ def all_products(request):
             products = products.filter(brand__name__in=brands)
             brands = Brand.objects.filter(name__in=brands)
 
-
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -72,7 +71,6 @@ def all_products(request):
         'current_brands': brands,
         'current_sorting': current_sorting,
         'active_category': selected_category,
-        # 'product_list': product_list,
     }
 
     return render(request, 'products/products.html', context)
