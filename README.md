@@ -44,6 +44,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Easily log in or out so I can view my personal profile
 * Be able to save and remove items to a wishlist so I can decide if I want purchase them later
 * View and edit my delivery and account details to ensure my details are correct
+* Leave a product review
 * Edit my reviews so that I can ensure the reviews are correct
 * View my purchase history so I can keep track of past orders
 * Receive confirmation emails following a purchase so I know the purchase was successful

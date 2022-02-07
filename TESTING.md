@@ -4,11 +4,9 @@
 
 * Quickly and easily understand the purpose of the site to decide if I want to stay
     * Introductory paragraph underneath the hero image introduces the site and explains its purpose
-    * Quickly and easily understand the purpose of the site to decide if I want to stay
+    * Hero images and site logo show the site's purpose.
 
-![supporting screenshot](https://github.com/AledPeart/plant-base/blob/main/static/images/user-story-screenshot-1.png) 
-
- 
+![supporting screenshot](media/awaiting-image.jpeg) 
 
 * Have clear navigation tools to move around the site to find what I am looking for easily
     * Clear navigation bar at the top each page containing links to the products.
@@ -22,8 +20,10 @@
     
 * Be able to filter the products by their specific categories or brands so I can browse a particular brand or category I am looking for
     * Filter buttons/dropdown menu allows users to filter the results by category or brand and find the items they are interested in quickly.
+
 * Search for items in the shop by their name or description so I can easily find items I am looking for
     * Users are able to click the search icon on all pages and search through the product range by name and description
+
 * Sort the items in the shop by price, name, brand and category to find items within my budget, or within my desired brand/category
     * Convenient drpdown selector on mobile and filter buttons on desktop allow users to determine the order in which the products are listed
 
@@ -50,12 +50,45 @@
     * Django allauth allows users to quickly and easily create an account
     * Users need only provide a username, email and password to create an account
     * When users make a subsequent purchase they have the option to save their details to their account
-    
+
 * Have my performed actions confirmed to me so I am sure my intended action was completed.
     * Confirmation messages shown to the users following key user actions e.g adding items to bag, signing in and out, adding items to a wishlist
 
 ### ___As a registered user I also want to:___
 
+* Easily log in or out so I can view my personal profile
+    * Users can login or ou of te site with a few simple clicks.
+    * confirmation message shown to the user to confirm their action
+    * Personal dashboard is linked from the users icon in the main navbar
+
+* Be able to save and remove items to a wishlist so I can decide if I want purchase them later
+    * Users are able to quickly add and remove items on their wishlist either from the product and product detail page.
+    * Filled heart icon shows the user quickly if the item is in their wishlist
+    * Confirmation message given to the user on adding an item to their wishlist along with an invitaion to view the wishlist.
+    * Users can view their complete wishlist from the user dashboard
+
+* View and edit my delivery and account details to ensure my details are correct
+    * From the dashoard users can view their personal details and edit them.
+
+* Leave a product review
+    * Registered users who are signed in can leave a review of a chosen product
+    * Users are able to give te product a rating and a reccomendation to inform their fellow customers
+
+* Edit my reviews so that I can ensure the reviews are correct
+    * Users can subsequently edit a review from the product detail page.
+    * Users can only edit a review that they left
+
+* View my purchase history so I can keep track of past orders
+    * In their dashboard users can view their order history.
+    * Users can see all past orders and speciic details of individual orders
+
+* Receive confirmation emails following a purchase so I know the purchase was successful
+    * Users are sent a confirmation email to their account email address following a succesful purchase.
+
 ### ___As the site owner I want:___
 
-* Introductory paragraph underneath the hero image introduces the site and explains its purpose
+* Be able to add, edit or delete products to keep the store updated
+
+* Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store
+
+* Be able to delete a users review in case it may be inappropriate or unfair.
