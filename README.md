@@ -51,7 +51,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### As the site owner I want
 * Be able to add, edit or delete products to keep the store updated
 * Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store
-* Be able to delete a users review in case it may be inappropriate or unfair.
+* Be able to edit or delete a users review in case it may be inappropriate or unfair.
 
 
 ## Design
