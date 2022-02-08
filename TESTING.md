@@ -252,3 +252,11 @@
 | Product name links back to the product detail page                      | Pass   |
 | Order total and delivery costs are shown correctly                      | Pass   |
 | The 'Keep Shopping' button takes user back to the products page         | Pass   |
+
+### User Dashboard
+| Test Condition                                                                                    | Result |
+|---------------------------------------------------------------------------------------------------|--------|
+| User Dashboard Page shows three areas available to the user (details, order history and wishlist) | Pass   |
+| Icons, title and outline turn pink on hover                                                       | Pass   |
+| Each link takes the user to the correct page                                                      | Pass   |
+
