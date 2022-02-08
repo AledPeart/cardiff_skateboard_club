@@ -189,3 +189,21 @@
 | Review owners are able to edit reviews                                                                                             | Pass   |
 | Unauthenticated users are not able to leave a review or to edit/delete an existing one.                                            | Pass   |
 | Unauthenticated users are shown a message that they should sign in to leave a review                                               | Pass   |
+
+### Bag Page
+| Test Condition                                                                          | Result |
+|-----------------------------------------------------------------------------------------|--------|
+| Correct items showing in the users bag                                                  | Pass   |
+| Plus and minus icons increase and decrease the Qty number on each click                 | Pass   |
+| Correct image shown for each product                                                    | Pass   |
+| Correct product name, code and price shown for each item                                | Pass   |
+| Update button updates the bag content correctly                                         | Pass   |
+| Remove button completely removes all items                                              | Pass   |
+| The 'Keep Shopping' button returns user to the products page                            | Pass   |
+| Correct subtotal shown for the totals of each item                                      | Pass   |
+| Correct bag total amount showing                                                        | Pass   |
+| Correct delivery total shown if delivery charge applicable                              | Pass   |
+| Delivery charge is 0 if no delivery charge applicable                                   | Pass   |
+| Grant total is correct for singular and multiple items if delivery charge applicable    | Pass   |
+| Grant total is correct for singular and multiple items if no delivery charge applicable | Pass   |
+| The 'Secure Checkout' button takes users to the checkout page                           | Pass   |
