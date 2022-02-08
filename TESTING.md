@@ -280,3 +280,16 @@
 | Back to dashboard link shown as user came from dashboard.                   | Pass   |
 | Back to dashboard link sends user back to the dashboard.                    | Pass   |
 | Confirmation message shown to the user to show this is a past order.        | Pass   |
+
+### Wishlist
+| Test Condition                                                             | Result |
+|----------------------------------------------------------------------------|--------|
+| If products in wishlist, products information shown correctly              | Pass   |
+| Correct product image showing                                              | Pass   |
+| If no image available temporary image is shown                             | Pass   |
+| Button to 'View Product' displaying and links to the correct product       | Pass   |
+| Button to 'Remove from Wishlist' displaying and removes item from wishlist | Pass   |
+| Confirmation message shown when item removed from wishlist                 | Pass   |
+| If no items in wishlist, message informing user is displayed               | Pass   |
+| Back to Dashboard' Button displayed and links to the dashboard             | Pass   |
+| Keep Shopping' Button displayed and links to the products page             | Pass   |

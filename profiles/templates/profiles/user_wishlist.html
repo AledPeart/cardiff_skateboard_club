@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+    <!-- <div class="overlay"></div> -->
     <div class="container">
         <div class="row">
             <div class="col-12 mx-auto">
@@ -23,41 +23,56 @@
                 <hr />
               
                 {% if products %}
-                {% for product in products %}
-              
-                <div class="card mb-3 rounded-0">
-                  <div class="row g-0">
-                    <div class="col-md-2">
-                        <img class="img-fluid d-block p-2" width="135px" src="{{ product.image.url }}"
-                          alt="{{ product.name }}" />
-                    </div>
-                    <div class="col-md-10">
-                      <div class="card-body">
-                        <h5 class="card-title">{{product.name}}</h5>
-                        <p class="card-text">{{product.description}}</p>
-                        <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
-                        <a type="button" class="btn btn-black hover-pink fw500 btn-sm" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
-                        <a type="button" class="btn btn-pink hover-pink fw500 btn-sm" href="{% url 'product_detail' product.id %}">View Product</a>
-                         
+                  {% for product in products %}
+                
+                  <div class="card mb-3 rounded-0">
+                    <div class="row g-0">
+                      <div class="col-md-2">
+                        
+                            {% if product.image %}
+                            <img class="img-fluid d-block p-2" width="135px" src="{{ product.image.url }}"
+                            alt="{{ product.name }}" />
+                             {% else %}
+                             <img class="img-fluid d-block p-2" width="135px" src="{{ MEDIA_URL }}awaiting-image.jpeg"
+                             alt="{{ product.name }}" />
+                            {% endif %}
+                      </div>
+                      <div class="col-md-10">
+                        <div class="card-body">
+                          <h5 class="card-title">{{product.name}}</h5>
+                          <p class="card-text">{{product.description}}</p>
+                          <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
+                          <a type="button" class="btn btn-black hover-pink fw500 btn-sm" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
+                          <a type="button" class="btn btn-pink hover-pink fw500 btn-sm" href="{% url 'product_detail' product.id %}">View Product</a>
+                          
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              
-                {% endfor %}
+                
+                  {% endfor %}
                 {% else %}
-                <p class="card-text">No products have been added to your wishlist yet</p>
+                  <p class="card-text m-4"><strong>No products have been added to your wishlist yet</strong></p>
                 {% endif %} 
-              
-              
-              
               </div>
-              <a href="{% url 'profile' %}" class="btn btn-black hover-pink rounded-0 my-2">
-                <span class="icon mr-2">
+
+              <div class="mb-3">
+                <a href="{% url 'profile' %}" class="btn btn-outline-black hover-pink rounded-0 my-2">
+                  <span class="icon mr-2">
                     <i class="fas fa-angle-left"></i>
-                </span>
-                <span class="text-uppercase">Back to Dashboard</span>
-            </a>
+                  </span>
+                  <span class="text-uppercase">Back to Dashboard</span>
+                </a>
+              
+                <a href="{% url 'products' %}" class="btn btn-pink hover-pink rounded-0 my-2">
+                  <span class="icon mr-2">
+                    <i class="fas fa-gifts"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Shopping!</span>
+                </a>
+            </div>
+             
+              
         </div>
     </div>
         
