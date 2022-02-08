@@ -143,3 +143,49 @@
 | Correct confirmation message shown to the user for each action                                                     | Pass   |
 | If the user tries to add an item when not logged in they are directed to the login page                            | Pass   |
 | The 'See More' button links correctly to the product details page                                                  | Pass   |
+
+### Product Details Page
+| Test Condition                                                                                                                     | Result |
+|------------------------------------------------------------------------------------------------------------------------------------|--------|
+| Rating stars average and associate text are showing correctly                                                                      | Pass   |
+| Correct text displayed if no product has no ratings                                                                                | Pass   |
+| Number of customers who have recommended the product is showing correctly                                                          | Pass   |
+| Correct text displayed if no product has no reccomendations                                                                        | Pass   |
+| Correct category tag is displaying, and links to the correct category                                                              | Pass   |
+| Only superusers are able to add/delte the products                                                                                 | Pass   |
+| Info message generated when a superuser starts to edit a product                                                                   | Pass   |
+| Edit product functionality works as expected                                                                                       | Pass   |
+| Success message generated when a user has succesfully edited a product                                                             | Pass   |
+| User is then returned to the product detail page                                                                                   | Pass   |
+| Updated product details shown correctly in the product detail template                                                             | Pass   |
+| Form validation checks generate a warning message and prevent the form from submitting the form                                    | Pass   |
+| If user enteres incorrect information in the form but it meets the validation checks, warning message given and form not submitted | Pass   |
+| When the user clicks the delete button the delete modal fires.                                                                     | Pass   |
+| Cancel button on the modals closes it and returns user to the product detail template                                              | Pass   |
+| Delete button on the modals deletes the product and returns user to the product template                                           | Pass   |
+| On deleteing the product user is given a confirmation message                                                                      | Pass   |
+| If a user is not a super user the links are not shown                                                                              | Pass   |
+| Clicking the wishlist button adds the product to a users wishlist if user logged in, and heart icon turns solid                    | Pass   |
+| Clicking the wishlist button again removes the product from a users wishlist if user logged in, and heart icon shows an outline    | Pass   |
+| Correct confirmation message shown to the user for each action                                                                     | Pass   |
+| If the user tries to add an item when not logged in they are directed to the login page                                            | Pass   |
+| Quantity selector butons allow the user to add the correspending number of items to their bag                                      | Pass   |
+| Confirmation message with a snapshot of the bag is shown to the user                                                               | Pass   |
+| The 'View Bag' button in the message snapshot send user to the bag page.                                                           | Pass   |
+| The 'Keep Shopping' button sends the user back to the products page                                                                | Pass   |
+| Authenticated users are able to add a review.                                                                                      | Pass   |
+| Review form inputs work as expected and dropdowns show the correct values                                                          | Pass   |
+| On submitting the review, user given a confirmation message                                                                        | Pass   |
+| The new review is shown correctly in the review box.                                                                               | Pass   |
+| User reviews are ordered correctly, with the most recent first                                                                     | Pass   |
+| Rating stars, user name and how long ago the review was left are showing correctly                                                 | Pass   |
+| Review text is shown correctly                                                                                                     | Pass   |
+| Product recommendation shown correctly with the correct Icon.                                                                      | Pass   |
+| Superusers are able to edit and delete any reviews                                                                                 | Pass   |
+| Delete modal functionality works correctly                                                                                         | Pass   |
+| Delete review functionality works correctly                                                                                        | Fail   |
+| Edit review functionality works correctly                                                                                          | Pass   |
+| Confirmation messages provided correctly                                                                                           | Pass   |
+| Review owners are able to edit reviews                                                                                             | Pass   |
+| Unauthenticated users are not able to leave a review or to edit/delete an existing one.                                            | Pass   |
+| Unauthenticated users are shown a message that they should sign in to leave a review                                               | Pass   |
