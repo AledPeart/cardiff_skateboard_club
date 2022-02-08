@@ -116,3 +116,11 @@
 | If items found correct message shows No of items found for the search term                   | Pass   |
 | If no items are found, correct message shows 0 items found                                   | Pass   |
 | If no search criteria entered, warning message shown and user returned to the products page  | Pass   |
+
+### Homepage 
+| Test Condition                                                                   | Result |
+|----------------------------------------------------------------------------------|--------|
+| Shop Now' button in the introductory paragraph links to the products page        | Pass   |
+| The 'see more' link in the introductory paragraph links to the about CSC section | Pass   |
+| The 3 product image containers fade on hover and reveal the corect button        | Pass   |
+| The 3 product imagebuttons link correctly to the relevant products               | Pass   |
