@@ -186,6 +186,7 @@ a:hover {
 .hover-pink:focus {
     background: rgb(245, 61, 162);
     color: white !important; /* use important to override bootstrap defaults */
+    border: none;
 }
 
 .btt-button {
@@ -311,6 +312,13 @@ a:hover {
     left: 0;
     bottom: 0;
     width: 100%;
+  }
+/* --- products page  */
+
+/* CREDIT - adapted from from W3C https://www.w3schools.com/howto/howto_js_active_element.asp */
+.sort-active {
+    border: 2px solid  rgb(245, 61, 162);
+    color: rgb(245, 61, 162) !important;
   }
 
   /*--- product-detail ---*/
@@ -628,7 +636,4 @@ a:hover {
   } */
 
 
-  .sort-active {
-    border: 2px solid  rgb(245, 61, 162);
-    color: rgb(245, 61, 162) !important;
-  }
+  
