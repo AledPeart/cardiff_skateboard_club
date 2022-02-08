@@ -214,12 +214,6 @@
 | Grant total is correct for singular and multiple items if no delivery charge applicable | Pass   |
 | The 'Secure Checkout' button takes users to the checkout page                           | Pass   |
 
-
-
-
-
-
-
 ### Checkout Page
 | Test Condition                                                                              | Result |
 |---------------------------------------------------------------------------------------------|--------|
@@ -248,3 +242,13 @@
 | Stripe webhooks are successfully processed                                                  | Pass   |
 | If an invalid card number entered, warning message is shown                                 | Pass   |
 | If webhook disabled and payment cannot be processed, error message is shown                 | Pass   |
+
+### Checkout Successs Page
+| Test Condition                                                          | Result |
+|-------------------------------------------------------------------------|--------|
+| Message showing that a confirmation email was sent to the user is shown | Pass   |
+| Order summary details are rendered                                      | Pass   |
+| All information shown correctly according to the order                  | Pass   |
+| Product name links back to the product detail page                      | Pass   |
+| Order total and delivery costs are shown correctly                      | Pass   |
+| The 'Keep Shopping' button takes user back to the products page         | Pass   |
