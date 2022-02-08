@@ -25,6 +25,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="order-history table-responsive">
                         <table class="table table-sm table-borderless">
+                            {% if orders %}
                             <thead>
                                 <tr>
                                     <th>Order Number</th>
@@ -35,30 +36,36 @@
                             </thead>
                             <tbody>
                                 {% for order in orders %}
-                                    <tr>
-                                        <td>
-                                            <a href="{% url 'order_history' order.order_number %}"
+
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}"
                                             title="{{ order.order_number }}">
-                                                {{ order.order_number|truncatechars:6 }}
-                                            </a>
-                                        </td>
-                                        <td>{{ order.date }}</td>
-                                        <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}
-                                                    <li class="small">
-                                                        {{ item.product.name }} x{{ item.quantity }}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </td>
-                                        <td>£{{ order.grand_total }}</td>
-                                    </tr>
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                            <li class="small">
+                                                {{ item.product.name }} x{{ item.quantity }}
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>£{{ order.grand_total }}</td>
+                                </tr>
                                 {% endfor %}
                             </tbody>
+                            {% else %}
+                                <p><strong> You do not have any past orders. You best <a href="{% url 'products' %}"
+                                        class="btn btn-small btn-pink rounded-0 hover-pink ml-1"> Get Shopping! </a>
+                                </strong></p>
+                            {% endif %}
                         </table>
                     </div>
-                    <a href="{% url 'profile' %}" class="btn btn-black hover-pink rounded-0 my-2">
+                    <a href="{% url 'profile' %}" class="btn btn-black hover-pink rounded-0 m-2">
                         <span class="icon mr-2">
                             <i class="fas fa-angle-left"></i>
                         </span>

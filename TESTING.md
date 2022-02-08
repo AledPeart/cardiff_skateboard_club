@@ -260,3 +260,23 @@
 | Icons, title and outline turn pink on hover                                                       | Pass   |
 | Each link takes the user to the correct page                                                      | Pass   |
 
+### User Details
+| Test Condition                                                                     | Result |
+|------------------------------------------------------------------------------------|--------|
+| User details form shown to the user with their stored information                  | Pass   |
+| Users able to update the infomation                                                | Pass   |
+| If the user has not saved details previously all details will be blank             | Pass   |
+| New users able to add aand save details                                            | Pass   |
+| Confirmation message shown to the users to confirm that their details were updated | Pass   |
+| Back to Dashboard' link directs user to the dashboard                              | Pass   |
+
+### Order History
+| Test Condition                                                              | Result |
+|-----------------------------------------------------------------------------|--------|
+| If no past orders, message shown to confirm and a link to the products page | Pass   |
+| If past orders, orders shown in a table                                     | Pass   |
+| Order number links to the Order Summary for that order                      | Pass   |
+| Order summary displays correctly as on the checkout success page            | Pass   |
+| Back to dashboard link shown as user came from dashboard.                   | Pass   |
+| Back to dashboard link sends user back to the dashboard.                    | Pass   |
+| Confirmation message shown to the user to show this is a past order.        | Pass   |
