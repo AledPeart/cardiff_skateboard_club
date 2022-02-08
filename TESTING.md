@@ -88,20 +88,31 @@
 ### ___As the site owner I want:___
 
 * Be able to add, edit or delete products to keep the store updated
+    * Admin users can edit and delete products from the individual product detail page
+    * Admin users can add new products in the product admin section.
+* Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store.
+    * This functionality is exclusive to superusers and has been ensured programatically in the back-end.
+    * Warning messages given to users who try to force entry to restricted pages.
 
-* Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store
-
-* Be able to delete a users review in case it may be inappropriate or unfair.
+* Be able to edit or delete a users review in case it may be inappropriate or unfair.
+    * Only Admin users are able to delete reviews again this has been ensured programatically in the back-end.
+    * Admin Users can also edit any review
 
 ## Manual Functionality Testing
 
 ### Base Template
-| Test Condition                                                                | Result |
-|-------------------------------------------------------------------------------|--------|
-| CSC navbar logo links to the homepage                                         | Pass   |
-| Navbar dropdown links take users to the products                              | Pass   |
-| Each navbar link filter the products correctly                                | Pass   |
-| When not logged in, user icon links show 'register' and 'login'               | Pass   |
-| When logged in, user icon links show 'dashboard' and 'logout'                 | Pass   |
-| When an admin user is logged in, user icons also show product management link | Pass   |
-|                                                                               | Pass   |
+| Test Condition                                                                               | Result |
+|----------------------------------------------------------------------------------------------|--------|
+| CSC navbar logo links to the homepage                                                        | Pass   |
+| Navbar dropdown links take users to the products                                             | Pass   |
+| Each navbar link filter the products correctly                                               | Pass   |
+| When not logged in, user icon links show 'register' and 'login'                              | Pass   |
+| When logged in, user icon links show 'dashboard' and 'logout'                                | Pass   |
+| When an admin user is logged in, user icons also show product management link                | Pass   |
+| Bag icon links to the bag page                                                               | Pass   |
+| Search bar icon reveals the hidden search bar                                                | Pass   |
+| Search bar functions correctly and finds items by 'name'                                     | Pass   |
+| Search bar functions correctly and finds items by 'description'                              | Pass   |
+| If items found correct message shows No of items found for the search term                   | Pass   |
+| If no items are found, correct message shows 0 items found                                   | Pass   |
+| If no search criteria entered, warning message shown and user returned to the products page  | Pass   |

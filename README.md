@@ -30,7 +30,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### As a new user I want to
 * Quickly and easily understand the purpose of the site to decide if I want to stay
 * Have clear navigation tools to move around the site to find what I am looking for easily
-* *Be able to browse the full range of available products to decide if there is something I wish to purchase
+* Be able to browse the full range of available products to decide if there is something I wish to purchase
 * Be able to filter the products by their specific categories or brands so I can browse a particular brand or category I am looking for
 * Search for items in the shop by their name or description so I can easily find items I am looking for
 * Sort the items in the shop by price, name, brand and category to find items within my budget, or within my desired brand/category
@@ -52,6 +52,34 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Be able to add, edit or delete products to keep the store updated
 * Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store
 * Be able to edit or delete a users review in case it may be inappropriate or unfair.
+
+| As a first time visitor.... | I want to....                                                        | So that I can.....                                                 |
+|-----------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------|
+|                             | Quickly and easily understand the purpose of the site                | Decide if I want to stay                                           |
+|                             | Have clear navigation tools to move around the site                  | Find what I am looking for easily                                  |
+|                             | Be able to prowse the full range of available products               | Decide if there is something I wish to purchase                    |
+|                             | Be able to filter the products by their specific categories          | Browse a collection of the products I am looking for               |
+|                             | Be able to filter the products by their specific brands              | Browse a particular brand I am looking for                         |
+|                             | Search for items in the shop by their name or description            | Easily find items I am looking for                                 |
+|                             | Sort the items in the shop by price, name, brand and category        | Find items within my budget, or within my desired brand/category   |
+|                             | View individual product details                                      | Decide if a product meets my needs                                 |
+|                             | Add items to my bag easily                                           | That I can continue to browse the store and make further purchases |
+|                             | View my bag, and make adjustments to it before I check out           | Enjoy a convenient and pleaseant experience                        |
+|                             | Create an account easily                                             | Make purchases and save my details for future use                  |
+|                             | Have my performed actions confirmed to me                            | Be sure my intended action was completed                           |
+| As a registered user....    | I want to....                                                        | So that I can.....                                                 |
+|                             | Easily log in or out                                                 | View my personal profile                                           |
+|                             | Be able to save items to my wishlist                                 | Decide if I want purchase them later                               |
+|                             | View and edit my delivery and account details                        | Ensure my details are correct                                      |
+|                             | Leave a product review                                               | Improve the shopping experience for others                         |
+|                             | Edit my reviews                                                      | So that I can ensure the reviews are correct                       |
+|                             | View my purchase history                                             | Keep track of past orders                                          |
+|                             | Recieve confirmation emails following a purchase                     | Ensure that the purchase was succesful                             |
+| As the site owner....       | I want to....                                                        | So that I can.....                                                 |
+|                             | Be able to add, edit or delete products                              | Make changes as necessary and keep the store updated               |
+|                             | Ensure that only superusers are able to add, edit or delete products | Maintain control of the items in the store                         |
+|                             | Be able to edit or delete a users review                             | In case it may be inappropriate or unfair.                         |
+
 
 
 ## Design
