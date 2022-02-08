@@ -124,3 +124,22 @@
 | The 'see more' link in the introductory paragraph links to the about CSC section | Pass   |
 | The 3 product image containers fade on hover and reveal the corect button        | Pass   |
 | The 3 product imagebuttons link correctly to the relevant products               | Pass   |
+
+### Products Page
+| Test Condition                                                                                                     | Result |
+|--------------------------------------------------------------------------------------------------------------------|--------|
+| Correct brand or category name rendered at top of page above skateboard png                                        | Pass   |
+| Product filtering dropdown selector works correctly for each given criteria                                        | Pass   |
+| Product filtering buttons works correctly for each given criteria                                                  | Fail   |
+| Links change color to pink on hover                                                                                | Pass   |
+| Solid pink border shown on the active link                                                                         | Pass   |
+| Show 'all products' link works correctly                                                                           | Pass   |
+| text shows correct number of products being filtered                                                               | Pass   |
+| Hover shadow effect works correctly on each individual product container                                           | Pass   |
+| Rating stars render correctly for each individual product                                                          | Pass   |
+| Correct text displayed if no product has no ratings                                                                | Pass   |
+| Clicking the heart outline icon adds the product to a users wishlist if user logged in, and turns solid            | Pass   |
+| Clicking the solid heart icon removes the product from a users wishlist if user logged in, and turns to an outline | Pass   |
+| Correct confirmation message shown to the user for each action                                                     | Pass   |
+| If the user tries to add an item when not logged in they are directed to the login page                            | Pass   |
+| The 'See More' button links correctly to the product details page                                                  | Pass   |
