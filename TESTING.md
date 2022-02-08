@@ -293,3 +293,15 @@
 | If no items in wishlist, message informing user is displayed               | Pass   |
 | Back to Dashboard' Button displayed and links to the dashboard             | Pass   |
 | Keep Shopping' Button displayed and links to the products page             | Pass   |
+
+### Product Admin
+| Test Condition                                                                      | Result |
+|-------------------------------------------------------------------------------------|--------|
+| Product Admin menu link only available to superusers                                | Pass   |   
+| Non superusers prevented from forcing acces to the page                             | Pass   |   
+| Error message shown to non superusers when doing so                                 | Pass   |   
+| Add Product Form displays all relevant fields                                       | Pass   |   
+| Form controls prevent invalid inputs                                                | Pass   |   
+| Adding a new product without an image delivers expected result with temporary image | Pass   |  
+| After adding the product user shown the product details page for that product       | Pass   |  
+| Confirmation message confirms product added successfully                            | Pass   |  
