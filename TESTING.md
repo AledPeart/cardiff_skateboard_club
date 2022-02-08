@@ -136,17 +136,21 @@
 | Show 'all products' link works correctly                                                                           | Pass   |
 | text shows correct number of products being filtered                                                               | Pass   |
 | Hover shadow effect works correctly on each individual product container                                           | Pass   |
+| Correct image shown for each product                                                                               | Pass   |
+| If no image available temporary image is shown                                                                     | Pass   |
 | Rating stars render correctly for each individual product                                                          | Pass   |
 | Correct text displayed if no product has no ratings                                                                | Pass   |
 | Clicking the heart outline icon adds the product to a users wishlist if user logged in, and turns solid            | Pass   |
 | Clicking the solid heart icon removes the product from a users wishlist if user logged in, and turns to an outline | Pass   |
 | Correct confirmation message shown to the user for each action                                                     | Pass   |
 | If the user tries to add an item when not logged in they are directed to the login page                            | Pass   |
-| The 'See More' button links correctly to the product details page                                                  | Pass   |
+| The 'See More' button links correctly to the product details page                                                  | Pass   |                                      
 
 ### Product Details Page
 | Test Condition                                                                                                                     | Result |
 |------------------------------------------------------------------------------------------------------------------------------------|--------|
+| Correct image shown for each product                                                                                               | Pass   |
+| If no image available temporary image is shown                                                                                     | Pass   |
 | Rating stars average and associate text are showing correctly                                                                      | Pass   |
 | Correct text displayed if no product has no ratings                                                                                | Pass   |
 | Number of customers who have recommended the product is showing correctly                                                          | Pass   |
@@ -196,6 +200,7 @@
 | Correct items showing in the users bag                                                  | Pass   |
 | Plus and minus icons increase and decrease the Qty number on each click                 | Pass   |
 | Correct image shown for each product                                                    | Pass   |
+| If no image available temporary image is shown                                          | Pass   |
 | Correct product name, code and price shown for each item                                | Pass   |
 | Update button updates the bag content correctly                                         | Pass   |
 | Remove button completely removes all items                                              | Pass   |
@@ -203,7 +208,43 @@
 | Correct subtotal shown for the totals of each item                                      | Pass   |
 | Correct bag total amount showing                                                        | Pass   |
 | Correct delivery total shown if delivery charge applicable                              | Pass   |
+| if delivery charge, message showing how much more spend required to get free delivery   |        |
 | Delivery charge is 0 if no delivery charge applicable                                   | Pass   |
 | Grant total is correct for singular and multiple items if delivery charge applicable    | Pass   |
 | Grant total is correct for singular and multiple items if no delivery charge applicable | Pass   |
 | The 'Secure Checkout' button takes users to the checkout page                           | Pass   |
+
+
+
+
+
+
+
+### Checkout Page
+| Test Condition                                                                              | Result |
+|---------------------------------------------------------------------------------------------|--------|
+| Order summary section displaying correct number of items being purchased                    | Pass   |
+| Order summary displaying the correct product information for each item                      | Pass   |
+| Correct product image showing                                                               | Pass   |
+| If no image available temporary image is shown                                              | Pass   |
+| Correct subtotal shown for the totals of each item                                          | Pass   |
+| Correct bag total amount showing                                                            | Pass   |
+| Correct delivery total shown if delivery charge applicable                                  | Pass   |
+| Delivery charge is 0 if no delivery charge applicable                                       | Pass   |
+| Grant total is correct for singular and multiple items if delivery charge applicable        | Pass   |
+| Grant total is correct for singular and multiple items if no delivery charge applicable     | Pass   |
+| Checkout form renders correctly                                                             | Pass   |
+| Detail fields are both showing correctly                                                    | Pass   |
+| Delivery fields are all showing correctly                                                   | Pass   |
+| If the user is authenticated and has saved details previously details are pre-filled        | Pass   |
+| Form validation working correctly                                                           | Pass   |
+| User has the option to save any changes in their details to their profile page              | Pass   |
+| If user in not authenticated, message shows login/create account link in order to save info | Pass   |
+| Warning message displays how much users card will be charged                                | Pass   |
+| Adjust Bag' link takes user back to the bag page                                            | Pass   |
+| Complete Order' button triggers the payment process                                         | Pass   |
+| Payment processing message and spinner appear while the payment is processed                | Pass   |
+| Confirmation message shown to the user if order is successful                               | Pass   |
+| Stripe webhooks are successfully processed                                                  | Pass   |
+| If an invalid card number entered, warning message is shown                                 | Pass   |
+| If webhook disabled and payment cannot be processed, error message is shown                 | Pass   |
