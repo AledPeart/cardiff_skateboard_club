@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Lato&display=swap">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -25,6 +26,7 @@
     {% endblock %}
 
     {% block corejs %}
+
         <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -140,17 +142,10 @@
                             <a href="{% url 'products' %}?brand=sour_solution" class="dropdown-item">Sour Solution</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'products' %}" id="all-products-link">
                             All Products
                         </a>
-                        <div class="dropdown-menu p-2 border-0" aria-labelledby="all-products-link">
-                            <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
-                                Category</a>
-                            <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-                        </div>
                     </li>
                 </ul>
           

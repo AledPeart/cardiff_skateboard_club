@@ -144,7 +144,8 @@
 | Clicking the solid heart icon removes the product from a users wishlist if user logged in, and turns to an outline | Pass   |
 | Correct confirmation message shown to the user for each action                                                     | Pass   |
 | If the user tries to add an item when not logged in they are directed to the login page                            | Pass   |
-| The 'See More' button links correctly to the product details page                                                  | Pass   |                                      
+| The 'See More' button links correctly to the product details page                                                  | Pass   |
+| The Back to Top button, sends the user back to the top of the page                                                 | Pass   |
 
 ### Product Details Page
 | Test Condition                                                                                                                     | Result |
@@ -305,3 +306,39 @@
 | Adding a new product without an image delivers expected result with temporary image | Pass   |  
 | After adding the product user shown the product details page for that product       | Pass   |  
 | Confirmation message confirms product added successfully                            | Pass   |  
+
+## Responsiveness
+
+The site has been designed with a mobile first approach, and great care has been taken throughout the development process to ensure that the site responds well across all viewing devices. Bootstrap ‘breakpoints’ have been adhered to ensure consistency in the design layouts, and this has been extensively tested using [ChromeDevTools]( https://developer.chrome.com/docs/devtools/) both throughout development and on completion of the build. Some custom CSS media queries have been used to improve the responsiveness of the design reducing padding as appropriate and to allow some text to fit neatly within the design space as intended. e.g
+
+```
+/* following media query to reduce font size on smaller screens */
+
+@media (max-width: 400px) {
+    .add-review-container {
+        padding: 4px !important;
+    }
+} 
+```
+I have tested my site across various screen widths in order to best replicate the breadth of modern viewing devices, and in line with the Bootstrap breakpoints that were used in the design, namely:
+
+    Extra Small <576px
+    Small 576-768px
+    Medium 768-992px
+    Large 992-1200px
+    Extra Large >1200px
+
+Additional testing was carried out on the physical devices that I have access to:
+ 
+    A large screen desktop
+    Laptop
+    Tablet
+    Mobile device
+
+And on the following browsers:
+
+    Chrome
+    Firefox
+    Safari (ios)
+
+Further responsiveness testing was done using [Responsinator](http://www.responsinator.com/)

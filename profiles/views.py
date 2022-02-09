@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse,
+    get_object_or_404, HttpResponseRedirect)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -6,7 +8,6 @@ from .models import UserProfile, Product
 from .forms import UserProfileForm
 
 from checkout.models import Order
-
 
 
 @login_required
@@ -20,7 +21,8 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please check the form and try again.')
+            messages.error(request, 'Update failed. \
+                 Please check the form and try again.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -46,7 +48,8 @@ def user_details(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please check the form and try again.')
+            messages.error(request, 'Update failed. \
+                 Please check the form and try again.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -64,10 +67,8 @@ def user_details(request):
 def order_summary(request):
     """ Display the user's previous order summary """
 
-    
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = profile.orders.all()
-
 
     template = 'profiles/order_summary.html'
     context = {
@@ -119,15 +120,17 @@ def add_to_wishlist(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     profile = get_object_or_404(UserProfile, user=request.user)
+    
 # code taken from tutor support session with @igor_ci
+
     if product in profile.wishlist.all():
         profile.wishlist.remove(product)
-        messages.info(request, f'{product.name} was removed from your wishlist. ')
+        messages.info(request, f'{product.name} was \
+             removed from your wishlist. ')
     else:
         profile.wishlist.add(product)
-        messages.info(request, f'You have added {product.name} to your wishlist. ')
-        
-    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+        messages.info(request, f'You have \
+             added {product.name} to your wishlist. ')
 
-
-
+    return redirect(reverse('product_detail', args=[product.id]))
+ 

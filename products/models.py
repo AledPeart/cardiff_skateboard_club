@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Category(models.Model):
     """
     A model for each individual categoory of products
@@ -38,8 +39,10 @@ class Product(models.Model):
     """
     A model for the individual products
     """
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    brand = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
+    brand = models.ForeignKey(
+        'Brand', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
@@ -60,9 +63,11 @@ class Product(models.Model):
 
     def get_recommended(self):
 
-        total = sum(int(review['recommended']) for review in self.reviews.values())
+        total = sum(int(review[
+            'recommended']) for review in self.reviews.values())
 
         return total
+
 
 class ProductReview(models.Model):
     """
