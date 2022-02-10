@@ -19,7 +19,7 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated successfully')
+            messages.warning(request, 'Profile updated successfully')
         else:
             messages.error(request, 'Update failed. \
                  Please check the form and try again.')
@@ -46,7 +46,7 @@ def user_details(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated successfully')
+            messages.warning(request, 'Profile updated successfully')
         else:
             messages.error(request, 'Update failed. \
                  Please check the form and try again.')
@@ -84,7 +84,7 @@ def order_history(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
 
-    messages.info(request, (
+    messages.warning(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'
     ))
@@ -133,4 +133,4 @@ def add_to_wishlist(request, product_id):
              added {product.name} to your wishlist. ')
 
     return redirect(reverse('product_detail', args=[product.id]))
- 
+

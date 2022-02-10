@@ -122,8 +122,17 @@ a:hover {
     border: 1px solid black !important;
 }
 
+.border-pink {
+    border: 1px solid rgb(245, 61, 162);
+}
+
 .border-grey {
     border: 2px solid #e9ecef !important;
+}
+
+.border-top-pink {
+    border-top: 2px solid rgb(245, 61, 162);
+
 }
 
 .bg-grey {
@@ -374,12 +383,14 @@ a:hover {
 .message-container {
     position: fixed;
     top: 72px;
-    right: 15px;
+    right: 0;
     z-index: 99999999999;
 }
 
 .custom-toast {
     overflow: visible;
+    width: 75%;
+    /* border: 2px solid rgb(245, 61, 162) !important; */
 }
 
 .toast-capper {
@@ -436,7 +447,7 @@ a:hover {
 }
 
 .bag-notification-wrapper {
-    height: 100px;
+    height: 150px;
     overflow-x: hidden;
     overflow-y: auto;
 }

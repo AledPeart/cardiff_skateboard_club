@@ -54,7 +54,7 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.warning(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
@@ -100,7 +100,7 @@ def product_detail(request, product_id):
         # else:
         review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text, recommended=recommended)
 
-        messages.success(
+        messages.warning(
             request,
             "You have succesfully added a product review!")
 
@@ -134,13 +134,13 @@ def edit_review(request, review_id):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Review edited successfully!')
+            messages.warning(request, 'Review edited successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update review. Please check the form and try again.')
     else:
         form = ReviewForm(instance=review)
-        messages.success(request, f'You are editing a review of {product.name}')
+        messages.warning(request, f'You are editing a review of {product.name}')
 
     template = 'products/edit_review.html'
     context = {
@@ -167,7 +167,7 @@ def delete_review(request, review_id):
 
     review.delete()
 
-    messages.success(request, f"{review.user}'s review has now been deleted!")
+    messages.warning(request, f"{review.user}'s review has now been deleted!")
 
     return redirect(reverse('product_detail', args=[product.id]))
 
@@ -215,13 +215,15 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, 'product edited successfully!')
+            messages.warning(request, 'product edited successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please check the form and try again.')
+            messages.error(
+                request,
+                'Failed to update product. Please check the form and try again.')
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name}')
+        messages.warning(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
     context = {
@@ -243,6 +245,6 @@ def delete_product(request, product_id):
         
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, f'{product.name} has now been deleted!')
+    messages.warning(request, f'{product.name} has now been deleted!')
     return redirect(reverse('products'))
 

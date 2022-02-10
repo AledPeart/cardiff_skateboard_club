@@ -76,7 +76,8 @@ class ProductReview(models.Model):
 
     class Meta:
         ordering = ['-date_added']
-
+        
+       
     user = models.ForeignKey(
         User, related_name='reviews', on_delete=models.CASCADE)
     product = models.ForeignKey(

@@ -11,10 +11,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+   
     <div class="container">
         <div class="row">
-            <hr class="hr-grey">
+            <!-- <hr class="hr-grey"> -->
             <div class="spacer-block-sm"></div>
             <!-- product title -->
             <div class="col-12 text-center">
@@ -268,7 +268,7 @@
                                                                                                             {% csrf_token %}
                                                                                                             <div>
                                                                                                                 <label class="m-2">Rate this product out of 5</label>
-                                                                                                                <select name="stars" id="" class="review-text-area">
+                                                                                                                <select name="stars" id="" class="review-text-area form-control" required>
                                                                                                                     <option value="1">1</option>
                                                                                                                     <option value="2">2</option>
                                                                                                                     <option value="3" selected>3</option>
