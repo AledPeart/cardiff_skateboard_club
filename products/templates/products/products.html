@@ -26,64 +26,62 @@
                         <img src="/media/skateboard.png" alt="small graphic of a skateboard">
                     </div>
                 {% endfor %}
-                <hr class="w-50 mb-1">
+                <hr class="w-90 mb-1">
+
+                <div class="col-12">
+                    <p class="text-black mt-3 text-center">
+                        {% if search_term %} {{ products|length }} Products found for <strong>"{{ search_term }}"</strong>
+                        {% else %}
+                        <strong>Showing: </strong>{{ products|length }} Products
+                        {% endif %}
+                    </p>
+                </div>
+
+               
             </div>
         </div>
+
+         <!-- Bootstrap Off-Canvas -->
+         
+          <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            Button with data-bs-target
+          </button> -->
+          
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="category-off-canvas" aria-labelledby="category-off-canvas-label">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="category-off-canvas">Categories</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body text-center">
+                        
+                            <p> Filter items by their category to find what you are looking for.</p>
+                            <div class="btn-group-vertical">
+                                <a href="{% url 'products' %}?category=decks" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Decks</a>
+                                <a href="{% url 'products' %}?category=wheels" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Wheels</a>
+                                <a href="{% url 'products' %}?category=trucks" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Trucks</a>
+                                <a href="{% url 'products' %}?category=bearings" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Bearings</a>
+                                <a href="{% url 'products' %}?category=griptape" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Griptape</a>
+                                <a href="{% url 'products' %}?category=caps_beanies" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Caps & Beanies</a>
+                                <a href="{% url 'products' %}?category=dvds_zines" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">DVDs & Zines</a>
+                                <a href="{% url 'products' %}?category=gifts" class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0">Gifts</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+            <!-- Bootstrap Off-Canvas end -->
+            
+            
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
-                    <div class="col-12 col-md-6 my-auto order-md-last d-none justify-content-center justify-content-md-end">
-                        <div class="sort-select-wrapper w-50">
-                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                <option value="brand_asc" {% if current_sorting == 'brand_asc' %}selected{% endif %}>Brand (A-Z)</option>
-                                <option value="brand_desc" {% if current_sorting == 'brand_desc' %}selected{% endif %}>Brand (Z-A)</option>
-                                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                            </select>
-                        </div>
+                <!-- product sorting for mobile -->
+                    <div class="d-block d-lg-none">
+                        {% include 'products/includes/product_sort_mobile.html' %}
                     </div>
-
-
-                    <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-black mt-3 text-center text-md-left">
-                            {% if search_term %} {{ products|length }} Products found for <strong>"{{ search_term }}"</strong>
-                            {% else %}
-                            <strong>Showing: </strong>{{ products|length }} Products
-                            {% endif %}
-                        </p>
-                    </div>
-               
-                    <div class="col-12 text-black mt-1 text-center text-md-left">
-                        <p><span class="d-none d-sm-inline-block"><strong>Sort:</strong></span>
-                        
-                            {% if active_category %}
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true"><i class="fa-solid fa-sterling-sign"></i><i class="fa-solid fa-arrow-up-wide-short"></i></a>
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true"><i class="fa-solid fa-sterling-sign"></i><i class="fa-solid fa-arrow-down-wide-short"></i></a>
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true"><i class="fa-solid fa-arrow-down-a-z"></i></a>
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true"><i class="fa-solid fa-arrow-up-z-a"></i></a>
-                            {% elif active_brand %}
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
-                            {% elif search_term %}
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
-                            {% else %}
-                            <a href="{% url 'products' %}?sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
-                            {% endif %}
-                        </p>
-                    </div>
+                <!-- product sorting for desktop -->
+                    <div class="d-none d-lg-block">
+                        {% include 'products/includes/product_sort_desktop.html' %}
+                    </div> 
             </div>
                 <div class="row">
                     {% for product in products %}
@@ -123,24 +121,6 @@
     </div>
 
     <div class="spacer-block"></div>
-   
-
-
-    <!-- code ammended from https://github.com/flatplanet/Django-Club-Youtube-Playlist -->
-<!-- <div class="text-muted mt-3 text-center text-md-left">
-    {% if product_list.has_previous %}
-        <a href="?page=1">&laquo first</a>
-        <a href="?page={{ product_list.previous_page_number }}">previous</a>
-    {% endif %}
-
-    page {{ product_list.number }} of {{ product_list.paginator.num_pages }}
-
-    {% if product_list.has_next %}
-        <a href="?page={{ product_list.next_page_number }}">next</a>
-        <a href="?page={{ product_list.paginator.num_pages }}">last &raquo</a>
-    {% endif %}
-
-</div> -->
 
 
 
