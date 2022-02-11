@@ -286,28 +286,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-
-
 {{ block.super }}
 {% include 'products/includes/quantity_adjust_script.html' %}
-<!-- <script>
-var alertPlaceholder = document.getElementById('wishlistAlertPlaceholder')
-var alertTrigger = document.getElementById('liveAlertBtnAdd')
-
-function alert(message, type) {
-  var wrapper = document.createElement('div')
-  wrapper.innerHTML = '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">' + message + '<button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
-
-  alertPlaceholder.append(wrapper)
-}
-
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', function () {
-    alert('{{product.name}} added to your wishlist. <a href="{% url 'user_wishlist' %}" class="alert-link"><strong> View Wishlist</strong></a>')
-  })
-}
-
-</script> -->
-
 {% endblock %}
 
