@@ -17,7 +17,7 @@
                 {% for c in current_categories %}
                     <div class="category-badge">
                         <h5 class=" mb-0 align-bottom text-pink">{{ c.friendly_name }}</h5>
-                        <img src="/media/skateboard.png" alt="small graphic of a skateboard">
+                        <img src="{{ MEDIA_URL }}skateboard.png" alt="small graphic of a skateboard">
                     </div>
                 {% endfor %}
                 {% for b in current_brands %}
