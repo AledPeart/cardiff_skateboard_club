@@ -129,8 +129,8 @@ def add_to_wishlist(request, product_id):
              removed from your wishlist. ')
     else:
         profile.wishlist.add(product)
-        messages.info(request, f'You have \
-             added {product.name} to your wishlist. ')
+        # messages.info(request, f'You have \
+        #      added {product.name} to your wishlist. ')
 
     return redirect(reverse('product_detail', args=[product.id]))
 

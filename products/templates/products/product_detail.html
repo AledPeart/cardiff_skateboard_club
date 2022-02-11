@@ -88,11 +88,16 @@
                                     class="ri-heart-fill text-pink ri-lg align-middle"></i></a>
                             {% else %}
                             <a href="{% url 'add_to_wishlist' product.id %}"
-                                class="btn btn-pink rounded-0 text-uppercase" role="button" aria-disabled="true">Add
+                            id="liveAlertBtnAdd" class="btn btn-pink rounded-0 text-uppercase" role="button" aria-disabled="true">Add
                                 to Wishlist <i class="ri-heart-line text-pink ri-lg align-middle"></i></a>
                             {% endif %}
                             <!--------- ---------> 
-                </div>
+
+                            
+                            
+                            <div id="wishlistAlertPlaceholder"></div>
+                                    <button type="button" class="btn btn-primary" id="liveAlertBtnAdd">Show live alert</button>
+                                </div>
             </div>
             <!-- end product details -->
 
@@ -309,12 +314,33 @@
                                                                     <div class="spacer-block-sm"></div>
                         
                      
-                
-        
+                                                                    
     </div>
 {% endblock %}
 
 {% block postloadjs %}
+
+
 {{ block.super }}
 {% include 'products/includes/quantity_adjust_script.html' %}
+<script>
+var alertPlaceholder = document.getElementById('wishlistAlertPlaceholder')
+var alertTrigger = document.getElementById('liveAlertBtnAdd')
+
+function alert(message, type) {
+  var wrapper = document.createElement('div')
+  wrapper.innerHTML = '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">' + message + '<button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+
+  alertPlaceholder.append(wrapper)
+}
+
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', function () {
+    alert('{{product.name}} added to your wishlist. <a href="{% url 'user_wishlist' %}" class="alert-link"><strong> View Wishlist</strong></a>')
+  })
+}
+
+</script>
+
 {% endblock %}
+
