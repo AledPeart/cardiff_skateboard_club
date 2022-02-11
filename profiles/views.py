@@ -19,7 +19,7 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.warning(request, 'Profile updated successfully')
+            messages.info(request, 'Profile updated successfully')
         else:
             messages.error(request, 'Update failed. \
                  Please check the form and try again.')
@@ -46,7 +46,7 @@ def user_details(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.warning(request, 'Profile updated successfully')
+            messages.info(request, 'Profile updated successfully')
         else:
             messages.error(request, 'Update failed. \
                  Please check the form and try again.')
@@ -122,15 +122,14 @@ def add_to_wishlist(request, product_id):
     profile = get_object_or_404(UserProfile, user=request.user)
     
 # code taken from tutor support session with @igor_ci
-
     if product in profile.wishlist.all():
         profile.wishlist.remove(product)
-        messages.info(request, f'{product.name} was \
-             removed from your wishlist. ')
+        messages.warning(request, f'{product.name} was \
+             removed from your wishlist.  ', extra_tags='wishlist_link')
     else:
         profile.wishlist.add(product)
-        # messages.info(request, f'You have \
-        #      added {product.name} to your wishlist. ')
+        messages.info(request, f'You have \
+             added {product.name} to your wishlist. ', extra_tags='wishlist_link')
 
     return redirect(reverse('product_detail', args=[product.id]))
 

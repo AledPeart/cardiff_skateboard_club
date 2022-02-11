@@ -100,7 +100,7 @@ def product_detail(request, product_id):
         # else:
         review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text, recommended=recommended)
 
-        messages.warning(
+        messages.info(
             request,
             "You have succesfully added a product review!")
 
@@ -134,7 +134,7 @@ def edit_review(request, review_id):
 
         if form.is_valid():
             form.save()
-            messages.warning(request, 'Review edited successfully!')
+            messages.info(request, 'Review edited successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update review. Please check the form and try again.')
@@ -186,7 +186,7 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, 'New product added successfully!')
+            messages.info(request, 'New product added successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please check the form and try again')
@@ -215,7 +215,7 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.warning(request, 'product edited successfully!')
+            messages.info(request, 'product details successfully updated!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
