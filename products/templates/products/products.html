@@ -23,7 +23,7 @@
                 {% for b in current_brands %}
                     <div class="category-badge">
                         <h5 class=" mb-0 align-bottom text-black">{{ b.friendly_name }}</h5>
-                        <img src="/media/skateboard.png" alt="small graphic of a skateboard">
+                        <img src="{{ MEDIA_URL }}skateboard.png" alt="small graphic of a skateboard">
                     </div>
                 {% endfor %}
                 <hr class="w-90 mb-1">
@@ -47,7 +47,7 @@
             Button with data-bs-target
           </button> -->
           
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="category-off-canvas" aria-labelledby="category-off-canvas-label">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="category-off-canvas" aria-labelledby="category-off-canvas">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="category-off-canvas">Categories</h5>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -98,7 +98,7 @@
                                     {% endif %}
                                 <div class="card-body pb-0 text-center">
                                     <h6 class="thin">{{ product.name }}</h6>
-                                    <h7 class="">£{{ product.price }}</h7>
+                                    <h6 class="small">£{{ product.price }}</h6>
                                     <p><span class="text-pink mb-0 small">{% include 'products/includes/star_ratings_avg.html' %}</span></p>
                                     <div class="row justify-content-center">
                                         <div class="col-12 col-md-10">
@@ -129,13 +129,13 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
     
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);
