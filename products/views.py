@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-# from django.core.paginator import Paginator 
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand, ProductReview
@@ -9,6 +8,7 @@ from profiles.models import UserProfile
 from .forms import ProductForm, ReviewForm
 
 # Create your views here.
+
 
 def all_products(request):
     """ A view to show all CSC products """
@@ -54,18 +54,15 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.warning(request, "You didn't enter any search criteria!")
+                messages.warning(request, "You didn't \
+                     enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query)
+            | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-    
-    # pagination but broke filtering
-    # pagination = Paginator(Product.objects.all(), 12)
-    # page = request.GET.get('page')
-    # product_list = pagination.get_page(page)
 
     context = {
         'products': products,
@@ -98,7 +95,10 @@ def product_detail(request, product_id):
         #         request, "You've already reviewed this product")
         #     return redirect(reverse('product_detail', args=[product.id]))
         # else:
-        review = ProductReview.objects.create(product=product, user=request.user, stars=stars, review_text=review_text, recommended=recommended)
+        review = ProductReview.objects.create(
+            product=product,
+            user=request.user, stars=stars, review_text=review_text,
+            recommended=recommended)
 
         messages.info(
             request,
@@ -108,8 +108,6 @@ def product_detail(request, product_id):
 
     context = {
          'product': product,
-        #  'review': review,
-        #  'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -126,7 +124,8 @@ def edit_review(request, review_id):
     if not request.user.is_superuser and not request.user == review.user:
         messages.error(
             request,
-            "Sorry, you don't have the necessary permissions to access that page.")
+            "Sorry, you don't have the necessary \
+                 permissions to access that page.")
         return redirect(reverse('product_detail', args=[product.id]))
 
     if request.method == 'POST':
@@ -137,10 +136,12 @@ def edit_review(request, review_id):
             messages.info(request, 'Review edited successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update review. Please check the form and try again.')
+            messages.error(request, 'Failed to \
+                 update review. Please check the form and try again.')
     else:
         form = ReviewForm(instance=review)
-        messages.warning(request, f'You are editing a review of {product.name}')
+        messages.warning(request, f'You are \
+             editing a review of {product.name}')
 
     template = 'products/edit_review.html'
     context = {
@@ -153,7 +154,7 @@ def edit_review(request, review_id):
     return render(request, template, context)
 
 
-@login_required 
+@login_required
 def delete_review(request, review_id):
     """ Delete a review """
     review = get_object_or_404(ProductReview, pk=review_id)
@@ -162,7 +163,8 @@ def delete_review(request, review_id):
     if not request.user.is_superuser:
         messages.error(
             request,
-            "Sorry, you don't have the necessary permissions to access that page.")
+            "Sorry, you don't have the necessary \
+                 permissions to access that page.")
         return redirect(reverse('product_detail', args=[product.id]))
 
     review.delete()
@@ -172,14 +174,15 @@ def delete_review(request, review_id):
     return redirect(reverse('product_detail', args=[product.id]))
 
 
-@login_required 
+@login_required
 def add_product(request):
     """ Add a product to the store """
 
     if not request.user.is_superuser:
         messages.error(
             request,
-            "Sorry, you don't have the necessary permissions to access that page.")
+            "Sorry, you don't have the necessary \
+                 permissions to access that page.")
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -189,16 +192,18 @@ def add_product(request):
             messages.info(request, 'New product added successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please check the form and try again')
+            messages.error(request, 'Failed to add product. \
+                 Please check the form and try again')
     else:
         form = ProductForm()
-       
+
     template = 'products/add_product.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product(request, product_id):
@@ -207,7 +212,8 @@ def edit_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(
             request,
-            "Sorry, you don't have the necessary permissions to access that page.")
+            "Sorry, you don't have the necessary \
+                 permissions to access that page.")
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -220,7 +226,8 @@ def edit_product(request, product_id):
         else:
             messages.error(
                 request,
-                'Failed to update product. Please check the form and try again.')
+                'Failed to update product. \
+                     Please check the form and try again.')
     else:
         form = ProductForm(instance=product)
         messages.warning(request, f'You are editing {product.name}')
@@ -233,18 +240,19 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-@login_required 
+
+@login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
 
     if not request.user.is_superuser:
         messages.error(
             request,
-            "Sorry, you don't have the necessary permissions to access that page.")
+            "Sorry, you don't have the necessary \
+             permissions to access that page.")
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.warning(request, f'{product.name} has now been deleted!')
     return redirect(reverse('products'))
-

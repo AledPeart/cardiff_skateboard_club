@@ -3,6 +3,7 @@ from .models import Product, Category, Brand, ProductReview
 
 # Register your models here.
 
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'product_code',
@@ -16,17 +17,20 @@ class ProductAdmin(admin.ModelAdmin):
 
     ordering = ('product_code',)
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
 
+
 class BrandAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
+
 
 class ProductReviewAdmin(admin.ModelAdmin):
     list_display = (
@@ -40,8 +44,7 @@ class ProductReviewAdmin(admin.ModelAdmin):
     ordering = ('date_added',)
 
 
-
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Brand, BrandAdmin)
-admin.site.register(ProductReview,ProductReviewAdmin)
+admin.site.register(ProductReview, ProductReviewAdmin)

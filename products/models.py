@@ -84,8 +84,7 @@ class ProductReview(models.Model):
         (2, '2'),
         (1, '1'),
     )
-        
-       
+
     user = models.ForeignKey(
         User, related_name='reviews', on_delete=models.CASCADE)
     product = models.ForeignKey(

@@ -73,8 +73,8 @@ class TestProductForm(TestCase):
         })
         # Form should be valid - image not required
         self.assertTrue(form.is_valid())
-       
-       
+
+
 # class TestProductForm(TestCase):
 
 #     def test_product_name_required(self):
@@ -95,4 +95,3 @@ class TestProductForm(TestCase):
 #         form = ProductForm({'name': 'Test Product Code Field'})
 #          #Test should pass as form valid
 #         self.assertTrue(form.is_valid())
-
