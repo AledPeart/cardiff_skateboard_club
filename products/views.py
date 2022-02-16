@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, Brand, ProductReview
 from profiles.models import UserProfile
+from .models import Product, Category, Brand, ProductReview
 from .forms import ProductForm, ReviewForm
 
 # Create your views here.
@@ -58,11 +58,8 @@ def all_products(request):
                      enter any search criteria!")
                 return redirect(reverse('products'))
 
-        queries = (
-            Q(name__icontains=query) | 
-            Q(description__icontains=query)
-        )
-        products = products.filter(queries)
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
