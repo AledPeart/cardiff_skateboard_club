@@ -37,6 +37,7 @@ body {
 
 a:hover {
     color: rgb(245, 61, 162) !important;
+    text-decoration: none;
 }
 
 /* --- Custom classes --- */
@@ -57,9 +58,9 @@ a:hover {
     height: auto;
 }
 
-a:hover {
-    text-decoration: none;
-}
+/* a:hover {
+    
+} */
 
 .image-link:hover {
     zoom: 25%;
@@ -295,9 +296,18 @@ a:hover {
     text-decoration: none;
 }
 
-.social-footer a:hover {
+#footer-icon:hover {
     color: rgb(245, 61, 162) !important;
+    text-decoration: none;
 }
+
+/* .social-footer i, .social-footer i:before {
+    color: rgb(245, 61, 162) !important;
+} */
+
+/* .content-info a, .content-info a:before {
+    color: white !important
+    } */
 
 .nav-toggler-btn {
     color:rgb(245, 61, 162);

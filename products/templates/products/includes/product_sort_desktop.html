@@ -11,25 +11,25 @@
                         <span class="align-middle d-none d-sm-inline-block">Sort:</span>
                         
                             {% if active_category %}
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
+                            <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
+                            <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
+                            <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
+                            <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
                             {% elif active_brand %}
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
+                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
+                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
+                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
+                            <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
                             {% elif search_term %}
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
+                            <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
+                            <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
+                            <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
+                            <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
                             {% else %}
-                            <a href="{% url 'products' %}?sort=price&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
-                            <a href="{% url 'products' %}?sort=price&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
-                            <a href="{% url 'products' %}?sort=name&direction=asc" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
-                            <a href="{% url 'products' %}?sort=name&direction=desc" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
+                            <a href="{% url 'products' %}?sort=price&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}" aria-pressed="true">Price (low to high)</a>
+                            <a href="{% url 'products' %}?sort=price&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}" aria-pressed="true">Price (high to low)</a>
+                            <a href="{% url 'products' %}?sort=name&direction=asc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}" aria-pressed="true">Name (A-Z)</a>
+                            <a href="{% url 'products' %}?sort=name&direction=desc" role="button" class="btn btn-outline btn-sm {% if current_sorting == 'name_desc' %}sort-active{% endif %}" aria-pressed="true">Name (Z-A)</a>
                             {% endif %}
                       
                         

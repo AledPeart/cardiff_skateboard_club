@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+   
     <div class="container">
         <div class="row">
             <div class="col">
@@ -23,66 +23,72 @@
                 <hr>
             </div>
         </div>
-        <div class="row">   
-        <div class="col-12 col-lg-4">
-            <a href="{% url 'user_details' %}" class="text-reset text-decoration-none" role="button">
-                <div class="card dash-card mb-3">
-                    <div class="row g-0">
-                        <div class="col-2 position-relative">
-                            <i class="ri-truck-line ri-3x mx-3"></i>
-                        </div>
-                        <div class="col-10">
-                            <div class="card-body ps-0 ps-md-1">
-                                <h1 class="h5">Your Details</h1>
-                                <p class="card-text small text-muted">View your Details</p>
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <a href="{% url 'user_details' %}" class="text-reset text-decoration-none" role="button">
+                    <div class="card dash-card mb-3">
+                        <div class="row g-0">
+                            <div class="col-2 position-relative">
+                                <i class="ri-truck-line ri-3x mx-3"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="card-body ps-0 ml-3 ps-md-1">
+                                    <h1 class="h5">Your Details</h1>
+                                    <p class="card-text small text-muted">View your Details</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <div class="col-12 col-lg-4">
-            <a href="{% url 'order_summary' %}" class="text-reset text-decoration-none" role="button">
-                <div class="card dash-card mb-3">
-                    <div class="row g-0">
-                        <div class="col-2 position-relative">
-                            <i class="ri-gift-line ri-3x mx-3"></i>
-                        </div>
-                        <div class="col-10">
-                            <div class="card-body ps-0 ps-md-1">
-                                <h1 class="h5">Order History</h1>
-                                <p class="card-text small text-muted">View your Order History</p>
+            <div class="col-12 col-lg-4">
+                <a href="{% url 'order_summary' %}" class="text-reset text-decoration-none" role="button">
+                    <div class="card dash-card mb-3">
+                        <div class="row g-0">
+                            <div class="col-2 position-relative">
+                                <i class="ri-gift-line ri-3x mx-3"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="card-body ml-3 ps-0 ps-md-1">
+                                    <h1 class="h5">Order History</h1>
+                                    <p class="card-text small text-muted">View your Order History</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <div class="col-12 col-lg-4">
-            <a href="{% url 'user_wishlist' %}" class="text-reset text-decoration-none" role="button">
-                <div class="card dash-card mb-3">
-                    <div class="row g-0">
-                        <div class="col-2 position-relative">
-                            <i class="ri-file-list-line ri-3x mx-3"></i>
-                        </div>
-                        <div class="col-10">
-                            <div class="card-body ps-0 ps-md-1">
-                                <h1 class="h5">Your Wish List</h1>
-                                <p class="card-text small text-muted">View your Wish List</p>
+            <div class="col-12 col-lg-4">
+                <a href="{% url 'user_wishlist' %}" class="text-reset text-decoration-none" role="button">
+                    <div class="card dash-card mb-3">
+                        <div class="row g-0">
+                            <div class="col-2 position-relative">
+                                <i class="ri-file-list-line ri-3x mx-3"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="card-body ml-3 ps-0 ps-md-1">
+                                    <h1 class="h5">Your Wish List</h1>
+                                    <p class="card-text small text-muted">View your Wish List</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
+        <a href="{% url 'products' %}" class="btn btn-pink hover-pink rounded-0 m-4">
+            <span class="icon mr-2">
+                <i class="fas fa-gifts"></i>
+            </span>
+            <span class="text-uppercase">Keep Shopping!</span>
+        </a>
     </div>
         
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    <script src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
