@@ -55,7 +55,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.warning(request, "You didn't \
-                     enter any search criteria!")
+                     enter any search criteria, please try again")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
@@ -99,7 +99,7 @@ def product_detail(request, product_id):
             user=request.user, stars=stars, review_text=review_text,
             recommended=recommended)
 
-        messages.info(
+        messages.success(
             request,
             "You have succesfully added a product review!")
 
@@ -132,7 +132,7 @@ def edit_review(request, review_id):
 
         if form.is_valid():
             form.save()
-            messages.info(request, 'Review edited successfully!')
+            messages.success(request, 'Review edited successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to \
@@ -188,7 +188,7 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.info(request, 'New product added successfully!')
+            messages.success(request, 'New product added successfully!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. \
@@ -220,7 +220,7 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.info(request, 'product details successfully updated!')
+            messages.success(request, 'product details successfully updated!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
