@@ -66,7 +66,7 @@
                 <a class="text-black" href="#" id="user-options-mobile" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
-                        <div><i class="ri-user-line ri-lg icon"></i></div>
+                        <i class="ri-user-line ri-lg icon"></i>
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
@@ -86,11 +86,15 @@
                 <a class="text-black" href="{% url 'view_bag' %}">
                     <div class="text-center">
                         {% if total %}
-                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon"><small><p class="text-pink mb-0">{{ product_count }}</p></small></i></div>
+                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon">
+                                <span class="text-pink mb-0"><small>{{ product_count }}</small></span>
+                            </i>
+                        </div>
                         {% else %}
-                        <div><i class="ri-shopping-bag-line ri-lg icon"></i>
+                        <div>
+                            <i class="ri-shopping-bag-line ri-lg icon"></i>
+                        </div>
                         {% endif %}
-                        </div> 
                     </div>
                 </a>
             </li>
@@ -210,7 +214,9 @@
                 <a class="text-black" href="{% url 'view_bag' %}">
                     <div class="text-center">
                         {% if total %}
-                        <div><i class="ri-shopping-bag-line text-pink ri-xl icon"><small><p class="text-pink mb-0">{{ product_count }}</p></small></i></div>
+                        <div>
+                            <i class="ri-shopping-bag-line text-pink ri-xl icon"><span class="text-pink mb-0"><small>{{ product_count }}</small></span></i>
+                        </div>
                         {% else %}
                         <div><i class="ri-shopping-bag-line ri-xl icon"></i></div> 
                         {% endif %}

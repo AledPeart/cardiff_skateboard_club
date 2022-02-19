@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-12 mx-auto">
                 <h1 class="h3">Your Details</h1>
-                <div>Default Delivery Information</div>
+                <p>You can update your default delivery information here</p>
                 <hr />
 
                 <div class="row">
@@ -50,5 +50,5 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    <script src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

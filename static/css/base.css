@@ -107,8 +107,8 @@ a:hover {
     color: #75fbf4;
 }
 
-.bg-teal {
-    background-color: #75fbf4;
+.bg-white {
+    background-color: #fff;
 }
 
 .purple {
@@ -346,6 +346,11 @@ a:hover {
 .review-text-area {
     border-color: rgb(245, 61, 162);
 }
+
+/*--- Wishlist ---*/
+.wishlist-image {
+    min-width: 100px;
+}
   
   /* --- icons --- */
 /* from Bulma */
@@ -365,25 +370,6 @@ a:hover {
     margin-top: 1em;
     color: #000;
 }
-
-/* Flash Messages */
-
-/* .flash-body {
-    margin: 10px auto;
-    
-    width: -webkit-fit-content;
-    
-    width: -moz-fit-content;
-    
-    width: fit-content;
-    height: auto !important;
-}
-
-.flash-body i {
-    font-size: 1.5rem;
-    color: #313232;
-} */
-
 
 /* --- Toasts --- */
 
@@ -613,8 +599,6 @@ a:hover {
         align-self:  center !important;
     }
 } 
-
-
 
 
 /* --- spinner overlay --- */

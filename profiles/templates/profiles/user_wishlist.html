@@ -19,21 +19,21 @@
         <div class="row">
             <div class="col-12 mx-auto">
                 <h1 class="h3">My Wishlist</h1>
-                <div>Manage your Wishlist</div>
+                <p>Manage your Wishlist<p>
                 <hr />
               
                 {% if products %}
                   {% for product in products %}
                 
                   <div class="card mb-3 rounded-0">
-                    <div class="row g-0">
+                    <div class="row g-0 text-center text-sm-left">
                       <div class="col-md-2">
                         
                             {% if product.image %}
-                            <img class="img-fluid d-block p-2" width="135px" src="{{ product.image.url }}"
+                            <img class="img-fluid d-sm-block p-2 wishlist-image" width="135" src="{{ product.image.url }}"
                             alt="{{ product.name }}" />
                              {% else %}
-                             <img class="img-fluid d-block p-2" width="135px" src="{{ MEDIA_URL }}awaiting-image.jpeg"
+                             <img class="img-fluid d-sm-block p-2 wishlist-image" width="135" src="{{ MEDIA_URL }}awaiting-image.jpeg"
                              alt="{{ product.name }}" />
                             {% endif %}
                       </div>
@@ -42,9 +42,8 @@
                           <h5 class="card-title">{{product.name}}</h5>
                           <p class="card-text">{{product.description}}</p>
                           <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
-                          <a type="button" class="btn btn-black hover-pink fw500 btn-sm" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
-                          <a type="button" class="btn btn-pink hover-pink fw500 btn-sm" href="{% url 'product_detail' product.id %}">View Product</a>
-                          
+                            <a class="btn btn-outline-black hover-pink fw500 btn-sm m-1" href="{% url 'add_to_wishlist' product.id %}">Remove from Wishlist</a>
+                            <a class="btn btn-pink hover-pink fw500 btn-sm m-1" href="{% url 'product_detail' product.id %}">View Product</a>
                         </div>
                       </div>
                     </div>
