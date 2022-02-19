@@ -231,10 +231,9 @@
                 {% elif level == 30 %}
                     {% include 'includes/toasts/toast_warning.html' %}
                 {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success_bag.html' %}
+                     {% include 'includes/toasts/toast_info.html' %}
                 {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                    
+                      {% include 'includes/toasts/toast_success_bag.html' %}
                 {% endif %}
             {% endwith %}
         {% endfor %}
