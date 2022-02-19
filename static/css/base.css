@@ -161,10 +161,6 @@ a:hover {
 }
 
 
-
-
-
-
 /* --- Buttons --- */
 
 .shop-now-button {
@@ -198,17 +194,13 @@ a:hover {
 .hover-pink:focus {
     background: rgb(245, 61, 162);
     color: white !important; /* use important to override bootstrap defaults */
-    border: none;
+    border: 1px solid rgb(245, 61, 162);
 }
-
-
 
 .hr-grey{
     border-top: 2px solid #e9ecef;
     width: 90%;
 }
-
-
 
   /* CREDIT _ code ammended from CSS Tricks */
 .shadow-hover:hover {
@@ -296,11 +288,6 @@ a:hover {
     text-decoration: none;
 }
 
-#footer-icon:hover {
-    color: rgb(245, 61, 162) !important;
-    text-decoration: none;
-}
-
 /* .social-footer i, .social-footer i:before {
     color: rgb(245, 61, 162) !important;
 } */
@@ -370,6 +357,13 @@ a:hover {
     margin-top: 1em;
     color: #000;
 }
+/* 
+.social-footer i:hover {
+    
+    color: rgb(245, 61, 162);
+} */
+
+
 
 /* --- Toasts --- */
 
@@ -636,6 +630,3 @@ a:hover {
       font-size: 3.5rem;
     }
   } */
-
-
-  

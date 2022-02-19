@@ -138,29 +138,28 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 ### Site Header and Footer
 * CSC logo in the top left that links to the home page
-* Navigation menu is positioned centrally and includes a series of dropdown menus that allow users to filter products by type or brand, as well as to order the products by price and category.
+* Navigation menu is positioned centrally, across all pages, and includes a series of dropdown menus that allow users to filter products by type or brand.
 * On the far right of the navbar are search, user and bag icons.
 * Search Icon reveals a hidden search bar to reduce screen clutter, particularly on mobile.
 * Search bar allows users to search the products by name and description.
 * If users are logged in the user icon reveals a dropdown menu which links to the users dashboard and an option to log out of the site.
-* If the user is a Site Admin they will lsao be shown a link to the 'product admin' page.
+* If the user is a Site Admin they will also be shown a link to the 'product admin' page.
 * If the user is not logged in the dropdown will show the option to login to the site or to register an account.
 * Bag icon links to the users shopping bag and is pink if there are items in the bag. The number of items is also shown to the user.
 * Footer displays the social media icons (for demonstration, not currently active)
 
 ### Home Page
 * Users are shown a hero image of a skateboarder and the CSC logo and a short introductory paragraph to immediately make the purpose of the site clear.
-* Users are shown a link to learm more about CSC, and a  'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.
+* Users are shown a link to learm more about CSC, and a 'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.
 * Below this a series of 3 colourful images link to diffrent products in the store.
 * There is a nother short paragraph about CSC and an image to encourage supporting local independant shops.
 
 ### Products Page
 * Products are laid out in a convenient grid style which stacks nicely on mobile devices.
-* Users are able to use the menus in the navbar to filter products by categories or brands.
-* Users can then sort the items in order by price, name, brand or category by clicking the relevant buttons.
-* An information box displays the amount of products the user is viewing and also informs them of the results if they have searched for a product. 
-* Each product has an image aand some key information underneath, including the average rating of the product.
-* Users are able to add a product to their wishlist by clicking on the heart icon.
+* Information text displays the amount of products the user is viewing and also informs them of the results if they have searched for a product. 
+* Users are able to activate a convenient Bootstrap 'off canvas' menu to show a series buttons to filter the products by category. 
+* Users can then sort the items in order, either by price or name by clicking the relevant buttons.
+* Each product has an image and some key information underneath, including the average rating of the product.
 * Users are invited to click the 'See More' button which links to the 'product details' page.
 
 ### Product Details Page
@@ -179,13 +178,13 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Bag Page
 * Users are shown a nice summarised list of the items in their bag
 * Users are able to adjust the quantiy of each item in their bag or remove them completely.
-* Users are shown the grant total of their items and any shipping costs as well as how much more they need to spend to reveive free shipping (if applicable).
+* Users are shown the grand total of their items and any shipping costs as well as how much more they need to spend to reveive free shipping (if applicable).
 * User are given the option to checkout or to keep shopping.
 
 ### Checkout Page
 * Users are presented with nicely laid out form to complete in order to submit their personal, delivery and payment details.
-* Summarise details of the priducts being purchased and the grand total are shown.
-* If users are returning customer their delivery details are pre-poulated for convenience.
+* Summary details of the products being purchased and the grand total are shown.
+* If users are returning customers their delivery details are pre-poulated for convenience.
 * Registered users are able to save their details to their profile, and un-registered users are given the option of creating an account in order to do so.
 * Users are warned on how much their card will be charged.
 * Bootstrap 'spinner' used to inform customers that their payment is being processed.
@@ -199,7 +198,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### User Dashboard
 * Convenient area for registered users to acces all the features associated with their account.
 * Users can view and update their their details.
-* View their order history, where they can view specific details of individual oreders and link to the products themselves in case they want to re-order.
+* View their order history, where they can view specific details of individual orders and link to the products themselves in case they want to re-order.
 * View their wishlist, where users can remove items, or head to the product detaiuls page in order to purchase the item.
 
 ### Product Admin
@@ -214,12 +213,15 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 ### User Wishlist
 * Users are able to add and remove products from a whishlist which is linked to their profile.
-* Users can click a heart icon to add/remove an item from the products page, or via a button on the product detail page.
-* View all saved items in within tgheir dashboard.
+* Users can do this by clicking a button on the product detail page.
+* Confirmation 'toast' message shows the users a link to view their wishlist.
+* View all saved items in within their dashboard.
 
 ### Messages
 * Django's message framework used in conjunction with Bootstrap toasts to provide confirmation messages to user actions.
-* Info, Success, Warning and Error tags have been utilised to give the user consistent feedback.
+* Info, Success, Warning and Error levels have been utilised to give the user consistent feedback.
+* Info level specifically used to show users of any ammendments to their shopping bag, while other message levels used as normal.
+* Custom extra message tags used to customise the 'wishlist' messages.
 
 ### Defensive Programming
 * Defensive programming principles employed throughout the site.
@@ -230,7 +232,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Account security covered by Django's 'allauth'.
 * Django form and image validation ensures inputs do not compromise the database.
 * Payment processing and securtiy covered by 'Stripe".
-* Bootstrap modals used to force amin users to confirm that they  are happy to delete a product or a review.
+* Bootstrap modals used to force admin users to confirm that they are happy to delete a product or a review.
 * Custom 404 and 500 error pages displayed if displayed if a page can't be found.
 * Button and menu links on the error pages so user can easily return to the site.
 
