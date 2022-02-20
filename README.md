@@ -210,6 +210,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Users can add reviews of products, which incluse a description, star rating and whether they recommend the product. 
 * This information is presented for other users in various ways across the site.
 * Users can edit their own reviews, and site admins can edit or delete any review.
+* A user can only submit one review per product.
 
 ### User Wishlist
 * Users are able to add and remove products from a whishlist which is linked to their profile.
