@@ -1,5 +1,5 @@
 # Cardiff Skatebord Club  
-![CSC Mockup](static/images/am_I_responsive.png)
+![CSC Mockup](media/readme-images/csc-mock-up.png)
 
 
 [View deployed site here](https://cardiff-skateboard-club.herokuapp.com/)
@@ -26,32 +26,6 @@ CSC or 'Cardiff Skateboard Club' was founded originally in 2008 by a group of lo
 
 ## User stories
 Here I will address the aims and goals of the store from both the perspectives of a new user, registered user and of the owner.
-
-### As a new user I want to
-* Quickly and easily understand the purpose of the site to decide if I want to stay
-* Have clear navigation tools to move around the site to find what I am looking for easily
-* Be able to browse the full range of available products to decide if there is something I wish to purchase
-* Be able to filter the products by their specific categories or brands so I can browse a particular brand or category I am looking for
-* Search for items in the shop by their name or description so I can easily find items I am looking for
-* Sort the items in the shop by price, name, brand and category to find items within my budget, or within my desired brand/category
-* View individual product details to decide if a product meets my needs
-* See product reviews and ratings from other users, so I can buy an item with confidence
-* Add items to my bag easily so that I can continue to browse the store and make further purchases
-* View my bag, and make adjustments to it before I check out, to enjoy a convenient and pleasant experience
-* Create an account easily so I cake purchases and save my details for future use
-* Have my performed actions confirmed to me so I am sure my intended action was completed
-### As a registered user I also want to
-* Easily log in or out so I can view my personal profile
-* Be able to save and remove items to a wishlist so I can decide if I want purchase them later
-* View and edit my delivery and account details to ensure my details are correct
-* Leave a product review
-* Edit my reviews so that I can ensure the reviews are correct
-* View my purchase history so I can keep track of past orders
-* Receive confirmation emails following a purchase so I know the purchase was successful
-### As the site owner I want
-* Be able to add, edit or delete products to keep the store updated
-* Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store
-* Be able to edit or delete a users review in case it may be inappropriate or unfair.
 
 | As a first time visitor.... | I want to....                                                        | So that I can.....                                                 |
 |-----------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------|
@@ -99,10 +73,10 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 ![Colour Pallet](media/readme-images/csc-colors.png) source www.coolers.co
 * The main background of the site will be white. This is to keep things neutral and uncluttered (#FFFFFF). The product images are so colorful and vibrant that it would be distracting to have too many colours and textures vying for the user's attention, and would not enhance the user experience and potentially affect a decision to purchase.
-* I have used a light grey color (#E9ECEF) to separate areas of the site areas, such as the header and footer and for forms and where there is a lot of information presented such as the 'product detail' page.
+* I have used a light grey color (#E9ECEF) to separate areas of the site areas, such as the header and footer and for forms and also horizontal rules where there is a lot of information presented such as the 'product detail' page.
 * Bootstrap cards and a shadow effect have also been used for the same purpose on the 'products' page.
 * The main recurring color in the design is a bright pink (#F53DA2) which is used to inject some colour and vibrancy into the design in keeping with the skateboarding culture.
-* The pink also used to subtly donate a positive action, e.g the 'buy now' button, 'add to favorites' etc. Whereas less positive actions such as 'go back', 'previous' or 'cancel' have a plain black/white aesthetic.
+* The pink also used with the buttons to subtly donate a positive action, e.g the 'buy now' button, 'add to favorites' etc. Whereas less positive actions such as 'go back', 'previous' or 'cancel' have a plain black/white aesthetic.
 * Pink is also used as a hover effect on links, for review stars, and to animate the shopping bag when it contains items.
 
 ### Fonts
@@ -114,7 +88,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Bootstrap
 
 * I have used the CSS framework Bootstrap to achieve a design consistency across the site. Bootstrap's responsive breakpoints have been utilised to ensure the site layout is responsive across all viewports and devices
-* I have used customised Bootstrap's modals, cards, alerts, toasts, forms and responsive navbar, throughout the site to achieve a uniformity of design that is visually pleasing and responsive.
+* I have used customised Bootstrap's modals, cards, alerts, toasts, forms, off canvas and responsive navbar, throughout the site to achieve a uniformity of design that is visually pleasing and responsive.
 
 ### Buttons
 * The majority of the sites button have been customised from Bootstrap, with pink 'outline' buttons used to denote forward or positive actions while black outline buttons have been used for negative or returning actions.
@@ -122,11 +96,13 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 ### Images
 * Images are predominantly of the products. Skateboarding products are incredibly vibrant and provide most of the colour for the site.
-* The homepage has a 'hero' image which is overlayed with the CSC logo to quickly establish the nature of the site.
+* The homepage has a 'hero' image which is overlayed with the CSC logo to quickly establish the nature and purpose of the site.
 * Other general images and artwork (provided by CSC) are used to animate the homepage.
 
 ### Icons
-* Remix Icon's have been used for their clean aesthetic and simplicity, to convey meaning quickly to users and to keep the design minimal. Notably they are used for the 'search' 'user profile' and 'bag' links in the navbar as well as a heart for the user favorites/wishlist,   rating stars and social media footer links.
+* [Remixicon](https://remixicon.com/)'s have been used for their clean aesthetic and simplicity, to convey meaning quickly to users and to keep the design minimal. Notably they are used for the 'search' 'user profile' and 'bag' links in the navbar as well as a heart for the user favorites/wishlist,   rating stars and social media footer links.
+* [Font Awesome](https://fontawesome.com/)  Icons were used on occasion when a suitable icon could not be fopund in the Remix Icon library.
+
 
 ### Wireframes
 * My initial wireframes can be seen [here](media/readme-images/wireframes.png)
@@ -140,17 +116,25 @@ Here I will address the aims and goals of the store from both the perspectives o
 * CSC logo in the top left that links to the home page
 * Navigation menu is positioned centrally, across all pages, and includes a series of dropdown menus that allow users to filter products by type or brand.
 * On the far right of the navbar are search, user and bag icons.
-* Search Icon reveals a hidden search bar to reduce screen clutter, particularly on mobile.
+* Search Icon reveals a hidden search bar to reduce screen clutter, particularly on mobile.    
+
+![supporting screenshot](media/readme-images/layout-features1.png)      
+
 * Search bar allows users to search the products by name and description.
 * If users are logged in the user icon reveals a dropdown menu which links to the users dashboard and an option to log out of the site.
 * If the user is a Site Admin they will also be shown a link to the 'product admin' page.
 * If the user is not logged in the dropdown will show the option to login to the site or to register an account.
 * Bag icon links to the users shopping bag and is pink if there are items in the bag. The number of items is also shown to the user.
-* Footer displays the social media icons (for demonstration, not currently active)
+* Footer displays the social media icons (for demonstration, not currently active)    
 
+![supporting screenshot](media/readme-images/layout-features3.png)    
+  
 ### Home Page
 * Users are shown a hero image of a skateboarder and the CSC logo and a short introductory paragraph to immediately make the purpose of the site clear.
-* Users are shown a link to learm more about CSC, and a 'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.
+* Users are shown a link to learm more about CSC, and a 'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.     
+
+![supporting screenshot](media/readme-images/layout-features2.png)     
+
 * Below this a series of 3 colourful images link to diffrent products in the store.
 * There is a nother short paragraph about CSC and an image to encourage supporting local independant shops.
 
@@ -160,46 +144,72 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Users are able to activate a convenient Bootstrap 'off canvas' menu to show a series buttons to filter the products by category. 
 * Users can then sort the items in order, either by price or name by clicking the relevant buttons.
 * Each product has an image and some key information underneath, including the average rating of the product.
-* Users are invited to click the 'See More' button which links to the 'product details' page.
+* Users are invited to click the 'See More' button which links to the 'product details' page.     
+
+![supporting screenshot](media/readme-images/layout-features4.png)      
 
 ### Product Details Page
 * Users are shown all the information pertaining to each product
 * Page split into 3 distinct sections to display this information to the user.
 * The top section contains a large product image and other key information such as price, rating and how many users have recommended the product.
 * Users are able to add/remove products to/from their wishlist.
-* Site admins are able to edit or delete individual products. 
+* Site admins are able to edit or delete individual products.     
+
+![supporting screenshot](media/readme-images/layout-features6.png)        
+
 * The middle section allows users to select the desired number of a particular item and add it to their shopping bag.
 * Confirmation messages are used to confirm the users actions. 
 * On adding to their bag users are shown a 'toast' which summarises their bag contents, and offers them a link to view their bag.
 * In the bootom area the users can view any reviews left by other users.
 * Registered users can leave a product review, and also edit their own reviews.
-* Site admin users can edit or delete reviews.
+* Site admin users can edit or delete reviews.     
+
+![supporting screenshot](media/readme-images/layout-features5.png)       
+
 
 ### Bag Page
 * Users are shown a nice summarised list of the items in their bag
 * Users are able to adjust the quantiy of each item in their bag or remove them completely.
 * Users are shown the grand total of their items and any shipping costs as well as how much more they need to spend to reveive free shipping (if applicable).
-* User are given the option to checkout or to keep shopping.
+* User are given the option to checkout or to keep shopping.      
+
+![supporting screenshot](media/readme-images/layout-features7.png)         
+
 
 ### Checkout Page
 * Users are presented with nicely laid out form to complete in order to submit their personal, delivery and payment details.
-* Summary details of the products being purchased and the grand total are shown.
+* Summary details of the products being purchased and the grand total are shown.    
+
+![supporting screenshot](media/readme-images/layout-features8.png)       
+
 * If users are returning customers their delivery details are pre-poulated for convenience.
 * Registered users are able to save their details to their profile, and un-registered users are given the option of creating an account in order to do so.
 * Users are warned on how much their card will be charged.
 * Bootstrap 'spinner' used to inform customers that their payment is being processed.
-* Security, payment errors, and card payments are handled via integration with 'Stripe' payments.
+* Security, payment errors, and card payments are handled via integration with 'Stripe' payments.    
+
+![supporting screenshot](media/readme-images/layout-features9.png)       
+
  
 ### Checkout Success
 * Users are presented with a 'toast' message to confirm their order was succesul and that a confirmation email has been sent.
 * A detailed order summary is presented, and then saved to the user's profile if applicable for them to view.
-* Users are given a convenient linkback to the store so they they can 'Keep Shopping!'.
+* Users are given a convenient linkback to the store so they they can 'Keep Shopping!'.    
+
+![supporting screenshot](media/readme-images/layout-features10.png)      
+  
 
 ### User Dashboard
-* Convenient area for registered users to acces all the features associated with their account.
-* Users can view and update their their details.
-* View their order history, where they can view specific details of individual orders and link to the products themselves in case they want to re-order.
-* View their wishlist, where users can remove items, or head to the product detaiuls page in order to purchase the item.
+* Convenient area for registered users to acces all the features associated with their account.     
+
+![supporting screenshot](media/readme-images/layout-features13.png)     
+
+* Users can view and update their their details.        
+* View their order history, where they can view specific details of individual orders and link to the products themselves in case they want to re-order.     
+
+![supporting screenshot](media/readme-images/layout-features11.png)     
+
+* View their wishlist, where users can remove items, or head to the product details page in order to purchase the item.     
 
 ### Product Admin
 * Users with site admin access can add new products to the site, as well as edit and delete existing ones from the product details page.
@@ -216,7 +226,9 @@ Here I will address the aims and goals of the store from both the perspectives o
 * Users are able to add and remove products from a whishlist which is linked to their profile.
 * Users can do this by clicking a button on the product detail page.
 * Confirmation 'toast' message shows the users a link to view their wishlist.
-* View all saved items in within their dashboard.
+* View all saved items in their dashboard.    
+
+![supporting screenshot](media/readme-images/layout-features12.png)
 
 ### Messages
 * Django's message framework used in conjunction with Bootstrap toasts to provide confirmation messages to user actions.

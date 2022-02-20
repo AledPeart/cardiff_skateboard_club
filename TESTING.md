@@ -2,119 +2,149 @@
 
 ### ___As a new user I want to:___
 
-* Quickly and easily understand the purpose of the site to decide if I want to stay
+* __Quickly and easily understand the purpose of the site to decide if I want to stay__
     * Introductory paragraph underneath the hero image introduces the site and explains its purpose
     * Hero images and site logo show the site's purpose.
 
 ![supporting screenshot](media/readme-images/user-story1.png)
 
-* Have clear navigation tools to move around the site to find what I am looking for easily
+* __Have clear navigation tools to move around the site to find what I am looking for easily__
     * Clear navigation bar at the top each page containing links to the products.    
+
     ![supporting screenshot](media/readme-images/user-story4.png)  
-    * Icons in the top right corner of the navbar, provide quick navigation to key areas, bag, dashboard etc    
+
+    * Icons in the top right corner of the navbar, provide quick navigation to key areas, bag, dashboard etc      
+
     ![supporting screenshot](media/readme-images/user-story5.png)
+
     * Numerous navigation buttons on various pages allowing users to find their way around the site
-    * Back to top button on the products page allows users to return to the top of the page quickly    
-     ![supporting screenshot](media/readme-images/user-story2.png)   
+    * Back to top button on the products page allows users to return to the top of the page quickly       
+
+     ![supporting screenshot](media/readme-images/user-story2.png)      
+
     * Dropdown menus used to keep screen 'clutter' to a minimum.
 
-* Be able to browse the full range of available products to decide if there is something I wish to purchase
+* __Be able to browse the full range of available products to decide if there is something I wish to purchase__
     * Products page allows users to browse the full range of products.
     
-* Be able to filter the products by their specific categories or brands so I can browse a particular brand or category I am looking for
-    * Filter buttons allows users to filter the results by category or brand and find the items they are interested in quickly.    
-    ![supporting screenshot](media/readme-images/user-story3.png)
+* __Be able to filter the products by their specific categories or brands so I can browse a particular brand or category I am looking for__
+    * Filter buttons allows users to filter the results by category or brand and find the items they are interested in quickly.  
 
-* Search for items in the shop by their name or description so I can easily find items I am looking for
-    * Users are able to click the search icon on all pages and search through the product range by name and description    
-    ![supporting screenshot](media/readme-images/user-story6.png)
+    ![supporting screenshot](media/readme-images/user-story3.png)     
 
-* Sort the items in the shop by price, name, brand and category to find items within my budget, or within my desired brand/category
-    * Convenient icon selectors on mobile and filter buttons on desktop allow users to determine the order in which the products are listed    
-    ![supporting screenshot](media/readme-images/user-story7.png)  ![supporting screenshot](media/readme-images/user-story8.png)
+* __Search for items in the shop by their name or description so I can easily find items I am looking for__
+    * Users are able to click the search icon on all pages and search through the product range by name and description   
 
-* View individual product details to decide if a product meets my needs.
+    ![supporting screenshot](media/readme-images/user-story6.png)     
+
+* __Sort the items in the shop by price, name, brand and category to find items within my budget, or within my desired brand/category__
+    * Convenient icon selectors on mobile and filter buttons on desktop allow users to determine the order in which the products are listed  
+
+    ![supporting screenshot](media/readme-images/user-story7.png)  ![supporting screenshot](media/readme-images/user-story8.png)      
+
+* __View individual product details to decide if a product meets my needs.__
     * Users can view the specifics of individual products on the product details page.
-    * Price, product details and other information presented clearly to the customer.    
-     ![supporting screenshot](media/readme-images/user-story9.png)
+    * Price, product details and other information presented clearly to the customer.   
 
-* See product reviews and ratings from other users, so I can buy an item with confidence.
+     ![supporting screenshot](media/readme-images/user-story9.png)      
+
+* __See product reviews and ratings from other users, so I can buy an item with confidence.__
     * On the products page users can see the average rating of each product (if it has been rated)
     * On the product details page users can see the ratings, and how many customers have recommended the product.
     * Users can also read individual review in full, and see how recent they are.    
-     ![supporting screenshot](media/readme-images/user-story10.png)
 
-* Add items to my bag easily so that I can continue to browse the store and make further purchases.
+     ![supporting screenshot](media/readme-images/user-story10.png)        
+
+* __Add items to my bag easily so that I can continue to browse the store and make further purchases.__
     * On the products detail page users have the option to add items to their back with one click.
     * Users can then either continue shopping or checkout.
 
-* View my bag, and make adjustments to it before I check out, to enjoy a convenient and pleasant experience.
+* __View my bag, and make adjustments to it before I check out, to enjoy a convenient and pleasant experience.__
     * On adding items to their bag Users receive a confirmation message with a link to view their bag.    
-    ![supporting screenshot](media/readme-images/user-story12.png)
+
+    ![supporting screenshot](media/readme-images/user-story12.png)      
+
     * Users can access the bag at any time form the navigation bar.
     * Users have the option to increase the amount of items in their bag easily.
     * Users can also remove items completely.    
-    ![supporting screenshot](media/readme-images/user-story11.png)
 
-* Create an account easily so I cake purchases and save my details for future use.
+    ![supporting screenshot](media/readme-images/user-story11.png)       
+
+* __Create an account easily so I cake purchases and save my details for future use.__
     * Django allauth allows users to quickly and easily create an account
     * Users need only provide a username, email and password to create an account
-    * When users make a subsequent purchase they have the option to save their details to their account
+    * When users make a subsequent purchase they have the option to save their details to their account    
 
-* Have my performed actions confirmed to me so I am sure my intended action was completed.
+
+* __Have my performed actions confirmed to me so I am sure my intended action was completed.__    
     * Confirmation messages shown to the users following key user actions e.g adding items to bag, signing in and out, adding items to a wishlist    
+
     
 ### ___As a registered user I also want to:___
 
-* Easily log in or out so I can view my personal profile
+* __Easily log in or out so I can view my personal profile__
     * Users can login or out of the site with a few simple clicks.    
-    ![supporting screenshot](media/readme-images/user-story14.png)
-    * confirmation message shown to the user to confirm their action
-    * Personal dashboard is linked from the users icon in the main navbar
 
-* Be able to save and remove items to a wishlist so I can decide if I want purchase them later
+    ![supporting screenshot](media/readme-images/user-story14.png)    
+
+    * confirmation message shown to the user to confirm their action
+    * Personal dashboard is linked from the users icon in the main navbar    
+    
+
+* __Be able to save and remove items to a wishlist so I can decide if I want purchase them later__
     * Users are able to quickly add and remove items on their wishlist from the product detail page.    
-     ![supporting screenshot](media/readme-images/user-story13.png)
+
+     ![supporting screenshot](media/readme-images/user-story13.png)    
+
     * Filled heart icon shows the user quickly if the item is in their wishlist
     * Confirmation message given to the user on adding an item to their wishlist along with an invitaion to view the wishlist.
-    * Users can view their complete wishlist from the user dashboard
+    * Users can view their complete wishlist from the user dashboard    
 
-* View and edit my delivery and account details to ensure my details are correct
+* __View and edit my delivery and account details to ensure my details are correct__
     * From the dashoard users can view their personal details and edit them.    
-     ![supporting screenshot](media/readme-images/user-story15.png)
 
-* Leave a product review
+     ![supporting screenshot](media/readme-images/user-story15.png)    
+
+* __Leave a product review__
     * Registered users who are signed in can leave a review of a chosen product
     * Users are able to give te product a rating and a reccomendation to inform their fellow customers    
-     ![supporting screenshot](media/readme-images/user-story16.png)
 
-* Edit my reviews so that I can ensure the reviews are correct
+     ![supporting screenshot](media/readme-images/user-story16.png)    
+
+* __Edit my reviews so that I can ensure the reviews are correct__
     * Users can subsequently edit a review from the product detail page.
     * Users can only edit a review that they left    
+
      ![supporting screenshot](media/readme-images/user-story17.png)
 
-* View my purchase history so I can keep track of past orders
+* __View my purchase history so I can keep track of past orders__
     * In their dashboard users can view their order history.
     * Users can see all past orders and speciic details of individual orders    
+
      ![supporting screenshot](media/readme-images/user-story18.png)
 
-* Receive confirmation emails following a purchase so I know the purchase was successful
+* __Receive confirmation emails following a purchase so I know the purchase was successful__
     * Users are sent a confirmation email to their account email address following a succesful purchase.
 
 ### ___As the site owner I want:___
 
-* Be able to add, edit or delete products to keep the store updated
+* __Be able to add, edit or delete products to keep the store updated__
     * Admin users can edit and delete products from the individual product detail page    
-     ![supporting screenshot](media/readme-images/user-story19.png)
+
+     ![supporting screenshot](media/readme-images/user-story19.png)    
+
     * Admin users can add new products in the product admin section.    
-     ![supporting screenshot](media/readme-images/user-story20.png)
-* Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store.
+
+     ![supporting screenshot](media/readme-images/user-story20.png)    
+
+* __Ensure that only superusers are able to add, edit or delete products in order to maintain control of the items in the store.__
     * This functionality is exclusive to superusers and has been ensured programatically in the back-end.
     * Warning messages given to users who try to force entry to restricted pages.    
 
-* Be able to edit or delete a users review in case it may be inappropriate or unfair.
+* __Be able to edit or delete a users review in case it may be inappropriate or unfair.__
     * Only Admin users are able to delete reviews again this has been ensured programatically in the back-end.
-    * Admin Users can also edit any review    
+    * Admin Users can also edit any review        
+
      ![supporting screenshot](media/readme-images/user-story21.png)
 
 ## Manual Functionality Testing
@@ -148,7 +178,7 @@
 | Test Condition                                                                                                     | Result |
 |--------------------------------------------------------------------------------------------------------------------|--------|
 | Correct brand or category name rendered at top of page above skateboard png                                        | Pass   |
-| Product filtering dropdown selector works correctly for each given criteria                                        | Pass   |
+| Off canvas product filtering buttons works correctly for each given criteria                                       | Pass   |
 | Product filtering buttons works correctly for each given criteria                                                  | Fail   |
 | Links change color to pink on hover                                                                                | Pass   |
 | Solid pink border shown on the active link                                                                         | Pass   |
@@ -158,11 +188,7 @@
 | Correct image shown for each product                                                                               | Pass   |
 | If no image available temporary image is shown                                                                     | Pass   |
 | Rating stars render correctly for each individual product                                                          | Pass   |
-| Correct text displayed if no product has no ratings                                                                | Pass   |
-| Clicking the heart outline icon adds the product to a users wishlist if user logged in, and turns solid            | Pass   |
-| Clicking the solid heart icon removes the product from a users wishlist if user logged in, and turns to an outline | Pass   |
-| Correct confirmation message shown to the user for each action                                                     | Pass   |
-| If the user tries to add an item when not logged in they are directed to the login page                            | Pass   |
+| Correct text displayed if the product has no ratings                                                               | Pass   |
 | The 'See More' button links correctly to the product details page                                                  | Pass   |
 | The Back to Top button, sends the user back to the top of the page                                                 | Pass   |
 
@@ -193,11 +219,13 @@
 | Clicking the wishlist button again removes the product from a users wishlist if user logged in, and heart icon shows an outline    | Pass   |
 | Correct confirmation message shown to the user for each action                                                                     | Pass   |
 | If the user tries to add an item when not logged in they are directed to the login page                                            | Pass   |
-| Quantity selector butons allow the user to add the correspending number of items to their bag                                      | Pass   |
+| Quantity selector buttons allow the user to add the correspending number of items to their bag                                     | Pass   |
 | Confirmation message with a snapshot of the bag is shown to the user                                                               | Pass   |
-| The 'View Bag' button in the message snapshot send user to the bag page.                                                           | Pass   |
+| The 'View Bag' button in the message snapshot sends user to the bag page.                                                          | Pass   |
 | The 'Keep Shopping' button sends the user back to the products page                                                                | Pass   |
 | Authenticated users are able to add a review.                                                                                      | Pass   |
+| Authenticated users can only add one review per product.                                                                           | Pass   |
+| Correct warning message shown to users if they try to add a dupicate review                                                        | Pass   |
 | Review form inputs work as expected and dropdowns show the correct values                                                          | Pass   |
 | On submitting the review, user given a confirmation message                                                                        | Pass   |
 | The new review is shown correctly in the review box.                                                                               | Pass   |
@@ -208,7 +236,7 @@
 | Superusers are able to edit and delete any reviews                                                                                 | Pass   |
 | Delete modal functionality works correctly                                                                                         | Pass   |
 | Delete review functionality works correctly                                                                                        | Fail   |
-| Edit review functionality works correctly                                                                                          | Pass   |
+| Edit review functionality works correctly                                                                                          | Fail   |
 | Confirmation messages provided correctly                                                                                           | Pass   |
 | Review owners are able to edit reviews                                                                                             | Pass   |
 | Unauthenticated users are not able to leave a review or to edit/delete an existing one.                                            | Pass   |
@@ -228,10 +256,10 @@
 | Correct subtotal shown for the totals of each item                                      | Pass   |
 | Correct bag total amount showing                                                        | Pass   |
 | Correct delivery total shown if delivery charge applicable                              | Pass   |
-| if delivery charge, message showing how much more spend required to get free delivery   |        |
+| If delivery charge, message showing how much more spend required to get free delivery   | Pass   |
 | Delivery charge is 0 if no delivery charge applicable                                   | Pass   |
-| Grant total is correct for singular and multiple items if delivery charge applicable    | Pass   |
-| Grant total is correct for singular and multiple items if no delivery charge applicable | Pass   |
+| Grand total is correct for singular and multiple items if delivery charge applicable    | Pass   |
+| Grand total is correct for singular and multiple items if no delivery charge applicable | Pass   |
 | The 'Secure Checkout' button takes users to the checkout page                           | Pass   |
 
 ### Checkout Page
