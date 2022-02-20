@@ -83,27 +83,28 @@ def product_detail(request, product_id):
 
 # Add review
 
-    if request.method == 'POST' and request.user.is_authenticated:
-        stars = request.POST.get('stars', 3)
-        review_text = request.POST.get('review_text', '')
-        recommended = request.POST.get('recommended', True)
-        reviews = product.reviews.all()
+    if request.user.is_authenticated or request.user.is_superuser:
+        if request.method == 'POST':
+            stars = request.POST.get('stars', 3)
+            review_text = request.POST.get('review_text', '')
+            recommended = request.POST.get('recommended', True)
+            reviews = product.reviews.all()
 
-        # if reviews.filter(user=request.user).exists():
-        #     messages.error(
-        #         request, "You've already reviewed this product")
-        #     return redirect(reverse('product_detail', args=[product.id]))
-        # else:
-        review = ProductReview.objects.create(
-            product=product,
-            user=request.user, stars=stars, review_text=review_text,
-            recommended=recommended)
+            if reviews.filter(user=request.user).exists():
+                messages.error(
+                    request, "You've already reviewed this product")
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                review = ProductReview.objects.create(
+                    product=product,
+                    user=request.user, stars=stars, review_text=review_text,
+                    recommended=recommended)
 
-        messages.success(
-            request,
-            "You have succesfully added a product review!")
+            messages.success(
+                request,
+                "You have succesfully added a product review!")
 
-        return redirect(reverse('product_detail', args=[product.id]))
+            return redirect(reverse('product_detail', args=[product.id]))
 
     context = {
          'product': product,
