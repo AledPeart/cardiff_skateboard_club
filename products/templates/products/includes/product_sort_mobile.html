@@ -1,8 +1,4 @@
 <div class="col-12 text-black mt-1 text-center">
-    <a class="btn btn-small btn-pink m-1 hover-pink rounded-0" data-bs-toggle="offcanvas" href="#category-off-canvas"
-        role="button" aria-controls="category-off-canvas">
-        Categories
-    </a>
     <div class="col">
         {% if active_category %}
         <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=asc"

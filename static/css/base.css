@@ -180,6 +180,11 @@ a:hover {
     border: 1px solid rgb(245, 61, 162);
 }
 
+.btn-pink-solid {
+    background: rgb(245, 61, 162);
+    color: white;
+}
+
 .btn-outline-black {
     background: white;
     color: black !important; /* use important to override link colors for <a> elements */
@@ -366,6 +371,9 @@ a:hover {
 
 
 /* --- Toasts --- */
+.toast-body{
+ width: 25%;
+}
 
 .message-container {
     position: fixed;

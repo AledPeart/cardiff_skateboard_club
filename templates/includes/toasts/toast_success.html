@@ -1,4 +1,4 @@
-<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+<div class="alert alert-success alert-dismissible text-center" role="alert">
     {{ message }}
     {% if 'wishlist_link' in message.extra_tags %}
     <a href="{% url 'user_wishlist' %}" class="alert-link"><strong> View Wishlist</strong></a>.
@@ -7,8 +7,6 @@
       <span aria-hidden="true">&times;</span>
     </button>
 </div>
-
-
 
 <!-- <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
     <div class="arrow-up arrow-warning"></div>
