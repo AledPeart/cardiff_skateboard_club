@@ -105,7 +105,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 
 ### Wireframes
-* My initial wireframes can be seen [here](media/readme-images/wireframes.png)
+* My initial wireframes can be seen [here](media/readme-images/csc-initial-wireframes.pdf)
 * The layout of the site has been largely governed by the accepted norms of a modern e-commerce store
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
@@ -135,7 +135,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 ![supporting screenshot](media/readme-images/layout-features2.png)     
 
-* Below this a series of 3 colourful images link to diffrent products in the store.
+* Below this a series of 3 colourful images, with buttons that appear on hover and link to different products in the store.
 * There is a nother short paragraph about CSC and an image to encourage supporting local independant shops.
 
 ### Products Page
@@ -200,7 +200,8 @@ Here I will address the aims and goals of the store from both the perspectives o
   
 
 ### User Dashboard
-* Convenient area for registered users to acces all the features associated with their account.     
+* Convenient area for registered users to acces all the features associated with their account.  
+* NB Referred to as a dashboard fo user claruty, but named 'profile' in the code for consistency.    
 
 ![supporting screenshot](media/readme-images/layout-features13.png)     
 
