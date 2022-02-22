@@ -222,7 +222,7 @@ a:hover {
 /* --- Home Page --- */
 
  /* CREDIT Code ammended from https://stackoverflow.com/questions/20134375/how-do-you-create-a-scrolling-window-over-a-still-background-image-with-css */
-.main-image-block {
+ .main-image-block {
     background: url('/media/jacob-bentzinger-vknJUK53wHU-unsplash.jpg') no-repeat center center fixed; 
     width: 100%;
     height: 800px;
