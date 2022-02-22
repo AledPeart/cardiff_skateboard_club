@@ -389,3 +389,57 @@ And on the following browsers:
     Safari (ios)
 
 Further responsiveness testing was done using [Responsinator](http://www.responsinator.com/)
+
+## Lighthouse Testing
+
+I have tested the accessibility and performance of all pages of my deployed site using the [Lighthouse](https://developers.google.com/web/tools/lighthouse) testing tool in Chrome DevTools.     
+There results were positive overall, with some areas highlighted as 'opportunities' for improvement. I noted theres and made the following changes:    
+* Addfed a descriptive Meta tag to the site header.
+* Reduced the size of all images to improve load times.
+* Increased the resoloution of the site logo to improve accesibility score.
+* Streamlined the sited CDN links and moved script links to the bottom of the base template.
+* Added aria labels to buttons and more more descriptive anchor links to improve accessibility.
+
+I ran the tests in incognito mode with all extensions disabled to provide the best possible test conditions, however there are some issues which remain unresolved at the time of submission:
+* Noted vulnerability in the jQuery library
+* Unused Javascript and CSS files due to Bootstrap, Font Awesome, Remixicon Jquery and Stripe.
+* Issues with Render Blocking - attributable to Bootstrap and FontAwesome.
+* Cache Policy issues on images. I have added a cache-policy setting in settings.py, but I believe that Lighthouse is flagging a server issue which is beyond my control.
+* HTTP/2 implementation advised (over HTTP/1.1). Time constraints and the scope of the project meant I was not able to address this particular issue.
+
+### Homepage        
+![supporting screenshot](media/readme-images/home.png)     
+
+### Products page        
+![supporting screenshot](media/readme-images/products.png)      
+
+### Product Detail Page          
+![supporting screenshot](media/readme-images/prod-detail.png)       
+
+### Bag Page        
+![supporting screenshot](media/readme-images/bag.png)     
+
+### Checkout Page        
+![supporting screenshot](media/readme-images/checkout.png)      
+
+### Checkout Success Page         
+![supporting screenshot](media/readme-images/checkout-success.png)       
+ 
+### Sign-in Page         
+![supporting screenshot](media/readme-images/signin.png)        
+
+### User Dashboard page       
+![supporting screenshot](media/readme-images/dashboard.png)     
+
+### User Details Page    
+![supporting screenshot](media/readme-images/user-details.png)     
+
+### Order history Page    
+![supporting screenshot](media/readme-images/order-hist.png)      
+
+### User Wishlist Page    
+![supporting screenshot](media/readme-images/wishlist.png)      
+
+### Product Admin Page    
+![supporting screenshot](media/readme-images/prod-admin.png)       
+ 
