@@ -12,23 +12,23 @@
 {% block content %}
 
 <div class="spacing container"></div>
-<div class="main-image-block row align-items-center">
+<!-- <div class="main-image-block row align-items-center">
   <div class="col-10 p-lg-5 float-right text-white">
     <img class="d-inline-block img-fluid float-right csc-logo" src="{{ MEDIA_URL }}CSC-Logo-White-600px.png" alt="CSC logo">
   </div>
-  
-</div>
-  <!-- <div class="main-image-block d-none d-md-block row align-items-center">
+</div> -->
+
+  <div class="main-image-block d-none d-sm-block row align-items-center">
   <div class="col-10 p-lg-5">
     <img class="img-fluid float-right csc-logo" src="{{ MEDIA_URL }}CSC-Logo-White-600px.png" alt="CSC logo">
   </div>
-</div> -->
+</div>
 
-<!-- <div class="d-inline-block d-md-none row align-items-center">
-  <div class="col-12  p-2 text-center">
-    <img class="img-fluid csc-logo" src="media/csc-logo-black-600px.png" alt="CSC logo">
+<div class="d-block d-sm-none row align-items-center">
+  <div class="col-12 text-center">
+    <img class="img-fluid p-2 csc-logo" src="media/csc-logo-black-600px.png" alt="CSC logo">
   </div>
-</div> -->
+</div>
 
 
 <div class="container-fluid p-0 mt-5">
@@ -51,8 +51,8 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
-      <a href="{% url 'products' %}?category=decks"><img class="image"
-          src="{{ MEDIA_URL }}184802767_2235253306606024_5395885038894168657_n.jpg" alt="Card image cap">
+      <a href="{% url 'products' %}?category=decks"><img class="home-image-link"
+          src="{{ MEDIA_URL }}184802767_2235253306606024_5395885038894168657_n.jpg" alt="skateboard image">
         <div class="middle">
           <div class="text">DECKS</div>
         </div>
@@ -60,8 +60,8 @@
     </div>
 
     <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
-      <a href="{% url 'products' %}?category=dvds_zines"><img class="image"
-          src="{{ MEDIA_URL }}181454103_830995130821895_8745566874423460027_n.jpg" alt="Card image cap">
+      <a href="{% url 'products' %}?category=dvds_zines"><img class="home-image-link"
+          src="{{ MEDIA_URL }}181454103_830995130821895_8745566874423460027_n.jpg" alt="image of a magazine">
         <div class="middle">
           <div class="text">MAGAZINES</div>
         </div>
@@ -69,8 +69,8 @@
     </div>
 
     <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
-      <a href="{% url 'products' %}?category=wheels"><img class="image"
-          src="{{ MEDIA_URL }}185840803_338209467837671_9177231274513118132_n.jpg" alt="Card image cap">
+      <a href="{% url 'products' %}?category=wheels"><img class="home-image-link"
+          src="{{ MEDIA_URL }}185840803_338209467837671_9177231274513118132_n.jpg" alt="image of wheels">
         <div class="middle">
           <div class="text">WHEELS</div>
         </div>

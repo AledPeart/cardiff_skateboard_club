@@ -92,45 +92,11 @@
     </div>
   </div>
 
-    <!-- Bootstrap Off-Canvas -->
-    <!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="category-off-canvas" aria-labelledby="category-off-canvas">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Categories</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body text-center">
-            <p> Filter items by their category to find what you are looking for.</p>
-            <div class="btn-group-vertical">
-                <a href="{% url 'products' %}?category=decks"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0" role="button">Decks</a>
-                <a href="{% url 'products' %}?category=wheels"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0" role="button">Wheels</a>
-                <a href="{% url 'products' %}?category=trucks"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0" role="button">Trucks</a>
-                <a href="{% url 'products' %}?category=bearings"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0"
-                    role="button">Bearings</a>
-                <a href="{% url 'products' %}?category=griptape"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0"
-                    role="button">Griptape</a>
-                <a href="{% url 'products' %}?category=caps_beanies"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0" role="button">Caps &
-                    Beanies</a>
-                <a href="{% url 'products' %}?category=dvds_zines"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0" role="button">DVDs &
-                    Zines</a>
-                <a href="{% url 'products' %}?category=gifts"
-                    class="btn btn-small btn-pink hover-pink thin text-uppercase m-2 rounded-0" role="button">Gifts</a>
-            </div>
-        </div>
-    </div> -->
-    <!-- Bootstrap Off-Canvas end -->
-
     <div class="row">
-        <div class="product-container col-10 offset-1">
+        <div class="product-container col-12 col-sm-10 offset-sm-1">
             <div class="row mt-1 mb-2">
                 <!-- product sorting for mobile -->
-                <div class="d-block d-lg-none">
+                <div class="d-block d-lg-none mx-auto">
                     {% include 'products/includes/product_sort_mobile.html' %}
                 </div>
                 <!-- product sorting for desktop -->

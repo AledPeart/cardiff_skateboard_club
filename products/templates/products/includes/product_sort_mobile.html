@@ -3,12 +3,12 @@
         {% if active_category %}
         <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}"
-            role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-up-wide-short fa-lg"></i></a>
+            role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign"></i><i
+                class="fa-solid fa-arrow-up fa-lg"></i></a>
         <a href="{% url 'products' %}?category={{ active_category }}&sort=price&direction=desc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}"
-            role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-down-wide-short fa-lg"></i></a>
+            role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign"></i><i
+                class="fa-solid fa-arrow-down fa-lg"></i></a>
         <a href="{% url 'products' %}?category={{ active_category }}&sort=name&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-arrow-down-a-z fa-lg"></i></a>
@@ -19,11 +19,11 @@
         <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-up-wide-short fa-lg"></i></a>
+                class="fa-solid fa-arrow-up fa-lg"></i></a>
         <a href="{% url 'products' %}?brand={{ active_brand }}&sort=price&direction=desc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-down-wide-short fa-lg"></i></a>
+                class="fa-solid fa-arrow-down fa-lg"></i></a>
         <a href="{% url 'products' %}?brand={{ active_brand }}&sort=name&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-arrow-down-a-z fa-lg"></i></a>
@@ -34,11 +34,11 @@
         <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-up-wide-short fa-lg"></i></a>
+                class="fa-solid fa-arrow-up fa-lg"></i></a>
         <a href="{% url 'products' %}?q={{ search_term }}&sort=price&direction=desc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-down-wide-short fa-lg"></i></a>
+                class="fa-solid fa-arrow-down fa-lg"></i></a>
         <a href="{% url 'products' %}?q={{ search_term }}&sort=name&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-arrow-down-a-z fa-lg"></i></a>
@@ -49,11 +49,11 @@
         <a href="{% url 'products' %}?sort=price&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-up-wide-short fa-lg"></i></a>
+                class="fa-solid fa-arrow-up fa-lg"></i></a>
         <a href="{% url 'products' %}?sort=price&direction=desc"
             class="btn btn-outline btn-sm {% if current_sorting == 'price_desc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-sterling-sign fa-lg p-1"></i><i
-                class="fa-solid fa-arrow-down-wide-short fa-lg"></i></a>
+                class="fa-solid fa-arrow-down fa-lg"></i></a>
         <a href="{% url 'products' %}?sort=name&direction=asc"
             class="btn btn-outline btn-sm {% if current_sorting == 'name_asc' %}sort-active{% endif %}"
             role="button" aria-pressed="true"><i class="fa-solid fa-arrow-down-a-z fa-lg"></i></a>
