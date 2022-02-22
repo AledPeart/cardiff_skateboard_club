@@ -8,6 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Cardiff Skateboard Club - an independant skate shop based in South Wales">
     {% endblock %}
 
     {% block extra_meta %}
@@ -52,7 +53,7 @@
                 <a class="text-black" href="#" id="user-options-mobile" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
-                        <i class="ri-user-line ri-lg icon"></i>
+                        <i class="ri-user-line ri-lg icon" alt="user profile icon"></i>
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
@@ -72,13 +73,13 @@
                 <a class="text-black" href="{% url 'view_bag' %}">
                     <div class="text-center">
                         {% if total %}
-                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon">
+                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon" alt="shopping bag icon">
                                 <span class="text-pink mb-0"><small>{{ product_count }}</small></span>
                             </i>
                         </div>
                         {% else %}
                         <div>
-                            <i class="ri-shopping-bag-line ri-lg icon"></i>
+                            <i class="ri-shopping-bag-line ri-lg icon" alt="shopping bag icon"></i>
                         </div>
                         {% endif %}
                     </div>
