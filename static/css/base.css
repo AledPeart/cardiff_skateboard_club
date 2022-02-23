@@ -226,6 +226,7 @@ a:hover {
     background: url('/media/hero-image-desktop.jpeg') no-repeat center center fixed; 
     width: 100%;
     height: 800px;
+    margin-top: 2px;
 }
 
 .csc-logo {
@@ -529,6 +530,7 @@ a:hover {
     .header-container {
         padding-top: 100px;
     }
+}
 
 
 

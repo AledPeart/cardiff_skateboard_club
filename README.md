@@ -88,7 +88,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Bootstrap
 
 * I have used the CSS framework Bootstrap to achieve a design consistency across the site. Bootstrap's responsive breakpoints have been utilised to ensure the site layout is responsive across all viewports and devices
-* I have used customised Bootstrap's modals, cards, alerts, toasts, forms, off canvas and responsive navbar, throughout the site to achieve a uniformity of design that is visually pleasing and responsive.
+* I have used customised Bootstrap's modals, cards, alerts, toasts, forms, and responsive navbar, throughout the site to achieve a uniformity of design that is visually pleasing and responsive.
 
 ### Buttons
 * The majority of the sites button have been customised from Bootstrap, with pink 'outline' buttons used to denote forward or positive actions while black outline buttons have been used for negative or returning actions.
@@ -132,7 +132,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Home Page
 * Users are shown a hero image of a skateboarder and the CSC logo and a short introductory paragraph to immediately make the purpose of the site clear.
 * Users are shown a link to learm more about CSC, and a 'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.     
-
+* The hero image was removed for mobile devices foillowing Lighthouse testing, for asthetic and performance reasons. 
 ![supporting screenshot](media/readme-images/layout-features2.png)     
 
 * Below this a series of 3 colourful images, with buttons that appear on hover and link to different products in the store.
@@ -141,7 +141,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Products Page
 * Products are laid out in a convenient grid style which stacks nicely on mobile devices.
 * Information text displays the amount of products the user is viewing and also informs them of the results if they have searched for a product. 
-* Users are able to activate a convenient Bootstrap 'off canvas' menu to show a series buttons to filter the products by category. 
+* Users are able to activate a convenient Bootstrap 'modal' which contains a set of buttons to filter the products by category. 
 * Users can then sort the items in order, either by price or name by clicking the relevant buttons.
 * Each product has an image and some key information underneath, including the average rating of the product.
 * Users are invited to click the 'See More' button which links to the 'product details' page.     

@@ -178,7 +178,8 @@
 | Test Condition                                                                                                     | Result |
 |--------------------------------------------------------------------------------------------------------------------|--------|
 | Correct brand or category name rendered at top of page above skateboard png                                        | Pass   |
-| Off canvas product filtering buttons works correctly for each given criteria                                       | Pass   |
+| Browse Categories button launches the modal correctly                                                              | Pass   |
+| Modal product filtering buttons works correctly for each given criteria                                            | Pass   |
 | Product filtering buttons works correctly for each given criteria                                                  | Fail   |
 | Links change color to pink on hover                                                                                | Pass   |
 | Solid pink border shown on the active link                                                                         | Pass   |
@@ -214,6 +215,8 @@
 | Cancel button on the modals closes it and returns user to the product detail template                                              | Pass   |
 | Delete button on the modals deletes the product and returns user to the product template                                           | Pass   |
 | On deleteing the product user is given a confirmation message                                                                      | Pass   |
+| If deleteing a product with an associated review the product and the review are deleted without issue                              | Pass   |
+| If deleteing a product which is in a users wishlist both are deleted without issue                                                 | Pass   |
 | If a user is not a super user the links are not shown                                                                              | Pass   |
 | Clicking the wishlist button adds the product to a users wishlist if user logged in, and heart icon turns solid                    | Pass   |
 | Clicking the wishlist button again removes the product from a users wishlist if user logged in, and heart icon shows an outline    | Pass   |
@@ -396,6 +399,7 @@ I have tested the accessibility and performance of all pages of my deployed site
 There results were positive overall, with some areas highlighted as 'opportunities' for improvement. I noted theres and made the following changes:    
 * Addfed a descriptive Meta tag to the site header.
 * Reduced the size of all images to improve load times.
+* Removed the hero image on mobile, now only showing the CSC logo, this has improved performance and is also more asthetically pleasing.
 * Increased the resoloution of the site logo to improve accesibility score.
 * Streamlined the sited CDN links and moved script links to the bottom of the base template.
 * Added aria labels to buttons and more more descriptive anchor links to improve accessibility.
