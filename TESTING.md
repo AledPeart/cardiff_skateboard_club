@@ -239,7 +239,7 @@
 | Superusers are able to edit and delete any reviews                                                                                 | Pass   |
 | Delete modal functionality works correctly                                                                                         | Pass   |
 | Delete review functionality works correctly                                                                                        | Fail   |
-| Edit review functionality works correctly                                                                                          | Fail   |
+| Edit review functionality works correctly                                                                                          | Pass   |
 | Confirmation messages provided correctly                                                                                           | Pass   |
 | Review owners are able to edit reviews                                                                                             | Pass   |
 | Unauthenticated users are not able to leave a review or to edit/delete an existing one.                                            | Pass   |
@@ -461,20 +461,84 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 
 ## Resolved Bugs
 
-### __Add To Wishlist__ function not working correctly
+* __Add To Wishlist__ function not working correctly
 
 I had incorrectly set up my __Add To Wishlist__ function. If a user was authenticated the function would work correctly, the item wuld be added to the wishlist and the correct message would be shown to the user.
 When a user was not logged in and tried to add an item to the wishlist they would be correctly directed to the Login Page, however when the user then logged in it would generetae an 'endless loop' and a constant stream of alert messages which would
 cause the browser to crash. After some investigation I realised that by using the following return statement:
  
-`          
-    return HttpResponseRedirect(request.META["HTTP_REFERER"])
-
-`         
+```          
+return HttpResponseRedirect(request.META["HTTP_REFERER"])
+```         
 to return the user to the page they had come from, was inadvertantly and unneccesarily causing the issue. By ammending the return statement to redirect the user to the product detail page
 the issue was resolved.
 
-`      
-    return redirect(reverse('product_detail', args=[product.id]))
+```      
+return redirect(reverse('product_detail', args=[product.id]))
+```
 
-`
+* __Edit Review Form__
+
+When adding a product review the select box for the rating stars was set with options 1-5 because I created the form in my template,
+however because the __Edit Review Form__ used crispy forms which use a default type of input for each model field. In this case the user was able to enter any number for the rating stars    
+    
+![supporting screenshot](media/readme-images/bug2.png) 
+
+and if those were outside of the specified range they would show on the review and in the average ratings thereby distorting things.    
+
+![supporting screenshot](media/readme-images/bug3.png)     
+
+ To override this I tried to add a max and min option but in the Django Docs I couldn't find a clear example for an integerfield, 
+so I decided to set defined options on the model as follows:
+
+```
+STAR_OPTIONS = (
+        (5, '5'),
+        (4, '4'),
+        (3, '3'),
+        (2, '2'),
+        (1, '1'),
+    )
+```    
+
+Ammending the model in this way had the desired affect and means that the available options for the star rating field on the __Edit Review Form__ are as intended.    
+
+![supporting screenshot](media/readme-images/bug1.png)     
+
+* __Pagination__
+
+I was really keen to implement a pagination feature into my site, particularly on the products page where if all the products are viewed together they number over 100, and the amount scrolling required by the user is not ideal.
+By referring to the Django Documentation I was able to get this working within the products view using Django's Paginator class to group the products into page objects. I then realised that this had impacted on the product filtering and ordering that I had already implemented. I decided to stick with the option of filtering and ordering products as I belive it offeres a more convenient way for users to browse the store. Given more time it is something I am keen to explore further. Essentially as both use query paramemters a way would need to be found to run them seperately so that they did not impact each other.
+
+* __Incorrect Product Review being deleted__
+
+When manually testing the functionality of my site I realised that when a review owner or a superuser was deleteing a review, it was always the most recent review that was being deleted and not the one that was selected for deletion. After some investigation I discovered that because the reviews were being deleted via a Bootstrap Modal to prevent accidental deletion I hadn't ensured that the modal IDs were unique i.e that there was a unique ID for each modal linked to a review. Initially they all had the same ID, and so therefore it was always the first review that was being deleted as there was no way to distinguish between them. By adding the __review id__ to the modal id and also to the __data target__ of the button that it points to as follows:    
+
+```
+id="DeleteReviewModal-{{ review.id }}"
+```
+```
+data-target="#DeleteReviewModal-{{ review.id }}"
+```     
+It ensured that the intended review was being deleted.
+
+* Unexpected whitespace when viewing on mobile
+
+When testing how the site layout was rendering on different screen sizes I became aware of unintended whitespace showing on the right hand side of some images and below the footer on pages witlimited content.    
+
+![supporting screenshot](media/readme-images/bug4.png)      
+
+ I found a post on
+[Stack Overflow](https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend) that indicated it was a common issue particularly on IOS devices. I have added the following CSS    
+````
+html,body {
+
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+````
+
+which has resloved the issue.
