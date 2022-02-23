@@ -308,6 +308,7 @@
 | Test Condition                                                                                    | Result |
 |---------------------------------------------------------------------------------------------------|--------|
 | User Dashboard Page shows three areas available to the user (details, order history and wishlist) | Pass   |
+| User Dashboard Page shows displays the users name correctly in the heading                        | Pass   |
 | Icons, title and outline turn pink on hover                                                       | Pass   |
 | Each link takes the user to the correct page                                                      | Pass   |
 
@@ -356,6 +357,16 @@
 | Adding a new product without an image delivers expected result with temporary image | Pass   |  
 | After adding the product user shown the product details page for that product       | Pass   |  
 | Confirmation message confirms product added successfully                            | Pass   |  
+
+### Login and Logout
+| Test Condition                                                                      | Result |
+|-------------------------------------------------------------------------------------|--------|
+| Users are able to login to the site without issue                                   | Pass   |   
+| Users are able to log outr of thwe site without issue                               | Pass   |   
+| Confirmation displayed to the user upon succesfully signing in                      | Pass   |   
+| Confirmation displayed to the user upon succesfully signing out                     | Pass   |
+| All other All auth features are working correctly                                   | Pass   |
+
 
 ## Responsiveness
 

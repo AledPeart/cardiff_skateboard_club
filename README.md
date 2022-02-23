@@ -201,7 +201,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 
 ### User Dashboard
 * Convenient area for registered users to acces all the features associated with their account.  
-* NB Referred to as a dashboard fo user claruty, but named 'profile' in the code for consistency.    
+* NB Referred to as a dashboard fo user clarity, but named 'profile' in the code for consistency.    
 
 ![supporting screenshot](media/readme-images/layout-features13.png)     
 
