@@ -406,6 +406,7 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 * Issues with Render Blocking - attributable to Bootstrap and FontAwesome.
 * Cache Policy issues on images. I have added a cache-policy setting in settings.py, but I believe that Lighthouse is flagging a server issue which is beyond my control.
 * HTTP/2 implementation advised (over HTTP/1.1). Time constraints and the scope of the project meant I was not able to address this particular issue.
+* I have also not considered issues related to Progressive Web Applications, as they fall outside the remit of this static web application. 
 
 ### Homepage        
 ![supporting screenshot](media/readme-images/home.png)     
