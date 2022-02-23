@@ -465,5 +465,16 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 
 I had incorrectly set up my __Add To Wishlist__ function. If a user was authenticated the function would work correctly, the item wuld be added to the wishlist and the correct message would be shown to the user.
 When a user was not logged in and tried to add an item to the wishlist they would be correctly directed to the Login Page, however when the user then logged in it would generetae an 'endless loop' and a constant stream of alert messages which would
-cause the browser to crash. After some investigation I was able to resolve this by using
+cause the browser to crash. After some investigation I realised that by using the following return statement:
  
+    ```    
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+
+    ```
+to return the user to the page they had come from, was inadvertantly and unneccesarily causing the issue. By ammending the return statement to redirect the user to the product detail page
+the issue was resolved.
+
+    ```
+    return redirect(reverse('product_detail', args=[product.id]))
+
+    ```
