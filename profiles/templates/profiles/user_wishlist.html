@@ -31,6 +31,7 @@
                         
                             {% if product.image %}
                             <img class="img-fluid d-sm-block p-2 wishlist-image" width="135" src="{{ product.image.url }}"
+                            onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"
                             alt="{{ product.name }}" />
                              {% else %}
                              <img class="img-fluid d-sm-block p-2 wishlist-image" width="135" src="{{ MEDIA_URL }}awaiting-image.jpeg"

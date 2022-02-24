@@ -40,7 +40,8 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                         {% if item.product.image %}
-                                        <img class="w-50" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        <img class="w-50" src="{{ item.product.image.url }}" onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"
+                                        alt="{{ item.product.name }}">
                                          {% else %}
                                         <img class="w-50" src="{{ MEDIA_URL }}awaiting-image.jpeg" alt="{{ item.product.name }}">
                                         {% endif %}

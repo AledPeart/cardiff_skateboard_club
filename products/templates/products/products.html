@@ -110,7 +110,8 @@
                     <div class="m-2 p-3 shadow-hover h-100">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"
+                            alt="{{ product.name }}">
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">

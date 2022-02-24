@@ -461,7 +461,7 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 
 ## Resolved Bugs
 
-* __Add To Wishlist__ function not working correctly
+### __Add To Wishlist__ function not working correctly
 
 I had incorrectly set up my __Add To Wishlist__ function. If a user was authenticated the function would work correctly, the item wuld be added to the wishlist and the correct message would be shown to the user.
 When a user was not logged in and tried to add an item to the wishlist they would be correctly directed to the Login Page, however when the user then logged in it would generetae an 'endless loop' and a constant stream of alert messages which would
@@ -477,7 +477,7 @@ the issue was resolved.
 return redirect(reverse('product_detail', args=[product.id]))
 ```
 
-* __Edit Review Form__
+### __Edit Review Form__
 
 When adding a product review the select box for the rating stars was set with options 1-5 because I created the form in my template,
 however because the __Edit Review Form__ used crispy forms which use a default type of input for each model field. In this case the user was able to enter any number for the rating stars    
@@ -505,12 +505,12 @@ Ammending the model in this way had the desired affect and means that the availa
 
 ![supporting screenshot](media/readme-images/bug1.png)     
 
-* __Pagination__
+### __Pagination__
 
 I was really keen to implement a pagination feature into my site, particularly on the products page where if all the products are viewed together they number over 100, and the amount scrolling required by the user is not ideal.
 By referring to the Django Documentation I was able to get this working within the products view using Django's Paginator class to group the products into page objects. I then realised that this had impacted on the product filtering and ordering that I had already implemented. I decided to stick with the option of filtering and ordering products as I belive it offeres a more convenient way for users to browse the store. Given more time it is something I am keen to explore further. Essentially as both use query paramemters a way would need to be found to run them seperately so that they did not impact each other.
 
-* __Incorrect Product Review being deleted__
+### __Incorrect Product Review being deleted__
 
 When manually testing the functionality of my site I realised that when a review owner or a superuser was deleteing a review, it was always the most recent review that was being deleted and not the one that was selected for deletion. After some investigation I discovered that because the reviews were being deleted via a Bootstrap Modal to prevent accidental deletion I hadn't ensured that the modal IDs were unique i.e that there was a unique ID for each modal linked to a review. Initially they all had the same ID, and so therefore it was always the first review that was being deleted as there was no way to distinguish between them. By adding the __review id__ to the modal id and also to the __data target__ of the button that it points to as follows:    
 
@@ -522,7 +522,7 @@ data-target="#DeleteReviewModal-{{ review.id }}"
 ```     
 It ensured that the intended review was being deleted.
 
-* Unexpected whitespace when viewing on mobile
+### __Unexpected whitespace when viewing on mobile__
 
 When testing how the site layout was rendering on different screen sizes I became aware of unintended whitespace showing on the right hand side of some images and below the footer on pages witlimited content.    
 
