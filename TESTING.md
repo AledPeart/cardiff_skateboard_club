@@ -541,4 +541,17 @@ html,body {
 }
 ````
 
-which has resloved the issue.
+which has resloved the issue.    
+
+### __Default Image not Loading__
+
+I caught this error when manually testing. Whenever a product image is not present, a default product image set to load using an if statement in the template, this works well and the default image is loaded if there is no image associated with that product (as seen below left). However, if for some eason the image cannot be and a 404 error is returned then the default image does not load, and the following is presented to the user (below right)    
+
+![supporting screenshot](media/readme-images/bug5.png)   
+
+In most situations the __if__ statement would catch a missing image and display the default placeholder, but as a extra precaution I have added the following attribute to the product image so that the default placeholder is loaded in the event of an error. This code was ammended from a post on [Stack Overflow](https://stackoverflow.com/questions/63038939/how-can-i-set-default-image-in-property-if-image-is-not-available-for-a-product)
+
+```
+onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"
+```
+
