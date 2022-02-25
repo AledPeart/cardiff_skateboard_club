@@ -2,23 +2,16 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
 
-<!-- <div class="spacing container"></div>
-<div class="main-image-block row align-items-center">
-  <div class="col-10 p-lg-5 float-right text-white">
-    <img class="d-inline-block img-fluid float-right csc-logo" src="{{ MEDIA_URL }}CSC-Logo-White-600px.png" alt="CSC logo">
-  </div>
-</div> -->
-
-  <div class="main-image-block d-none d-sm-block row align-items-center">
+<div class="main-image-block d-none d-sm-block row align-items-center my-4">
   <div class="col-10 p-lg-5">
     <img class="img-fluid float-right csc-logo" src="{{ MEDIA_URL }}CSC-Logo-White-600px.png" alt="CSC logo">
   </div>
@@ -30,21 +23,21 @@
   </div>
 </div>
 
-
 <div class="container-fluid p-0 mt-5">
   <div class="jumbotron jumbotron-home bg-white text-black text-center thin row justify-content-center">
     <div class="col-12 col-lg-8 col-xl-4">
-    <h2 class="pb-2"><small>Welcome to </small><span class="text-uppercase">cardiff skateboard club</span></h2>
-    
+      <h2 class="pb-2"><small>Welcome to </small><span class="text-uppercase">cardiff skateboard club</span></h2>
       <p>
-        The CSC Store, aka 'Cardiff Skateboard Club' is <span class="medium-font">Cardiff's only independent skateboard shop</span>. We have been around a while now, <span class="medium-font">since 2008</span> or something.
-        We are not really a club, but we also are kind of a club......<a href="#about-csc" role="button">learn more</a><br>
-        <a class="btn btn-pink hover-pink rounded-0 btn-lg mt-4" href="{% url 'products' %}" role="button">Shop Now</a>
+        The CSC Store, aka 'Cardiff Skateboard Club' is <span class="medium-font">Cardiff's only independent skateboard
+          shop</span>. We have been around a while now, <span class="medium-font">since 2008</span> or something.
+        We are not really a club, but we also are kind of a club......<a href="#about-csc" aria-label="more about csc"
+          role="button">learn
+          more</a><br>
+        <a class="btn btn-pink hover-pink rounded-0 btn-lg mt-4" href="{% url 'products' %}" aria-label="shop now"
+          role="button">Shop Now</a>
     </div>
   </div>
 </div>
-
-
 
 <h3 class="text-center thin pb-2">What are you looking for today.......?</h3>
 
@@ -52,7 +45,8 @@
   <div class="row justify-content-center">
     <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
       <a href="{% url 'products' %}?category=decks"><img class="home-image-link"
-          src="{{ MEDIA_URL }}184802767_2235253306606024_5395885038894168657_n.jpg" alt="skateboard image">
+          src="{{ MEDIA_URL }}184802767_2235253306606024_5395885038894168657_n.jpg" alt="skateboard image"
+          aria-label="shop boards">
         <div class="middle">
           <div class="text">DECKS</div>
         </div>
@@ -61,7 +55,8 @@
 
     <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
       <a href="{% url 'products' %}?category=dvds_zines"><img class="home-image-link"
-          src="{{ MEDIA_URL }}181454103_830995130821895_8745566874423460027_n.jpg" alt="image of a magazine">
+          src="{{ MEDIA_URL }}181454103_830995130821895_8745566874423460027_n.jpg" alt="image of a magazine"
+          aria-label="shop magazines">
         <div class="middle">
           <div class="text">MAGAZINES</div>
         </div>
@@ -70,7 +65,8 @@
 
     <div class="overlay-box p-3 col-8 col-lg-4 col-xl-3">
       <a href="{% url 'products' %}?category=wheels"><img class="home-image-link"
-          src="{{ MEDIA_URL }}185840803_338209467837671_9177231274513118132_n.jpg" alt="image of wheels">
+          src="{{ MEDIA_URL }}185840803_338209467837671_9177231274513118132_n.jpg" alt="image of wheels"
+          aria-label="shop wheels">
         <div class="middle">
           <div class="text">WHEELS</div>
         </div>
@@ -82,7 +78,8 @@
 <div class="container-fluid px-0 mt-5">
   <div class="jumbotron text-black text-center thin row justify-content-center mb-0">
     <div class="col-12 col-md-4">
-      <h1 id="about-csc" class="mt-6"><strong class="text-uppercase">About CSC <span><img src="{{ MEDIA_URL }}csc-logo-50px.png" alt="CSC logo"></span></strong></h1><br>
+      <h1 id="about-csc" class="mt-6"><strong class="text-uppercase">About CSC <span><img
+              src="{{ MEDIA_URL }}csc-logo-50px.png" alt="CSC logo"></span></strong></h1><br>
       <p>The CSC Store, aka 'Cardiff Skateboard Club' is <span class="medium-font">Cardiff's only independent skateboard
           shop</span>. We have been around a while now, <span class="medium-font">since 2008</span> or something.
         We are not really a club, but we also are kind of a club. You can't join as such,
@@ -98,10 +95,10 @@
   </div>
 </div>
 
-
 <div class="row justify-content-center">
   <div class="col-12 text-center">
-    <img class="img-fluid" src="{{ MEDIA_URL }}new-support-sticker_0c8bed00-d7e9-47b3-babf-76b98bd7a638_600x600.jpeg" alt="support independant shops graphic">
+    <img class="img-fluid" src="{{ MEDIA_URL }}new-support-sticker_0c8bed00-d7e9-47b3-babf-76b98bd7a638_600x600.jpeg"
+      alt="support independant shops graphic">
   </div>
 </div>
 
