@@ -2,39 +2,43 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
 
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Cardiff Skateboard Club - an independant skate shop based in South Wales">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cardiff Skateboard Club - an independant skate shop based in South Wales">
     {% endblock %}
 
     {% block extra_meta %}
     <link rel="apple-touch-icon" sizes="76x76" href="{{ MEDIA_URL }}apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ MEDIA_URL }}favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ MEDIA_URL }}favicon-16x16.png">
-    {% endblock %} 
+    {% endblock %}
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Lato&display=swap">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Lato&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
-    
-    
     <title>Cardiff Skateboard Club {% block extra_title %}{% endblock %}</title>
+
 </head>
 
 <body>
-   
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-grey fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler"
@@ -42,20 +46,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-         <!-- CSC Logo -->
-        
-         <a href="{% url 'home' %}" class="nav-link hover-text-pink">
-            <img class="main-logo-link" src="{{ MEDIA_URL }}csc-logo-black.png"
-                alt="CSC logo"><span class="logo-font d-none d-sm-inline-flex text-black px-1 my-0">Cardiff Skateboard Club</span>
+        <!-- CSC Logo -->
+
+        <a href="{% url 'home' %}" class="nav-link hover-text-pink">
+            <img class="main-logo-link" src="{{ MEDIA_URL }}csc-logo-black.png" alt="CSC logo"
+                aria-label="CSC site logo"><span class="logo-font d-none d-sm-inline-flex text-black px-1 my-0">Cardiff
+                Skateboard Club</span>
         </a>
-        
-             <!-- User/Bag on mobile -->
-            <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
+
+        <!-- User/Bag on mobile -->
+        <ul class="list-inline list-unstyled me-2 mb-0 d-flex">
             <li class="list-inline-item dropdown mx-1 d-flex d-lg-none">
-                <a class="text-black" href="#" id="user-options-mobile" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="text-black" href="#" id="user-options-mobile" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <div class="text-center">
-                        <i class="ri-user-line ri-lg icon" alt="user profile icon"></i>
+                        <i class="ri-user-line ri-lg icon" alt="user profile icon" aria-label="User profile icon"></i>
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
@@ -75,13 +80,15 @@
                 <a class="text-black" href="{% url 'view_bag' %}">
                     <div class="text-center">
                         {% if total %}
-                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon" alt="shopping bag icon">
+                        <div><i class="ri-shopping-bag-line text-pink ri-lg icon" alt="shopping bag icon"
+                                aria-label="Shopping bag icon">
                                 <span class="text-pink mb-0"><small>{{ product_count }}</small></span>
                             </i>
                         </div>
                         {% else %}
                         <div>
-                            <i class="ri-shopping-bag-line ri-lg icon" alt="shopping bag icon"></i>
+                            <i class="ri-shopping-bag-line ri-lg icon" alt="shopping bag icon"
+                                aria-label="Shopping bag icon"></i>
                         </div>
                         {% endif %}
                     </div>
@@ -93,191 +100,194 @@
         <div class="collapse navbar-collapse" id="navbar-toggler">
 
             <!-- Nav Links -->
-                <ul class="navbar-nav nav-menu mb-2 mb-md-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="skate-link" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Skate
-                        </a>
-                        <div class="dropdown-menu p-2 border-0" aria-labelledby="skate-link">
-                            <a href="{% url 'products' %}?category=decks" class="dropdown-item">Decks</a>
-                            <a href="{% url 'products' %}?category=wheels" class="dropdown-item">Wheels</a>
-                            <a href="{% url 'products' %}?category=trucks" class="dropdown-item">Trucks</a>
-                            <a href="{% url 'products' %}?category=bearings" class="dropdown-item">Bearings</a>
-                            <a href="{% url 'products' %}?category=griptape" class="dropdown-item">Griptape</a>
-                            <!-- <a href="{% url 'products' %}?category=decks,wheels,trucks,bearings,griptape"
-                            class="dropdown-item">All Skate</a> -->
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="accessories-link" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Accessories
-                        </a>
-                        <div class="dropdown-menu p-2 border-0" aria-labelledby="accessories-link">
-                            <a href="{% url 'products' %}?category=caps_beanies" class="dropdown-item">Caps &amp;
-                                Beanies</a>
-                            <a href="{% url 'products' %}?category=dvds_zines" class="dropdown-item">Dvds &amp;
-                                'Zines</a>
-                            <a href="{% url 'products' %}?category=gifts" class="dropdown-item">Gifts</a>
-                            <!-- <a href="{% url 'products' %}?category=caps_beanies,dvds_zines,gifts"
-                                class="dropdown-item">All
-                                Accessories</a> -->
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="brands-link" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Brands
-                        </a>
-                        <div class="dropdown-menu p-2 border-0" aria-labelledby="brands-link">
-                            <a href="{% url 'products' %}?brand=alltimers" class="dropdown-item">Alltimers</a>
-                            <a href="{% url 'products' %}?brand=anti_hero" class="dropdown-item">Anti Hero</a>
-                            <a href="{% url 'products' %}?brand=bones" class="dropdown-item">Bones</a>
-                            <a href="{% url 'products' %}?brand=butter_goods" class="dropdown-item">Butter Goods</a>
-                            <a href="{% url 'products' %}?brand=chocolate" class="dropdown-item">Chocolate</a>
-                            <a href="{% url 'products' %}?brand=handy_supply_co" class="dropdown-item">Handy Supply Co</a>
-                            <a href="{% url 'products' %}?brand=independent" class="dropdown-item">Independent</a>
-                            <a href="{% url 'products' %}?brand=oj" class="dropdown-item">OJ</a>
-                            <a href="{% url 'products' %}?brand=sour_solution" class="dropdown-item">Sour Solution</a>
-                            <a href="{% url 'products' %}" class="dropdown-item">View All</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}" id="all-products-link">
-                            All Products
-                        </a>
-                    </li>
-                </ul>
-          
-   
-        <ul class="list-inline list-unstyled me-2 mb-0 d-flex nav-icons ml-auto">
-            <li class="list-inline-item">
-                <!-- Search Icon -->
-                <a class="text-black" href="#" id="mobile-search" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center">
-                        <div><i class="ri-search-line ri-xl icon"></i></div>
+            <ul class="navbar-nav nav-menu mb-2 mb-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="skate-link" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Skate
+                    </a>
+                    <div class="dropdown-menu p-2 border-0" aria-labelledby="skate-link">
+                        <a href="{% url 'products' %}?category=decks" class="dropdown-item">Decks</a>
+                        <a href="{% url 'products' %}?category=wheels" class="dropdown-item">Wheels</a>
+                        <a href="{% url 'products' %}?category=trucks" class="dropdown-item">Trucks</a>
+                        <a href="{% url 'products' %}?category=bearings" class="dropdown-item">Bearings</a>
+                        <a href="{% url 'products' %}?category=griptape" class="dropdown-item">Griptape</a>
                     </div>
-                </a>
-                <!-- Hidden search Bar -->
-                <div class="dropdown-menu row border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-                    <form class="form" method="GET" action="{% url 'products' %}">
-                        <div class="input-group search-bar float-right">
-                            <input class="form-control border rounded-0" type="text" name="q"
-                                placeholder="What you looking for?">
-                            <div class="input-group-append">
-                                <button class="form-control form-control btn btn-pink hover-pink border rounded-0"
-                                    type="submit">
-                                    <span class="text-black">Search</span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="accessories-link" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Accessories
+                    </a>
+                    <div class="dropdown-menu p-2 border-0" aria-labelledby="accessories-link">
+                        <a href="{% url 'products' %}?category=caps_beanies" class="dropdown-item">Caps &amp;
+                            Beanies</a>
+                        <a href="{% url 'products' %}?category=dvds_zines" class="dropdown-item">Dvds &amp;
+                            'Zines</a>
+                        <a href="{% url 'products' %}?category=gifts" class="dropdown-item">Gifts</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="brands-link" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Brands
+                    </a>
+                    <div class="dropdown-menu p-2 border-0" aria-labelledby="brands-link">
+                        <a href="{% url 'products' %}?brand=alltimers" class="dropdown-item">Alltimers</a>
+                        <a href="{% url 'products' %}?brand=anti_hero" class="dropdown-item">Anti Hero</a>
+                        <a href="{% url 'products' %}?brand=bones" class="dropdown-item">Bones</a>
+                        <a href="{% url 'products' %}?brand=butter_goods" class="dropdown-item">Butter Goods</a>
+                        <a href="{% url 'products' %}?brand=chocolate" class="dropdown-item">Chocolate</a>
+                        <a href="{% url 'products' %}?brand=handy_supply_co" class="dropdown-item">Handy Supply Co</a>
+                        <a href="{% url 'products' %}?brand=independent" class="dropdown-item">Independent</a>
+                        <a href="{% url 'products' %}?brand=oj" class="dropdown-item">OJ</a>
+                        <a href="{% url 'products' %}?brand=sour_solution" class="dropdown-item">Sour Solution</a>
+                        <a href="{% url 'products' %}" class="dropdown-item">View All</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}" id="all-products-link">
+                        All Products
+                    </a>
+                </li>
+            </ul>
 
-            <!-- User/Bag on desktop -->
-            <li class="list-inline-item dropdown mx-1 d-none d-lg-flex">
-                <a class="text-black" href="#" id="user-options-desktop" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center">
-                        <div><i class="ri-user-line ri-xl icon"></i></div>
-                    </div>
-                </a>
-                <div class="dropdown-menu p-2 border-0 dropdown-menu-right" aria-labelledby="user-options-desktop">
-                    {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                    <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
-                    {% endif %}
-                    <a href="{% url 'profile' %}" class="dropdown-item">Dashboard</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                    {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                    {% endif %}
-                </div>
-            </li>
-            <li class="list-inline-item mx-1 d-none d-lg-flex">
-                <a class="text-black" href="{% url 'view_bag' %}">
-                    <div class="text-center">
-                        {% if total %}
-                        <div>
-                            <i class="ri-shopping-bag-line text-pink ri-xl icon"><span class="text-pink mb-0"><small>{{ product_count }}</small></span></i>
+
+            <ul class="list-inline list-unstyled me-2 mb-0 d-flex nav-icons ml-auto">
+                <li class="list-inline-item">
+                    <!-- Search Icon -->
+                    <a class="text-black" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" aria-label="Search bar icon">
+                        <div class="text-center">
+                            <div><i class="ri-search-line ri-xl icon"></i></div>
                         </div>
-                        {% else %}
-                        <div><i class="ri-shopping-bag-line ri-xl icon"></i></div> 
-                        {% endif %}
-                        
+                    </a>
+                    <!-- Hidden search Bar -->
+                    <div class="dropdown-menu row border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+                        <form class="form" method="GET" action="{% url 'products' %}">
+                            <div class="input-group search-bar float-right">
+                                <input class="form-control border rounded-0" type="text" name="q"
+                                    placeholder="What you looking for?">
+                                <div class="input-group-append">
+                                    <button class="form-control form-control btn btn-pink hover-pink border rounded-0"
+                                        type="submit">
+                                        <span class="text-black">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </a>
-            </li>
-        </ul>
+                </li>
+
+                <!-- User/Bag on desktop -->
+                <li class="list-inline-item dropdown mx-1 d-none d-lg-flex">
+                    <a class="text-black" href="#" id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <div class="text-center">
+                            <div><i class="ri-user-line ri-xl icon" aria-label="User profile icon"></i></div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu p-2 border-0 dropdown-menu-right" aria-labelledby="user-options-desktop">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href=" {% url 'add_product' %} " class="dropdown-item">Product Admin</a>
+                        {% endif %}
+                        <a href="{% url 'profile' %}" class="dropdown-item">Dashboard</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+                <li class="list-inline-item mx-1 d-none d-lg-flex">
+                    <a class="text-black" href="{% url 'view_bag' %}" aria-label="Shopping bag link">
+                        <div class="text-center">
+                            {% if total %}
+                            <div>
+                                <i class="ri-shopping-bag-line text-pink ri-xl icon"><span
+                                        class="text-pink mb-0"><small>{{ product_count }}</small></span></i>
+                            </div>
+                            {% else %}
+                            <div><i class="ri-shopping-bag-line ri-xl icon"></i></div>
+                            {% endif %}
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-    
+
     {% if messages %}
-        <div class="message-container">
+    <div class="message-container">
         {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                <!-- success -->
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                <!-- info -->
-                    {% include 'includes/toasts/toast_success_bag.html' %}
-                {% endif %}
-            {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        <!-- success -->
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        <!-- info -->
+        {% include 'includes/toasts/toast_success_bag.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
     {% endif %}
 
     {% block page_header %}
     {% endblock %}
-<div class="content">
-    {% block content %}
-    {% endblock %}
-</div>
-   
-
-<footer class="container-fluid bg-grey">
-    <div class="row justify-content-center">
-        <div class="social-footer col-12 text-center footer-bottom m-5 w-auto">
-            <a class="mx-1 mx-sm-3" href="https://www.facebook.com/"><i class="ri-facebook-line ri-xl"></i></a>
-            <a class="mx-1 mx-sm-3" href="#!"><i class="ri-twitter-line ri-xl"></i></a>
-            <a class="mx-1 mx-sm-3" href="#!"><i class="ri-instagram-line ri-xl"></i></a>
-            <a class="mx-1 mx-sm-3" href="#!"><i class="ri-pinterest-line ri-xl"></i></a>
-        </div>
-        <div class="col-12 text-uppercase text-center">
-            <p>&copy; 2022 Cardiff Skateboard Club</p>
-        </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
     </div>
 
-</footer>
 
-{% block corejs %}
+    <footer class="container-fluid bg-grey">
+        <div class="row justify-content-center">
+            <div class="social-footer col-12 text-center footer-bottom m-5 w-auto">
+                <a class="mx-1 mx-sm-3" href="https://www.facebook.com/" aria-label="facebook link" target="_blank"><i
+                        class="ri-facebook-line ri-xl"></i></a>
+                <a class="mx-1 mx-sm-3" href="https://www.twitter.com/" aria-label="twitter link" target="_blank"><i
+                        class="ri-twitter-line ri-xl"></i></a>
+                <a class="mx-1 mx-sm-3" href="https://www.instagram.com/" aria-label="instagram link" target="_blank"><i
+                        class="ri-instagram-line ri-xl"></i></a>
+                <a class="mx-1 mx-sm-3" href="https://www.pinterest.com/" aria-label="pinterest link" target="_blank"><i
+                        class="ri-pinterest-line ri-xl"></i></a>
+            </div>
+            <div class="col-12 text-uppercase text-center">
+                <p>&copy; 2022 Cardiff Skateboard Club</p>
+            </div>
+        </div>
 
-        <!-- <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script> -->
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-         <!-- Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"crossorigin="anonymous"></script>
-        <!-- Stripe -->
-        <script src="https://js.stripe.com/v3/"></script>
-{% endblock %}
+    </footer>
 
-{% block extra_js %}
-{% endblock %}
+    {% block corejs %}
 
-{% block postloadjs %}
+    <!-- <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script> -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+    {% block postloadjs %}
     <script>
         $('.toast').toast('show');
     </script>
-{% endblock %}
+    {% endblock %}
 
 </body>
+
 </html>

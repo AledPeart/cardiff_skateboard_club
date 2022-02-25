@@ -19,10 +19,6 @@ Shipping Address:
 
 If you have any questions, please contact us at {{ contact_email }}.
 
-Don't forget to get social with us on our social media channels
-
-***social media links here***
-
 
 Many thanks
 

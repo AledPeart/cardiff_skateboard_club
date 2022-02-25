@@ -2,83 +2,81 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-2">
-        <div class="row">
-            <div class="col-12 mx-auto">
-                <h1 class="h3">Order History</h1>
-                <p>Click on the individual order to see a detailed summary</p>
-                <hr />
-              
-                <div class="col-12 col-lg-6">
-                    <div class="order-history table-responsive mb-5">
-                        <table class="table table-sm table-borderless">
-                            {% if orders %}
-                            <thead>
-                                <tr>
-                                    <th>Order Number</th>
-                                    <th>Date</th>
-                                    <th>Items</th>
-                                    <th>Order Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for order in orders %}
 
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                            <li class="small">
-                                                {{ item.product.name }} x{{ item.quantity }}
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>£{{ order.grand_total }}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                            {% else %}
-                                <p><strong> You do not have any past orders. You best <a href="{% url 'products' %}"
-                                        class="btn btn-small btn-pink rounded-0 hover-pink ml-1"> Get Shopping! </a>
-                                </strong></p>
-                            {% endif %}
-                        </table>
-                    </div>
-                    <a href="{% url 'profile' %}" class="btn btn-black hover-pink rounded-0 m-">
-                        <span class="icon mr-2">
-                            <i class="fas fa-angle-left"></i>
-                        </span>
-                        <span class="text-uppercase">Back to Dashboard</span>
-                    </a>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <h1 class="h3">Order History</h1>
+            <p>Click on the individual order to see a detailed summary</p>
+            <hr />
+            <div class="col-12 col-lg-6">
+                <div class="order-history table-responsive mb-5">
+                    <table class="table table-sm table-borderless">
+                        {% if orders %}
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                </td>
+                                <td>{{ order.date }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for item in order.lineitems.all %}
+                                        <li class="small">
+                                            {{ item.product.name }} x{{ item.quantity }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>£{{ order.grand_total }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        {% else %}
+                        <p><strong> You do not have any past orders. You best <a href="{% url 'products' %}"
+                                    class="btn btn-small btn-pink rounded-0 hover-pink ml-1"> Get Shopping! </a>
+                            </strong></p>
+                        {% endif %}
+                    </table>
                 </div>
+                <a href="{% url 'profile' %}" class="btn btn-black hover-pink rounded-0 m-">
+                    <span class="icon mr-2">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Dashboard</span>
+                </a>
             </div>
         </div>
     </div>
-        
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script src="{% static 'profiles/js/countryfield.js' %}"></script>
+{{ block.super }}
+<script src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
