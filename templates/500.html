@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <hr>
+        <div class="card-body text-center">
+            <h1>Our Bad!</h1>
+            <p> Something's gone wrong, but we'll get it sorted.</p>
+            <a href="{% url 'products' %}" class="btn btn-pink hover-pink rounded-0 my-2 pl-1"
+                aria-label="Back to the store">
+                <i class="fas fa-chevron-left icon"></i>
+                Back to the store
+            </a>
+            <div class="d-block row align-items-center">
+                <div class="col-12 text-center">
+                    <img class="img-fluid p-2 csc-logo" src="{{ MEDIA_URL }}csc-logo-black-600px.png" alt="CSC logo">
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+
+{% endblock %}
