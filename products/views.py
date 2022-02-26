@@ -54,7 +54,7 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.warning(request, "You didn't \
+                messages.info(request, "You didn't \
                      enter any search criteria, please try again")
                 return redirect(reverse('products'))
 
@@ -140,7 +140,7 @@ def edit_review(request, review_id):
                  update review. Please check the form and try again.')
     else:
         form = ReviewForm(instance=review)
-        messages.warning(request, f'You are \
+        messages.info(request, f'You are \
              editing a review of {product.name}')
 
     template = 'products/edit_review.html'
@@ -169,7 +169,7 @@ def delete_review(request, review_id):
 
     review.delete()
 
-    messages.warning(request, f"{review.user}'s review has now been deleted!")
+    messages.info(request, f"{review.user}'s review has now been deleted!")
 
     return redirect(reverse('product_detail', args=[product.id]))
 
@@ -230,7 +230,7 @@ def edit_product(request, product_id):
                      Please check the form and try again.')
     else:
         form = ProductForm(instance=product)
-        messages.warning(request, f'You are editing {product.name}')
+        messages.info(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
     context = {
@@ -254,5 +254,5 @@ def delete_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.warning(request, f'{product.name} has now been deleted!')
+    messages.info(request, f'{product.name} has now been deleted!')
     return redirect(reverse('products'))

@@ -125,7 +125,7 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'The Stripe public key seems to be missing.')
+        messages.info(request, 'The Stripe public key seems to be missing.')
 
     template = 'checkout/checkout.html'
     context = {

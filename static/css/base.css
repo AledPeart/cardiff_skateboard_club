@@ -45,6 +45,11 @@ a:hover {
     height: 20px;
 }
 
+.hr-grey{
+    border-top: 2px solid #e9ecef;
+    width: 90%;
+}
+
 .large-font {
     font-size: 3rem;
 }
@@ -57,10 +62,6 @@ a:hover {
     width: 330px;
     height: auto;
 }
-
-/* a:hover {
-    
-} */
 
 .image-link:hover {
     zoom: 25%;
@@ -77,7 +78,6 @@ a:hover {
     font-size: 16px;
     padding: 16px 32px;
   }
-
 
 .bg-pink {
     background-color: rgb(245, 61, 162); 
@@ -160,7 +160,6 @@ a:hover {
     cursor: pointer;
 }
 
-
 /* --- Buttons --- */
 
 .shop-now-button {
@@ -202,10 +201,99 @@ a:hover {
     border: 1px solid rgb(245, 61, 162);
 }
 
-.hr-grey{
-    border-top: 2px solid #e9ecef;
-    width: 90%;
+ /* --- icons --- */
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
 }
+
+.icon-align { 
+    vertical-align: text-bottom; 
+}
+
+.social-footer i {
+    margin-top: 1em;
+    color: #000;
+}
+
+/* --- Toasts --- */
+.toast-body{
+    width: 25%;
+   }
+   
+   .message-container {
+       position: fixed;
+       top: 72px;
+       right: 0;
+       z-index: 99999999999;
+   }
+   
+   .custom-toast {
+       overflow: visible;
+       width: 75%;
+       /* border: 2px solid rgb(245, 61, 162) !important; */
+   }
+   
+   .toast-capper {
+       height: 2px;
+   }
+   
+   /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+   .arrow-up {
+       width: 0; 
+       height: 0; 
+       border-left: 4px solid transparent;
+       border-right: 4px solid transparent; 
+       border-bottom: 10px solid black;
+       position: absolute;
+       top: -10px;
+       right: 36px;
+   }
+
+/* --- BASE TEMPLATE --- */
+
+.main-logo-link{
+    width: 50px;
+    height: 50px;
+}
+
+.main-nav-link{
+    background-color: white;
+}
+
+.dropdown-item {
+    padding-left: 8px;
+}
+
+.nav-item a:hover {
+    color: rgb(245, 61, 162) !important;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    color: rgb(245, 61, 162) !important;
+    text-decoration: none;
+}
+
+.nav-toggler-btn {
+    color:rgb(245, 61, 162);
+}
+
+.search-bar {
+    width: 25%;
+ }
+
+.nav-menu a {
+    color: black !important;
+    margin-left: 5px;
+}
+
+/* --- HOME PAGE --- */
 
   /* CREDIT _ code ammended from CSS Tricks */
 .shadow-hover:hover {
@@ -217,9 +305,6 @@ a:hover {
     -webkit-box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
             box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
-
-
-/* --- Home Page --- */
 
  /* CREDIT Code ammended from https://stackoverflow.com/questions/20134375/how-do-you-create-a-scrolling-window-over-a-still-background-image-with-css */
  .main-image-block {
@@ -270,65 +355,7 @@ a:hover {
     width: 100%;
 }
 
-
-  /* --- Base template --- */
-
-.main-logo-link{
-    width: 50px;
-    height: 50px;
-}
-
-.main-nav-link{
-    background-color: white;
-}
-
-.dropdown-item {
-    padding-left: 8px;
-}
-
-.nav-item a:hover {
-    color: rgb(245, 61, 162) !important;
-    text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-    color: rgb(245, 61, 162) !important;
-    text-decoration: none;
-}
-
-/* .social-footer i, .social-footer i:before {
-    color: rgb(245, 61, 162) !important;
-} */
-
-/* .content-info a, .content-info a:before {
-    color: white !important
-    } */
-
-.nav-toggler-btn {
-    color:rgb(245, 61, 162);
-}
-
-/* .search-bar-container {
-    opacity: 0;
-} */
-
-.search-bar {
-    width: 25%;
- }
-
-.nav-menu a {
-    color: black !important;
-    margin-left: 5px;
-}
-
-/* .footer-bottom {
-    position: sticky;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  } */
-
-/* --- products page  */
+/* --- PRODUCTS PAGE  ---*/
 
 /* CREDIT - adapted from from W3C https://www.w3schools.com/howto/howto_js_active_element.asp */
 .sort-active {
@@ -336,7 +363,7 @@ a:hover {
     color: rgb(245, 61, 162) !important;
   }
 
-  /*--- product-detail ---*/
+  /*--- PRODUCT DETAIL PAGE ---*/
 
 .quantity-field {
     width: 25%;
@@ -346,72 +373,12 @@ a:hover {
     border-color: rgb(245, 61, 162);
 }
 
-/*--- Wishlist ---*/
+/*--- WISHLIST PAGE ---*/
 .wishlist-image {
     min-width: 100px;
 }
-  
-  /* --- icons --- */
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 2rem;
-    width: 2rem;
-}
 
-.icon-align { 
-    vertical-align: text-bottom; 
-}
-
-.social-footer i {
-    margin-top: 1em;
-    color: #000;
-}
-/* 
-.social-footer i:hover {
-    
-    color: rgb(245, 61, 162);
-} */
-
-
-
-/* --- Toasts --- */
-.toast-body{
- width: 25%;
-}
-
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 0;
-    z-index: 99999999999;
-}
-
-.custom-toast {
-    overflow: visible;
-    width: 75%;
-    /* border: 2px solid rgb(245, 61, 162) !important; */
-}
-
-.toast-capper {
-    height: 2px;
-}
-
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
-}
-
-/* --- Convenience classes - colors copied from Bootstrap --- */
+/* --- CONVENIENCE CLASSES - colors copied from Bootstrap --- */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -454,8 +421,7 @@ a:hover {
     overflow-y: auto;
 }
 
-/* --- Allauth form formatting --- */
-
+/* --- ALLAUTH FORM FORMATTING --- */
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
     color: #6c757d; /* text-secondary */
@@ -493,8 +459,8 @@ a:hover {
     line-height: 1.5;
     border-radius: 0;
 
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+/* standard bootstrap btn transitions */
+transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
@@ -512,7 +478,7 @@ a:hover {
     width: 25%;
 }
 
-/* --- Media Queries --- */
+/* --- MEDIA QUERIES --- */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -531,8 +497,6 @@ a:hover {
         padding-top: 100px;
     }
 }
-
-
 
 /* reduce padding on the add review container on smaller screens to improve layout */
 @media (max-width: 400px) {
@@ -594,8 +558,7 @@ a:hover {
 } 
 
 
-/* --- spinner overlay --- */
-
+/* --- SPINNER OVERLAY --- */
 .loading-overlay-hidden {
 	display: none;
 }

@@ -82,7 +82,7 @@ def order_history(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
 
-    messages.warning(request, (
+    messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'
     ))
@@ -122,7 +122,7 @@ def add_to_wishlist(request, product_id):
 # code taken from tutor support session with @igor_ci
     if product in profile.wishlist.all():
         profile.wishlist.remove(product)
-        messages.warning(request, f'{product.name} was \
+        messages.info(request, f'{product.name} was \
              removed from your wishlist.  ', extra_tags='wishlist_link')
     else:
         profile.wishlist.add(product)

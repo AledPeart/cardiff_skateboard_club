@@ -225,13 +225,15 @@
         {% if level == 40 %}
         {% include 'includes/toasts/toast_error.html' %}
         {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
+        {% include 'includes/toasts/toast_success_bag.html' %}
         {% elif level == 25 %}
         <!-- success -->
         {% include 'includes/toasts/toast_success.html' %}
         {% else %}
         <!-- info -->
-        {% include 'includes/toasts/toast_success_bag.html' %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        
+
         {% endif %}
         {% endwith %}
         {% endfor %}

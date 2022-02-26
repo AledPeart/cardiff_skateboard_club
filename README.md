@@ -132,7 +132,7 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Home Page
 * Users are shown a hero image of a skateboarder and the CSC logo and a short introductory paragraph to immediately make the purpose of the site clear.
 * Users are shown a link to learm more about CSC, and a 'Shop Now' button that takes them to the 'Products' page so that they can start browsing the store right away.     
-* The hero image was removed for mobile devices foillowing Lighthouse testing, for asthetic and performance reasons. 
+* The hero image was removed for mobile devices foillowing Lighthouse testing, for asthetic and performance reasons.     
 ![supporting screenshot](media/readme-images/layout-features2.png)     
 
 * Below this a series of 3 colourful images, with buttons that appear on hover and link to different products in the store.
@@ -234,7 +234,8 @@ Here I will address the aims and goals of the store from both the perspectives o
 ### Messages
 * Django's message framework used in conjunction with Bootstrap toasts to provide confirmation messages to user actions.
 * Info, Success, Warning and Error levels have been utilised to give the user consistent feedback.
-* Info level specifically used to show users of any ammendments to their shopping bag, while other message levels used as normal.
+* Warning level specifically and deliberately used to show users of any ammendments to their shopping bag, while other message levels used as normal.
+* This was utilised to provide a bespoke message to users displaying their bag contents and so as not to conflict with django all-auth messages
 * Custom extra message tags used to customise the 'wishlist' messages.
 
 ### Defensive Programming
