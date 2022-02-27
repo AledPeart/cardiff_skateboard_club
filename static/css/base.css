@@ -309,7 +309,7 @@ a:hover {
  /* CREDIT Code ammended from https://stackoverflow.com/questions/20134375/how-do-you-create-a-scrolling-window-over-a-still-background-image-with-css */
  .main-image-block {
     background: url('/media/hero-image-desktop.jpeg') no-repeat center center fixed; 
-    background-attachment: fixed;
+    position: static;
     width: 100%;
     height: 800px;
     margin-top: 2px;
