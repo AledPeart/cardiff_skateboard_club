@@ -9,7 +9,8 @@ if os.path.exists("env.py"):
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cardiff_skateboard_club.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                          'cardiff_skateboard_club.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

@@ -127,6 +127,7 @@ def add_to_wishlist(request, product_id):
     else:
         profile.wishlist.add(product)
         messages.success(request, f'You have \
-             added {product.name} to your wishlist. ', extra_tags='wishlist_link')
+             added {product.name} to your \
+                  wishlist. ', extra_tags='wishlist_link')
 
     return redirect(reverse('product_detail', args=[product.id]))

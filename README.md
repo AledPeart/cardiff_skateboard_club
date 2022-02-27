@@ -557,6 +557,8 @@ Full details of these summarised steps can be found [here](https://docs.github.c
 * [W3C - HTML Validation](https://validator.w3.org/) 
 * [W3C - CSS Validation](https://jigsaw.w3.org/css-validator/) 
 * [JSHint](https://jshint.com/)
+* [JSONLint](https://jsonlint.com/)
+* [PEP8 Online](http://pep8online.com/)
 * [AutoPrefixer](https://autoprefixer.github.io/) 
 * [TableGenerator](https://www.tablesgenerator.com/markdown_tables)
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)

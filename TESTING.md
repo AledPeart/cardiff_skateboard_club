@@ -402,7 +402,9 @@ And on the following browsers:
     Firefox
     Safari (ios)
 
-Further responsiveness testing was done using [Responsinator](http://www.responsinator.com/)
+Further responsiveness testing was done using [Responsinator](http://www.responsinator.com/) and [Am I Responsive](http://ami.responsivedesign.is/). No issues of concern were discovered.        
+
+![supporting screenshot](media/readme-images/validation3.png)   
 
 ## Lighthouse Testing
 
@@ -457,9 +459,135 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 ![supporting screenshot](media/readme-images/wishlist.png)      
 
 ### Product Admin Page    
-![supporting screenshot](media/readme-images/prod-admin.png)    
+![supporting screenshot](media/readme-images/prod-admin.png) 
 
-## Resolved Bugs
+## Validation Testing
+
+While developing and for final checks I have validated my code using the following validation tools. On submission no errors were showing:
+
+HTML - [W3C Markup](https://validator.w3.org/) was used, some erros and warnings were flagged. They included incorrect use of the heading hierarchy, missing closing `</div>` tags, and incorrectly nesting `<p>` tags. All errors and warnigs have been addressed have all been addressed.  
+CSS - [CSS Validation Service](https://jigsaw.w3.org/css-validator/)  No errors were found.      
+![supporting screenshot](media/readme-images/.png)
+CSS - CSS Validation Service
+![supporting screenshot](media/readme-images/.png)
+
+### PEP 8
+
+I have tested all my python code using the [PEP8 Online](http://pep8online.com/) validation tool.    
+
+![supporting screenshot](media/readme-images/validation1.png)       
+
+I did not test the files that django creates automatically, assuming those to be error free and correct for purpose.
+All of my code was PEP8 compliant, with the exception of the following 3 lines from _settings.py_ and _webhook_handler.py_ respectively which I was unable to shorten without compromising the code.
+
+```
+{
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+
+```    
+   
+```
+profile.default_street_address1 = shipping_details.address.line1
+profile.default_street_address2 = shipping_details.address.line2    
+
+```
+
+### JSHint
+
+All Javascript files were checked using [JSHint](https://jshint.com/). `/* jshint esversion 6 */` added as a comment to let jshint know that the minimum language to target is es6.
+
+All the filese were free from errors and warnings with the excetion of one undefined variable `Stripe` in the stripe_elements javascript file. 
+
+### JSONLint
+
+All my JSON fixtures files were checked with [JSONLint](https://jsonlint.com/) and were confirmed as _valid JSON_
+
+### Django Testing Tools
+
+I would like to have explored the django atutomated unit testing functionality more for this project. I spent some time trying to get to grips with the testing tools, using them to validate some of my form inputs in the products app. I have included some of the test I wrote below. However at this time I was pushing up against the submission deadline and realised I was not going to have the time to do this comprehensively, and achieve sufficient coverage, so I did not include it as part of my final testing. I opted to prioritise ensuring that my app was functioning as well as it could and was submitted error free. After submitting I will explore this further. 
+
+```
+from django.test import TestCase
+from .forms import ProductForm
+
+from django.test import TestCase
+from .forms import ProductForm
+
+
+class TestProductForm(TestCase):
+    """
+    Test that the product form works
+    """
+
+    def test_name_is_required(self):
+        """
+        Test if form submits without name field
+        """
+        form = ProductForm({
+            'name': '',
+            'description': 'test',
+            'price': 'test',
+            'image': 'test',
+        })
+        # Form should not be valid - name required
+        self.assertFalse(form.is_valid())
+        self.assertIn('name', form.errors.keys())
+        # Check error message is correct
+        self.assertEqual(
+            form.errors['name'][0], 'This field is required.')
+
+    def test_description_is_required(self):
+        """
+        Test if form submits without description field
+        """
+        form = ProductForm({
+            'name': 'test',
+            'description': '',
+            'price': 'test',
+            'image': 'test',
+        })
+        # Form should not be valid - description required
+        self.assertFalse(form.is_valid())
+        self.assertIn('description', form.errors.keys())
+        # Check error message is correct
+        self.assertEqual(
+            form.errors['description'][0], 'This field is required.')
+
+    def test_price_is_required(self):
+        """
+        Test if form submits without price field
+        """
+        form = ProductForm({
+            'name': 'test',
+            'description': 'test',
+            'price': '',
+            'image': 'test',
+        })
+        # Form should not be valid - price required
+        self.assertFalse(form.is_valid())
+        self.assertIn('price', form.errors.keys())
+        # Check error message is correct
+        self.assertEqual(
+            form.errors['price'][0], 'This field is required.')
+
+    def test_image_is_not_required(self):
+        """
+        Test if form submits without image field
+        """
+        form = ProductForm({
+            'name': 'test',
+            'description': 'test',
+            'price': 'test',
+            'image': '',
+        })
+        # Form should be valid - image not required
+        self.assertTrue(form.is_valid())
+
+```    
+
+## Bugs and Errors
 
 ### __Add To Wishlist__ function not working correctly
 
@@ -554,4 +682,5 @@ In most situations the __if__ statement would catch a missing image and display 
 ```
 onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"
 ```
+
 
