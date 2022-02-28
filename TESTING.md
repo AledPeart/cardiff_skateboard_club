@@ -303,6 +303,7 @@
 | Product name links back to the product detail page                      | Pass   |
 | Order total and delivery costs are shown correctly                      | Pass   |
 | The 'Keep Shopping' button takes user back to the products page         | Pass   |
+| Confirmation email received correctly                                   | Pass   |
 
 ### User Dashboard
 | Test Condition                                                                                    | Result |
@@ -318,7 +319,7 @@
 | User details form shown to the user with their stored information                  | Pass   |
 | Users able to update the infomation                                                | Pass   |
 | If the user has not saved details previously all details will be blank             | Pass   |
-| New users able to add aand save details                                            | Pass   |
+| New users able to add and save details                                             | Pass   |
 | Confirmation message shown to the users to confirm that their details were updated | Pass   |
 | Back to Dashboard' link directs user to the dashboard                              | Pass   |
 
@@ -365,6 +366,7 @@
 | Users are able to log outr of thwe site without issue                               | Pass   |   
 | Confirmation displayed to the user upon succesfully signing in                      | Pass   |   
 | Confirmation displayed to the user upon succesfully signing out                     | Pass   |
+| Confirmation email sent to new users                                                | Pass   |
 | All other All auth features are working correctly                                   | Pass   |
 
 
@@ -476,7 +478,7 @@ CSS - [CSS Validation Service](https://jigsaw.w3.org/css-validator/)  No errors 
 
 ![supporting screenshot](media/readme-images/validation4.png)    
 
-As an alternative I ran final checks in [Free Formatter](https://www.freeformatter.com/html-validator.html). This was not ideal and I would like to have run final check using the official w3 site. I received the following error on certain pages using this validator:   
+As an alternative I ran final checks HTML in [Free Formatter](https://www.freeformatter.com/html-validator.html). This was not ideal and I would like to have run final check using the official w3 site. I received the following error on certain pages using this validator:   
 ```
 Malformed byte sequence: “a3”.
 At line 344, column 47
@@ -485,9 +487,7 @@ Code Extract:
 
 A google search on this error did not provide any conclusive explanations. This error was not present when using the w3 validator and with no explanation given by _Free Formatter_, and no obvious errors in the code, I am happy to ignore it.
 
-
-
-All errors and warnigs have been addressed have all been addressed. 
+I ran final CSS checks CSS in [WTools](https://wtools.io/validate-css-online). Again this was not ideal, and I would like to have to made the final checks using the official w3 tool. There were no errors, but some warnings were given relating to changes made by the CSS Autoprefixer. In this case and without acces to the W3 site for final confirmation I decided to ignore these warnings and allow the autoprefixer changes to remain. there were also warnings regarding the use of `!Important`, I understand these but have left them in as they are used specifically to overide Bootstrap styling, and are not causing any issues.
 
 
 ### PEP 8

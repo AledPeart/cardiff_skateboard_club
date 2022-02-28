@@ -215,7 +215,7 @@
             </ul>
         </div>
     </nav>
-
+    <!-- Messages -->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -230,7 +230,7 @@
         {% else %}
         <!-- info -->
         {% include 'includes/toasts/toast_warning.html' %}
-        
+
 
         {% endif %}
         {% endwith %}
@@ -245,7 +245,7 @@
         {% endblock %}
     </div>
 
-
+    <!-- Footer -->
     <footer class="container-fluid bg-grey">
         <div class="row justify-content-center">
             <div class="social-footer col-12 text-center footer-bottom m-5 w-auto">
