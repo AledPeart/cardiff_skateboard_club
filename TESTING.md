@@ -489,7 +489,7 @@ HTML - [W3C Markup](https://validator.w3.org/) was used, initially some erros an
 
 ![supporting screenshot](media/readme-images/validation5.png)    
 
-CSS - [CSS Validation Service](https://jigsaw.w3.org/css-validator/)  No errors were found when I initially *(see below).
+CSS - [CSS Validation Service](https://jigsaw.w3.org/css-validator/)  No errors were found when I initially tested *(see below).
 
 *__NB I performed my initial validation checks 1-2 weeks before submission, however for the two days prior to submission the W3 validation sites were down, and I was unable to perform final validation checks as I would have liked.__*     
 
