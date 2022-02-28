@@ -1,3 +1,5 @@
+# Testing
+
 I have tested my deployed site to ensure that it achieves the intended aims of the owner and the expectations of the users by meeting the user stories detailed in the [README.md](README.md). I have also manually tested the deployed site across a number of different devices and browsers to ensure that the design, layout and functionality respond as intended. In addition the validity of my HTML, CSS, Javascript and Python code have been checked using the [W3C Markup](https://validator.w3.org/) , [CSS Validation Service](https://jigsaw.w3.org/css-validator/), [JSONLint](https://jsonlint.com/) and [PEP8]( https://pypi.org/project/pep8/) respectively. Finally I have used [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools to test the accessibility and performance of my site. The specific tests and results are detailed below:
 
 ## __Table of Contents__
@@ -156,7 +158,9 @@ I have tested my deployed site to ensure that it achieves the intended aims of t
     * Only Admin users are able to delete reviews again this has been ensured programatically in the back-end.
     * Admin Users can also edit any review        
 
-     ![supporting screenshot](media/readme-images/user-story21.png)
+     ![supporting screenshot](media/readme-images/user-story21.png)     
+
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
 
 ## Manual Functionality Testing
 
@@ -378,7 +382,9 @@ I have tested my deployed site to ensure that it achieves the intended aims of t
 | Confirmation displayed to the user upon succesfully signing in                      | Pass   |   
 | Confirmation displayed to the user upon succesfully signing out                     | Pass   |
 | Confirmation email sent to new users                                                | Pass   |
-| All other All auth features are working correctly                                   | Pass   |
+| All other All auth features are working correctly                                   | Pass   |      
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)     
 
 
 ## Responsiveness
@@ -710,7 +716,10 @@ I caught this error when manually testing. Whenever a product image is not prese
 In most situations the __if__ statement would catch a missing image and display the default placeholder, but as a extra precaution I have added the following attribute to the product image so that the default placeholder is loaded in the event of an error. This code was ammended from a post on [Stack Overflow](https://stackoverflow.com/questions/63038939/how-can-i-set-default-image-in-property-if-image-is-not-available-for-a-product)
 
 ```
-onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"
-```
+onerror="this.onerror=null; this.src='{{ MEDIA_URL }}awaiting-image.jpeg'"      
 
+```    
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top](#table-of-contents)
+ 
 
