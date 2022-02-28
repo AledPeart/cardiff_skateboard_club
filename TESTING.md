@@ -463,13 +463,32 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 
 ## Validation Testing
 
-While developing and for final checks I have validated my code using the following validation tools. On submission no errors were showing:
+### HTML & CSS
+While developing and for final checks I have validated my code using the following validation tools.
 
-HTML - [W3C Markup](https://validator.w3.org/) was used, some erros and warnings were flagged. They included incorrect use of the heading hierarchy, missing closing `</div>` tags, and incorrectly nesting `<p>` tags. All errors and warnigs have been addressed have all been addressed.  
-CSS - [CSS Validation Service](https://jigsaw.w3.org/css-validator/)  No errors were found.      
-![supporting screenshot](media/readme-images/.png)
-CSS - CSS Validation Service
-![supporting screenshot](media/readme-images/.png)
+HTML - [W3C Markup](https://validator.w3.org/) was used, initially some erros and warnings were flagged. They included incorrect use of the heading hierarchy, missing closing `</div>` tags, and incorrectly nesting `<p>` tags.  All errors were addressed *(see below).   
+
+![supporting screenshot](media/readme-images/validation5.png)    
+
+CSS - [CSS Validation Service](https://jigsaw.w3.org/css-validator/)  No errors were found when I initially *(see below).
+
+*__NB I performed my initial validation checks 1-2 weeks before submission, however for the two days prior to submission the W3 validation sites were down, and I was unable to perform final validation checks as I would have liked.__*     
+
+![supporting screenshot](media/readme-images/validation4.png)    
+
+As an alternative I ran final checks in [Free Formatter](https://www.freeformatter.com/html-validator.html). This was not ideal and I would like to have run final check using the official w3 site. I received the following error on certain pages using this validator:   
+```
+Malformed byte sequence: “a3”.
+At line 344, column 47
+Code Extract:
+```   
+
+A google search on this error did not provide any conclusive explanations. This error was not present when using the w3 validator and with no explanation given by _Free Formatter_, and no obvious errors in the code, I am happy to ignore it.
+
+
+
+All errors and warnigs have been addressed have all been addressed. 
+
 
 ### PEP 8
 
