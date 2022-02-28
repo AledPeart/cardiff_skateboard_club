@@ -175,12 +175,10 @@
                 <p>{{review.review_text }}</p>
                 <p><small>
                         {% if review.recommended %}
-                        <i class="align-bottom p-1 ri-checkbox-circle-fill ri-1x"
-                            aria-label="tick icon"></i><strong>Yes</strong>
+                        <i class="align-bottom p-1 ri-checkbox-circle-fill ri-1x"></i><strong>Yes</strong>
                         I recommend this product.
                         {% else %}
-                        <i class="align-bottom p-1 ri-close-circle-fill ri-1x"
-                            aria-label="cross icon"></i><strong>No</strong>
+                        <i class="align-bottom p-1 ri-close-circle-fill ri-1x"></i><strong>No</strong>
                         I don't recommend this product.
                         {% endif %}
                     </small></p>
@@ -203,9 +201,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header mx-auto">
-                            <h5 class="modal-title"><i class="align-bottom ri-error-warning-line ri-x2 p-2"
-                                    aria-label="warning icon"></i>Confirm
-                                Delete</h5>
+                            <h5 class="modal-title"><i class="align-bottom ri-error-warning-line ri-x2 p-2"></i>Confirm Delete</h5>
                         </div>
                         <div class="modal-body text-center">
                             <p>Are you sure you want to permanently delete
@@ -216,7 +212,7 @@
                         <div class="modal-footer mx-auto">
                             <button type="button"
                                 class="btn modal-cancel-btn btn-sm btn-outline-secondary text-uppercase"
-                                data-dismiss="modal" aria-label="Close">Cancel</button>
+                                data-dismiss="modal" aria-label="Cancel">Cancel</button>
                             <a href="{% url 'delete_review' review.id %}"
                                 class="btn btn-sm modal-delete-btn btn-danger text-uppercase"
                                 aria-label="delete">Delete</a>
