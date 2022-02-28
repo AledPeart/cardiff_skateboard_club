@@ -1,3 +1,14 @@
+I have tested my deployed site to ensure that it achieves the intended aims of the owner and the expectations of the users by meeting the user stories detailed in the [README.md](README.md). I have also manually tested the deployed site across a number of different devices and browsers to ensure that the design, layout and functionality respond as intended. In addition the validity of my HTML, CSS, Javascript and Python code have been checked using the [W3C Markup](https://validator.w3.org/) , [CSS Validation Service](https://jigsaw.w3.org/css-validator/), [JSONLint](https://jsonlint.com/) and [PEP8]( https://pypi.org/project/pep8/) respectively. Finally I have used [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools to test the accessibility and performance of my site. The specific tests and results are detailed below:
+
+## __Table of Contents__
+1. [User Stories](#user-stories)
+2. [Manual Functionality Testing](#manual-functionality-testing)
+3. [Responsiveness](#responsiveness)
+4. [Lighthouse Testing](#lighthouse-testing)
+5. [Automated Testing](#automated-testing)
+6. [Bugs and Errors](#bugs-and-errors)
+
+
 ## User Stories
 
 ### ___As a new user I want to:___
@@ -463,7 +474,7 @@ I ran the tests in incognito mode with all extensions disabled to provide the be
 ### Product Admin Page    
 ![supporting screenshot](media/readme-images/prod-admin.png) 
 
-## Validation Testing
+## Automated Testing
 
 ### HTML & CSS
 While developing and for final checks I have validated my code using the following validation tools.

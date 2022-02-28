@@ -559,7 +559,9 @@ Full details of these summarised steps can be found [here](https://docs.github.c
 * [JSHint](https://jshint.com/)
 * [JSONLint](https://jsonlint.com/)
 * [PEP8 Online](http://pep8online.com/)
-* [AutoPrefixer](https://autoprefixer.github.io/) 
+* [AutoPrefixer](https://autoprefixer.github.io/)
+* [Free Formatter](https://www.freeformatter.com/html-validator.html)
+* [WTools](https://wtools.io/validate-css-online) 
 * [TableGenerator](https://www.tablesgenerator.com/markdown_tables)
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
 
@@ -595,6 +597,8 @@ Full details of these summarised steps can be found [here](https://docs.github.c
 * My mentor, Antonio Rodriguez - for his advice and guidance.
 * Code institute tutors (particularly @igor_ci), for their speedy help and explanations.
 * Slack forums/webinars.
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[Back to Top ^](#table-of-contents)
 
 
 
